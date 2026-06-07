@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { "source": "/inicio",    "destination": "/index.html" },
+    { "source": "/servicios", "destination": "/index.html" },
+    { "source": "/geo",       "destination": "/index.html" },
+    { "source": "/proceso",   "destination": "/index.html" },
+    { "source": "/precios",   "destination": "/index.html" },
+    { "source": "/faq",       "destination": "/index.html" },
+    { "source": "/contacto",  "destination": "/index.html" },
+    { "source": "/(.*)",      "destination": "/index.html" }
+  ]
+}
