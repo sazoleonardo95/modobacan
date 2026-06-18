@@ -9,6 +9,8 @@
 <meta name="author" content="Modo Bacán">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://modobacan.cl/">
+<link rel="alternate" hreflang="es-CL" href="https://modobacan.cl/">
+<link rel="alternate" hreflang="es" href="https://modobacan.cl/">
 <link rel="alternate" type="text/plain" title="AI Training Data" href="https://modobacan.cl/llms.txt">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://modobacan.cl/">
@@ -451,6 +453,10 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 @media(max-width:1024px){
   .seo-hero-inner { grid-template-columns:1fr; gap:3rem; }
 }
+@media(max-width:1100px){
+  .n-links { gap:1.4rem; }
+  .n-links a { font-size:.65rem; }
+}
 @media(max-width:768px){
   .seo-hero-inner { padding:0 1.25rem; }
   .seo-pillars-head { grid-template-columns:1fr; gap:1.5rem; }
@@ -683,10 +689,14 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
     grid-template-columns:1fr !important;
     text-align:center;
     padding:2rem 1.5rem;
+    gap:1.25rem;
   }
   #precios .rv[style*="grid-template-columns"] .btn-p {
     align-self:center;
+    white-space:normal;
+    text-align:center;
   }
+  /* Nav demasiados items — reducir gap en tablet */
 }
 @media(max-width:480px){
   .proc-steps { grid-template-columns:1fr; }
@@ -781,6 +791,46 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   </noscript>
 
   <meta name="facebook-domain-verification" content="ayoi497z6yxjaoniu4riqbro3t7zh9">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Modo Bacán — Primera Agencia GEO de Chile",
+  "url": "https://modobacan.cl/",
+  "description": "La primera agencia GEO de Chile. Posicionamiento en Google, ChatGPT, Perplexity y Gemini para pymes y empresas chilenas. SEO, GEO, Landing Pages y Google Ads.",
+  "inLanguage": "es-CL",
+  "isPartOf": {"@type": "WebSite", "name": "Modo Bacán", "url": "https://modobacan.cl"},
+  "sameAs": ["https://modobacan.cl/seo", "https://modobacan.cl/geo", "https://modobacan.cl/landing"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Modo Bacán",
+  "url": "https://modobacan.cl",
+  "logo": "https://modobacan.cl/og-image.png",
+  "description": "Primera agencia GEO (Generative Engine Optimization) de Chile. Posicionamiento en Google e inteligencia artificial para pymes y empresas. Servicios de SEO, GEO, Landing Pages y Google Ads.",
+  "telephone": "+56954343686",
+  "email": "sazoleonardo95@gmail.com",
+  "foundingDate": "2026",
+  "founder": {"@type": "Person", "name": "Leonardo Sazo", "url": "https://leonardosazo.com"},
+  "areaServed": {"@type": "Country", "name": "Chile"},
+  "address": {"@type": "PostalAddress", "addressCountry": "CL", "addressRegion": "Maule"},
+  "priceRange": "$$",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios Modo Bacán",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "GEO", "url": "https://modobacan.cl/geo"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO", "url": "https://modobacan.cl/seo"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Landing Pages", "url": "https://modobacan.cl/landing"}}
+    ]
+  },
+  "sameAs": ["https://modobacan.cl/seo", "https://modobacan.cl/geo", "https://modobacan.cl/landing"]
+}
+</script>
 </head>
 <body>
 
@@ -805,8 +855,9 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
     <li><a href="/servicios">Servicios</a></li>
     <li><a href="/seo">SEO</a></li>
     <li><a href="/geo">GEO</a></li>
+    <li><a href="/landing">Landing Pages</a></li>
     <li><a href="/proceso">Proceso</a></li>
-    <li><a href="/precios">Precios</a></li>
+    <li><a href="/precios">Planes</a></li>
     <li><a href="/faq">FAQ</a></li>
     <li><a href="/contacto">Contacto</a></li>
   </ul>
@@ -820,8 +871,9 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   <a href="/servicios" onclick="closeMob()">Servicios</a>
   <a href="/seo" onclick="closeMob()">SEO</a>
   <a href="/geo" onclick="closeMob()">GEO</a>
+  <a href="/landing" onclick="closeMob()">Landing Pages</a>
   <a href="/proceso" onclick="closeMob()">Proceso</a>
-  <a href="/precios" onclick="closeMob()">Precios</a>
+  <a href="/precios" onclick="closeMob()">Planes</a>
   <a href="/faq" onclick="closeMob()">FAQ</a>
   <a href="/contacto" onclick="closeMob()">Contacto</a>
   <a href="/contacto" onclick="closeMob()" style="color:var(--accent)">→ Hablemos</a>
@@ -1527,7 +1579,10 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
         <div class="pc-em">🚀</div>
         <div class="pc-name">ARRANQUE</div>
         <div class="pc-tag">Pa empezar con todo 🇨🇱</div>
-        <div style="font-family:var(--font-m);font-size:.65rem;letter-spacing:.14em;color:var(--accent);border:1px solid var(--accent-b);background:var(--accent-d);padding:6px 14px;border-radius:3px;display:inline-block;margin-bottom:1.5rem;">CONSULTA AQUÍ</div>
+        <div style="margin-bottom:1.5rem;">
+          <div style="font-family:var(--font-d);font-size:2.4rem;letter-spacing:.03em;color:var(--white);line-height:1;">$129.900</div>
+          <div style="font-family:var(--font-m);font-size:.6rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;">Pago único · Sin mensualidad</div>
+        </div>
         <ul class="pc-feats">
           <li>Landing page profesional</li>
           <li>Diseño responsive</li>
@@ -1708,7 +1763,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
         <ul>
           
           <li><a href="/proceso">Proceso</a></li>
-          <li><a href="/precios">Precios</a></li>
+          <li><a href="/precios">Planes</a></li>
           <li><a href="/faq">FAQ</a></li>
           
         </ul>

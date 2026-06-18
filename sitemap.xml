@@ -26,6 +26,13 @@
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://modobacan.cl/seo"/>
   </url>
 
+
+  <url>
+    <loc>https://modobacan.cl/landing</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
   <url>
     <loc>https://modobacan.cl/servicios</loc>
     <lastmod>2026-06-17</lastmod>
