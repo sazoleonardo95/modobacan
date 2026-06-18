@@ -108,6 +108,9 @@ html { scroll-behavior: smooth; }
   --accent:   #C8FF00;
   --accent-d: rgba(200,255,0,0.12);
   --accent-b: rgba(200,255,0,0.28);
+  --orange:   #FF6B35;
+  --orange-b: rgba(255,107,53,.25);
+  --orange-d: rgba(255,107,53,.08);
   --purple:   #8B5CF6;
   --cyan:     #00E5FF;
   --border:   rgba(245,240,232,0.08);
@@ -615,6 +618,114 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   .geo-plat-grid { grid-template-columns:1fr 1fr; }
 }
 
+/* ── LANDING PAGE STYLES ─────────────────────────────────────── */
+
+/* Hero landing */
+.lp-hero { min-height:100vh; display:flex; align-items:center; padding-top:80px; position:relative; overflow:hidden; }
+.lp-hero-bg { position:absolute; inset:0;
+  background: radial-gradient(ellipse 60% 50% at 20% 40%, rgba(255,107,53,.08) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 40% at 85% 65%, rgba(255,107,53,.05) 0%, transparent 55%); }
+.lp-hero-grid { position:absolute; inset:0;
+  background-image: linear-gradient(rgba(200,255,0,.018) 1px,transparent 1px), linear-gradient(90deg,rgba(200,255,0,.018) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black,transparent); }
+.lp-hero-inner { position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:0 3rem; width:100%; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+
+/* Phone mockup */
+.lp-phone-wrap { position:relative; display:flex; align-items:center; justify-content:center; height:560px; }
+.lp-phone { width:260px; background:var(--black-3); border:1px solid var(--border); border-radius:32px; overflow:hidden; position:relative; box-shadow:0 32px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(200,255,0,.1); }
+.lp-phone-notch { width:80px; height:6px; background:var(--black-4); border-radius:3px; margin:14px auto 0; }
+.lp-phone-screen { padding:1rem; }
+.lp-phone-header { background:var(--orange); border-radius:8px; padding:.75rem 1rem; margin-bottom:.75rem; text-align:center; }
+.lp-phone-header-t { font-family:var(--font-d); font-size:.9rem; letter-spacing:.04em; color:var(--black); }
+.lp-phone-header-s { font-family:var(--font-m); font-size:.5rem; color:rgba(13,13,13,.7); letter-spacing:.08em; }
+.lp-phone-img { height:90px; background:linear-gradient(135deg,var(--black-4),var(--black-3)); border-radius:6px; margin-bottom:.75rem; display:flex; align-items:center; justify-content:center; font-size:1.8rem; border:1px solid var(--border); }
+.lp-phone-body { font-size:.6rem; color:var(--white-60); line-height:1.6; margin-bottom:.75rem; }
+.lp-phone-cta { background:var(--orange); border-radius:6px; padding:.6rem; text-align:center; font-family:var(--font-m); font-size:.58rem; letter-spacing:.1em; color:var(--black); font-weight:700; margin-bottom:.5rem; }
+.lp-phone-wa { background:#25D366; border-radius:6px; padding:.5rem; text-align:center; font-family:var(--font-m); font-size:.55rem; letter-spacing:.08em; color:#fff; display:flex; align-items:center; justify-content:center; gap:5px; }
+.lp-phone-glow { position:absolute; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle,rgba(255,107,53,.12),transparent 70%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; animation:geo-pulse 3s ease-in-out infinite; }
+.lp-phone-ring { position:absolute; width:360px; height:360px; border-radius:50%; border:1px solid rgba(255,107,53,.1); top:50%; left:50%; transform:translate(-50%,-50%); animation:geo-spin 20s linear infinite; }
+
+/* Métricas flotantes */
+.lp-metric { position:absolute; background:var(--black-3); border:1px solid var(--border); border-radius:8px; padding:.65rem 1rem; display:flex; align-items:center; gap:.6rem; white-space:nowrap; }
+.lp-metric-n { font-family:var(--font-d); font-size:1.2rem; letter-spacing:.03em; color:var(--orange); }
+.lp-metric-l { font-family:var(--font-m); font-size:.52rem; color:var(--white-30); letter-spacing:.08em; text-transform:uppercase; line-height:1.3; }
+.lp-metric.m1 { top:10%; right:-10%; }
+.lp-metric.m2 { bottom:20%; left:-12%; }
+.lp-metric.m3 { top:45%; left:-15%; }
+
+/* Resultados — iconos grandes */
+.lp-results { padding:7rem 0; background:var(--black-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.lp-results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:4rem; }
+.lp-res-card { background:var(--black-3); border:1px solid var(--border); border-radius:12px; padding:2.5rem 2rem; text-align:center; position:relative; overflow:hidden; transition:border-color .3s, transform .3s; }
+.lp-res-card:hover { border-color:var(--orange-b); transform:translateY(-4px); }
+.lp-res-card::before { content:''; position:absolute; top:-60px; left:50%; transform:translateX(-50%); width:200px; height:200px; background:radial-gradient(circle,rgba(255,107,53,.06),transparent 70%); }
+.lp-res-icon { font-size:2.8rem; margin-bottom:1rem; display:block; }
+.lp-res-n { font-family:var(--font-d); font-size:3.5rem; letter-spacing:.03em; color:var(--orange); line-height:1; margin-bottom:.3rem; }
+.lp-res-label { font-family:var(--font-d); font-size:1.2rem; letter-spacing:.04em; color:var(--white); margin-bottom:.6rem; }
+.lp-res-desc { font-size:.82rem; color:var(--white-60); line-height:1.65; }
+
+/* Industrias */
+.lp-industries { padding:7rem 0; }
+.lp-ind-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:4rem; }
+.lp-ind-card { background:var(--black-3); border:1px solid var(--border); border-radius:10px; padding:1.5rem 1.25rem; transition:border-color .3s, transform .3s; cursor:default; }
+.lp-ind-card:hover { border-color:var(--orange-b); transform:translateY(-3px); }
+.lp-ind-icon { font-size:1.6rem; margin-bottom:.75rem; display:block; }
+.lp-ind-name { font-family:var(--font-d); font-size:1.1rem; letter-spacing:.04em; color:var(--white); margin-bottom:.4rem; }
+.lp-ind-ex { font-size:.75rem; color:var(--white-30); line-height:1.5; font-family:var(--font-m); }
+
+/* Qué incluye */
+.lp-includes { padding:7rem 0; background:var(--black-2); border-top:1px solid var(--border); }
+.lp-inc-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:4rem; }
+.lp-inc-item { display:flex; gap:1rem; align-items:flex-start; background:var(--black-3); border:1px solid var(--border); border-radius:10px; padding:1.5rem; transition:border-color .3s; }
+.lp-inc-item:hover { border-color:var(--orange-b); }
+.lp-inc-ico { width:40px; height:40px; background:var(--orange-d); border:1px solid var(--orange-b); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+.lp-inc-title { font-family:var(--font-d); font-size:1.1rem; letter-spacing:.04em; color:var(--white); margin-bottom:.35rem; }
+.lp-inc-desc { font-size:.8rem; color:var(--white-60); line-height:1.65; }
+
+/* Proceso rápido */
+.lp-process { padding:7rem 0; border-top:1px solid var(--border); }
+.lp-proc-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-top:4rem; }
+.lp-proc-step { background:var(--black-3); padding:2rem 1.5rem; position:relative; }
+.lp-proc-step:hover { background:var(--black-4); }
+.lp-proc-n { font-family:var(--font-d); font-size:3rem; color:rgba(200,255,0,.1); line-height:1; margin-bottom:.5rem; }
+.lp-proc-title { font-family:var(--font-d); font-size:1.1rem; letter-spacing:.04em; color:var(--white); margin-bottom:.5rem; }
+.lp-proc-desc { font-size:.78rem; color:var(--white-60); line-height:1.6; }
+.lp-proc-time { margin-top:.75rem; font-family:var(--font-m); font-size:.58rem; color:var(--orange); letter-spacing:.1em; background:var(--orange-d); border:1px solid var(--orange-b); padding:2px 8px; border-radius:2px; display:inline-block; }
+
+/* CTA final */
+.lp-cta { padding:8rem 0; position:relative; overflow:hidden; }
+.lp-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 50% 50%, rgba(255,107,53,.07), transparent 70%); }
+.lp-cta-inner { position:relative; text-align:center; }
+.lp-cta-inner h2 { font-size:clamp(2.8rem,7vw,6rem); margin-bottom:1.4rem; line-height:.9; }
+.lp-cta-inner p { color:var(--white-60); font-size:1.05rem; max-width:500px; margin:0 auto 2.5rem; line-height:1.75; }
+.lp-cta-acts { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem; }
+.lp-trust-row { display:flex; align-items:center; justify-content:center; gap:2rem; flex-wrap:wrap; }
+.lp-trust-item { font-family:var(--font-m); font-size:.6rem; color:var(--white-30); letter-spacing:.1em; display:flex; align-items:center; gap:6px; }
+.lp-trust-item::before { content:'✓'; color:var(--orange); }
+
+/* Responsive landing */
+@media(max-width:1024px){
+  .lp-hero-inner { grid-template-columns:1fr; gap:3rem; }
+  .lp-phone-wrap { height:400px; }
+  .lp-metric.m1,.lp-metric.m2,.lp-metric.m3 { display:none; }
+  .lp-ind-grid { grid-template-columns:repeat(2,1fr); }
+  .lp-proc-steps { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:768px){
+  .lp-hero-inner { padding:0 1.25rem; }
+  .lp-results-grid { grid-template-columns:1fr; }
+  .lp-inc-grid { grid-template-columns:1fr; }
+  .lp-ind-grid { grid-template-columns:repeat(2,1fr); }
+  .lp-proc-steps { grid-template-columns:1fr 1fr; }
+  .lp-phone-wrap { height:320px; }
+  .lp-phone { width:200px; }
+}
+@media(max-width:480px){
+  .lp-ind-grid { grid-template-columns:1fr 1fr; }
+  .lp-proc-steps { grid-template-columns:1fr; }
+}
+
 /* RESPONSIVE */
 @media(max-width:1024px){
   .h-term { display:none; }
@@ -855,7 +966,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
     <li><a href="/servicios">Servicios</a></li>
     <li><a href="/seo">SEO</a></li>
     <li><a href="/geo">GEO</a></li>
-    <li><a href="/landing">Landing Pages</a></li>
+    <li><a href="#landing-deep">Landing Pages</a></li>
     <li><a href="/proceso">Proceso</a></li>
     <li><a href="/precios">Planes</a></li>
     <li><a href="/faq">FAQ</a></li>
@@ -871,7 +982,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   <a href="/servicios" onclick="closeMob()">Servicios</a>
   <a href="/seo" onclick="closeMob()">SEO</a>
   <a href="/geo" onclick="closeMob()">GEO</a>
-  <a href="/landing" onclick="closeMob()">Landing Pages</a>
+  <a href="#landing-deep" onclick="closeMob()">Landing Pages</a>
   <a href="/proceso" onclick="closeMob()">Proceso</a>
   <a href="/precios" onclick="closeMob()">Planes</a>
   <a href="/faq" onclick="closeMob()">FAQ</a>
@@ -1544,6 +1655,237 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   </section>
 
 </div><!-- /#geo-deep -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECCIÓN /LANDING — LANDING PAGES
+     ═══════════════════════════════════════════════════════════════ -->
+<div id="landing-deep">
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section style="background:var(--black);">
+  <div class="lp-hero">
+    <div class="lp-hero-bg"></div>
+    <div class="lp-hero-grid"></div>
+    <div class="lp-hero-inner">
+
+      <!-- Left -->
+      <div>
+        <div class="geo-h-label rv" style="color:var(--orange);border-color:var(--orange-b);background:var(--orange-d);"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--orange);"></span>Diseño web orientado a conversión</div>
+        <h1 style="font-family:var(--font-d);font-size:clamp(4rem,8vw,8rem);line-height:.88;letter-spacing:.02em;margin-bottom:1.6rem;" class="rv d1">
+          MÁS<br>
+          <span style="color:var(--orange);">CLIENTES.</span><br>
+          <span style="color:transparent;-webkit-text-stroke:1px rgba(245,240,232,.3);">MENOS RUIDO.</span>
+        </h1>
+        <p style="font-size:1.08rem;color:var(--white-60);line-height:1.78;max-width:480px;margin-bottom:2rem;" class="rv d2">Tu negocio merece una página que trabaje mientras tú duermes. Diseñamos landing pages que convierten visitas en consultas, WhatsApps y ventas — para cualquier negocio en Chile.</p>
+        <div class="h-acts rv d3">
+          <a href="https://wa.me/56954343686?text=Hola%20Modo%20Bacán,%20quiero%20una%20landing%20page%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn-p" style="background:var(--orange);color:#fff;">Quiero mi landing page →</a>
+          <a href="#lp-includes" class="btn-s">Ver qué incluye</a>
+        </div>
+        <div style="display:inline-flex;align-items:baseline;gap:.5rem;margin-top:2rem;background:var(--orange-d);border:1px solid var(--orange-b);border-radius:6px;padding:.65rem 1.25rem;" class="rv">
+          <span style="font-family:var(--font-d);font-size:2rem;letter-spacing:.03em;color:var(--white);line-height:1;">$129.900</span>
+          <span style="font-family:var(--font-m);font-size:.6rem;color:var(--orange);letter-spacing:.12em;text-transform:uppercase;">Pago único · Sin mensualidad</span>
+        </div>
+        <div style="display:flex;gap:2rem;margin-top:1.25rem;flex-wrap:wrap;" class="rv">
+          <div style="display:flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:.62rem;color:var(--white-30);letter-spacing:.08em;"><span style="color:var(--orange);">✓</span>Entrega en 5–7 días</div>
+          <div style="display:flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:.62rem;color:var(--white-30);letter-spacing:.08em;"><span style="color:var(--orange);">✓</span>Mobile-first</div>
+          <div style="display:flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:.62rem;color:var(--white-30);letter-spacing:.08em;"><span style="color:var(--orange);">✓</span>Sin contratos</div>
+        </div>
+      </div>
+
+      <!-- Right — Phone mockup -->
+      <div class="lp-phone-wrap rv d2">
+        <div class="lp-phone-glow"></div>
+        <div class="lp-phone-ring"></div>
+        <div class="lp-phone">
+          <div class="lp-phone-notch"></div>
+          <div class="lp-phone-screen">
+            <div class="lp-phone-header">
+              <div class="lp-phone-header-t">Tu Negocio · Chile</div>
+              <div class="lp-phone-header-s">⭐⭐⭐⭐⭐ · Más de 200 clientes</div>
+            </div>
+            <div class="lp-phone-img">🏆</div>
+            <div class="lp-phone-body">Somos especialistas en [tu servicio]. Atendemos en [tu ciudad] y en todo Chile. Consulta gratis, respuesta en menos de 1 hora.</div>
+            <div class="lp-phone-cta">📞 CONSULTA GRATIS AHORA</div>
+            <div class="lp-phone-wa">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              ESCRIBIR POR WHATSAPP
+            </div>
+          </div>
+        </div>
+        <!-- Métricas flotantes -->
+        <div class="lp-metric m1 rv">
+          <div><div class="lp-metric-n">3×</div><div class="lp-metric-l">más consultas</div></div>
+        </div>
+        <div class="lp-metric m2 rv">
+          <div><div class="lp-metric-n">+67%</div><div class="lp-metric-l">tasa conversión</div></div>
+        </div>
+        <div class="lp-metric m3 rv">
+          <div><div class="lp-metric-n">5–7d</div><div class="lp-metric-l">tiempo entrega</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── RESULTADOS ──────────────────────────────────────────── -->
+<div class="lp-results">
+  <div class="wrap">
+    <div style="text-align:center;" class="rv">
+      <div class="s-label" style="justify-content:center;color:var(--orange);">El único objetivo</div>
+      <h2>UNA LANDING PAGE<br>TIENE UN SOLO<br><span style="color:var(--orange);">TRABAJO.</span></h2>
+      <p style="color:var(--white-60);max-width:500px;margin:.8rem auto 0;line-height:1.75;">Convertir. No impresionar, no ganar premios de diseño. Convertir visitas en clientes reales para tu negocio.</p>
+    </div>
+    <div class="lp-results-grid">
+      <div class="lp-res-card rv d1">
+        <span class="lp-res-icon">💬</span>
+        <div class="lp-res-n">+3×</div>
+        <div class="lp-res-label">MÁS CONSULTAS</div>
+        <div class="lp-res-desc">Un formulario bien diseñado, un CTA claro y la propuesta de valor correcta multiplican las consultas de clientes potenciales desde el primer día.</div>
+      </div>
+      <div class="lp-res-card rv d2">
+        <span class="lp-res-icon">📱</span>
+        <div class="lp-res-n">+67%</div>
+        <div class="lp-res-label">MÁS WHATSAPPS</div>
+        <div class="lp-res-desc">El botón de WhatsApp estratégicamente ubicado, con mensaje pre-escrito y visible en mobile, convierte visitantes en conversaciones directas de venta.</div>
+      </div>
+      <div class="lp-res-card rv d3">
+        <span class="lp-res-icon">💰</span>
+        <div class="lp-res-n">+45%</div>
+        <div class="lp-res-label">MÁS VENTAS</div>
+        <div class="lp-res-desc">Cuando el visitante llega a una página diseñada para su intención específica, la tasa de conversión se dispara. Menos fricción, más ventas.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── INDUSTRIAS ──────────────────────────────────────────── -->
+<section class="lp-industries">
+  <div class="wrap">
+    <div style="text-align:center;" class="rv">
+      <div class="s-label" style="justify-content:center;color:var(--orange);">Para todo negocio chileno</div>
+      <h2>FUNCIONA PARA<br><span style="color:var(--orange);">TU INDUSTRIA.</span></h2>
+      <p style="color:var(--white-60);max-width:480px;margin:.8rem auto 0;line-height:1.75;">No hay negocio pequeño para una landing page. Si tienes clientes que buscan en Google o redes sociales, necesitas una página que los convierta.</p>
+    </div>
+    <div class="lp-ind-grid">
+      <div class="lp-ind-card rv d1"><span class="lp-ind-icon">🔧</span><div class="lp-ind-name">SERVICIOS</div><div class="lp-ind-ex">Gasfitería, electricidad, construcción, limpieza, mudanzas</div></div>
+      <div class="lp-ind-card rv d2"><span class="lp-ind-icon">🏥</span><div class="lp-ind-name">SALUD</div><div class="lp-ind-ex">Dentistas, psicólogos, nutricionistas, clínicas, médicos</div></div>
+      <div class="lp-ind-card rv d3"><span class="lp-ind-icon">🏫</span><div class="lp-ind-name">EDUCACIÓN</div><div class="lp-ind-ex">Academias, tutores, cursos, capacitaciones, colegios</div></div>
+      <div class="lp-ind-card rv" style="transition-delay:.4s"><span class="lp-ind-icon">🛍️</span><div class="lp-ind-name">RETAIL</div><div class="lp-ind-ex">Tiendas online, productos, e-commerce, catálogos</div></div>
+      <div class="lp-ind-card rv d1"><span class="lp-ind-icon">🍽️</span><div class="lp-ind-name">GASTRONOMÍA</div><div class="lp-ind-ex">Restaurantes, delivery, catering, pastelerías, cafés</div></div>
+      <div class="lp-ind-card rv d2"><span class="lp-ind-icon">⚖️</span><div class="lp-ind-name">PROFESIONALES</div><div class="lp-ind-ex">Abogados, contadores, arquitectos, consultores</div></div>
+      <div class="lp-ind-card rv d3"><span class="lp-ind-icon">🏠</span><div class="lp-ind-name">INMOBILIARIA</div><div class="lp-ind-ex">Corredoras, arriendos, propiedades, proyectos</div></div>
+      <div class="lp-ind-card rv" style="transition-delay:.4s"><span class="lp-ind-icon">✨</span><div class="lp-ind-name">BELLEZA</div><div class="lp-ind-ex">Peluquerías, nail art, spas, estética, maquillaje</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUÉ INCLUYE ─────────────────────────────────────────── -->
+<div class="lp-includes" id="lp-includes">
+  <div class="wrap">
+    <div style="text-align:center;" class="rv">
+      <div class="s-label" style="justify-content:center;color:var(--orange);">Sin letra chica</div>
+      <h2>TODO LO QUE<br><span style="color:var(--orange);">INCLUYE.</span></h2>
+      <p style="color:var(--white-60);max-width:480px;margin:.8rem auto 0;line-height:1.75;">Nada de extras escondidos. Esto es exactamente lo que recibe tu negocio cuando nos contratas.</p>
+    </div>
+    <div class="lp-inc-grid" style="margin-top:4rem;">
+      <div class="lp-inc-item rv d1">
+        <div class="lp-inc-ico">📐</div>
+        <div><div class="lp-inc-title">DISEÑO PROFESIONAL</div><div class="lp-inc-desc">Diseño único para tu negocio, no una plantilla genérica. Colores, tipografía y estructura pensados para tu cliente ideal.</div></div>
+      </div>
+      <div class="lp-inc-item rv d2">
+        <div class="lp-inc-ico">📱</div>
+        <div><div class="lp-inc-title">100% MOBILE-FIRST</div><div class="lp-inc-desc">El 80% de tus clientes llegan desde el celular. Tu landing se ve y funciona perfecto en cualquier dispositivo.</div></div>
+      </div>
+      <div class="lp-inc-item rv d3">
+        <div class="lp-inc-ico">💬</div>
+        <div><div class="lp-inc-title">WHATSAPP INTEGRADO</div><div class="lp-inc-desc">Botón flotante y CTAs de WhatsApp con mensaje pre-escrito. Un click y tu cliente ya está hablando contigo.</div></div>
+      </div>
+      <div class="lp-inc-item rv" style="transition-delay:.4s">
+        <div class="lp-inc-ico">📝</div>
+        <div><div class="lp-inc-title">FORMULARIO DE CONTACTO</div><div class="lp-inc-desc">Formulario funcional con notificación al email. Cada consulta llega directo a tu bandeja de entrada.</div></div>
+      </div>
+      <div class="lp-inc-item rv d1" style="transition-delay:.5s">
+        <div class="lp-inc-ico">🔍</div>
+        <div><div class="lp-inc-title">SEO BÁSICO INCLUIDO</div><div class="lp-inc-desc">Title, meta descripción, Schema JSON-LD, sitemap y Google Business configurado. Tu landing aparece en Google desde el día 1.</div></div>
+      </div>
+      <div class="lp-inc-item rv d2" style="transition-delay:.6s">
+        <div class="lp-inc-ico">⚡</div>
+        <div><div class="lp-inc-title">VELOCIDAD OPTIMIZADA</div><div class="lp-inc-desc">Core Web Vitals en verde. Carga en menos de 2 segundos. Google premia la velocidad con mejor posición orgánica.</div></div>
+      </div>
+      <div class="lp-inc-item rv d3" style="transition-delay:.7s">
+        <div class="lp-inc-ico">🌐</div>
+        <div><div class="lp-inc-title">HOSTING Y DOMINIO</div><div class="lp-inc-desc">Tu landing publicada en línea con dominio propio. Sin costos ocultos de servidor ni configuraciones técnicas de tu parte.</div></div>
+      </div>
+      <div class="lp-inc-item rv" style="transition-delay:.8s">
+        <div class="lp-inc-ico">📊</div>
+        <div><div class="lp-inc-title">ANALYTICS INSTALADO</div><div class="lp-inc-desc">Google Analytics 4 configurado. Sabes cuánta gente entra, de dónde vienen y qué hacen en tu página.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROCESO ─────────────────────────────────────────────── -->
+<section class="lp-process">
+  <div class="wrap">
+    <div style="text-align:center;" class="rv">
+      <div class="s-label" style="justify-content:center;color:var(--orange);">Simple y rápido</div>
+      <h2>LISTA EN<br><span style="color:var(--orange);">5–7 DÍAS.</span></h2>
+      <p style="color:var(--white-60);max-width:480px;margin:.8rem auto 0;line-height:1.75;">Sin reuniones interminables. Sin burocracia. Un proceso probado que entrega resultados rápido.</p>
+    </div>
+    <div class="lp-proc-steps rv d1" style="margin-top:4rem;">
+      <div class="lp-proc-step">
+        <div class="lp-proc-n">01</div>
+        <div class="lp-proc-title">CONVERSACIÓN</div>
+        <div class="lp-proc-desc">Nos cuentas tu negocio, tu cliente ideal y el objetivo principal. 30 minutos por WhatsApp o videollamada.</div>
+        <span class="lp-proc-time">Día 1</span>
+      </div>
+      <div class="lp-proc-step">
+        <div class="lp-proc-n">02</div>
+        <div class="lp-proc-title">DISEÑO</div>
+        <div class="lp-proc-desc">Creamos el diseño y la estructura de tu landing enfocada en conversión. Textos, imágenes y CTAs incluidos.</div>
+        <span class="lp-proc-time">Días 2–4</span>
+      </div>
+      <div class="lp-proc-step">
+        <div class="lp-proc-n">03</div>
+        <div class="lp-proc-title">REVISIÓN</div>
+        <div class="lp-proc-desc">Te mostramos el resultado. Ajustamos lo que necesites — colores, textos, secciones. Hasta que quedes 100% conforme.</div>
+        <span class="lp-proc-time">Días 4–5</span>
+      </div>
+      <div class="lp-proc-step">
+        <div class="lp-proc-n">04</div>
+        <div class="lp-proc-title">PUBLICACIÓN</div>
+        <div class="lp-proc-desc">Publicamos con dominio propio, configuramos Analytics y Google Business. Tu landing empieza a trabajar.</div>
+        <span class="lp-proc-time">Días 6–7</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ───────────────────────────────────────────── -->
+<section class="lp-cta">
+  <div class="wrap">
+    <div class="lp-cta-inner rv">
+      <div class="s-label" style="justify-content:center;color:var(--orange);">¿Listo para más clientes?</div>
+      <h2>TU NEGOCIO<br>MERECE UNA<br><span style="color:var(--orange);">PÁGINA QUE VENDA.</span></h2>
+      <p>Cada día sin landing page es un cliente que se fue con tu competencia. Hablemos hoy y tenla lista esta semana.</p>
+      <div class="lp-cta-acts">
+        <a href="https://wa.me/56954343686?text=Hola%20Modo%20Bacán,%20quiero%20una%20landing%20page%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn-p" style="background:var(--orange);color:#fff;">Escribir por WhatsApp →</a>
+        <a href="/contacto" class="btn-s">Formulario de contacto</a>
+      </div>
+      <p style="font-family:var(--font-m);font-size:.65rem;color:var(--white-30);letter-spacing:.08em;margin-bottom:1.5rem;">¿También necesitas posicionamiento? →
+  <a href="/seo" style="color:var(--cyan);text-decoration:none;">SEO en Google</a> &nbsp;·&nbsp;
+  <a href="/geo" style="color:var(--accent);text-decoration:none;">GEO en IA</a></p>
+<div class="lp-trust-row">
+        <div class="lp-trust-item">Entrega en 5–7 días</div>
+        <div class="lp-trust-item">Sin contrato de permanencia</div>
+        <div class="lp-trust-item">Mobile-first siempre</div>
+        <div class="lp-trust-item">SEO incluido</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /#landing-deep -->
 
 <!-- PROCESO -->
 <section id="proceso" class="sp" style="background:var(--black);">
