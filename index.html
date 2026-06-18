@@ -365,6 +365,100 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 .rv.vis { opacity:1; transform:none; }
 .rv.d1 { transition-delay:.1s; } .rv.d2 { transition-delay:.2s; } .rv.d3 { transition-delay:.3s; }
 
+
+/* ── SEO DEEP SECTION ─────────────────────────────────────── */
+#seo-deep { background:var(--black); }
+
+/* Hero SEO */
+.seo-hero { min-height:100vh; display:flex; align-items:center; padding-top:80px; overflow:hidden; position:relative; }
+.seo-hero-bg { position:absolute; inset:0; background:
+  radial-gradient(ellipse 55% 50% at 70% 35%, rgba(0,229,255,.07) 0%, transparent 65%),
+  radial-gradient(ellipse 40% 45% at 20% 75%, rgba(139,92,246,.07) 0%, transparent 60%); }
+.seo-hero-grid { position:absolute; inset:0;
+  background-image: linear-gradient(rgba(0,229,255,.015) 1px,transparent 1px), linear-gradient(90deg,rgba(0,229,255,.015) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black,transparent); }
+.seo-hero-inner { position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:0 3rem; width:100%; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+.seo-h-label { font-family:var(--font-m); font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--cyan); display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(0,229,255,.25); background:rgba(0,229,255,.08); padding:5px 14px; border-radius:2px; margin-bottom:1.6rem; }
+.seo-h-dot { width:6px; height:6px; border-radius:50%; background:var(--cyan); animation:blink 1.5s ease infinite; }
+.seo-h-title { font-family:var(--font-d); font-size:clamp(4rem,8vw,8.5rem); line-height:.88; letter-spacing:.02em; margin-bottom:1.8rem; }
+.seo-h-title .seo-accent { color:var(--cyan); }
+.seo-h-title .seo-ghost { color:transparent; -webkit-text-stroke:1px rgba(245,240,232,.3); }
+.seo-h-lead { font-size:1.08rem; color:var(--white-60); line-height:1.78; max-width:480px; margin-bottom:2.5rem; }
+.seo-h-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:8px; overflow:hidden; margin-top:2rem; }
+.seo-hs-item { background:var(--black-2); padding:1.2rem 1rem; text-align:center; }
+.seo-hs-n { font-family:var(--font-d); font-size:2rem; letter-spacing:.03em; color:var(--cyan); line-height:1; margin-bottom:4px; }
+.seo-hs-l { font-family:var(--font-m); font-size:.58rem; color:var(--white-30); letter-spacing:.12em; text-transform:uppercase; }
+
+/* SEO right visual — search result mockup */
+.seo-h-visual { position:relative; }
+.seo-serp { background:var(--black-3); border:1px solid var(--border); border-radius:12px; padding:1.5rem; display:flex; flex-direction:column; gap:.9rem; }
+.seo-serp-bar { display:flex; align-items:center; gap:10px; background:var(--black-4); border:1px solid var(--border); border-radius:6px; padding:.65rem 1rem; margin-bottom:.4rem; }
+.seo-serp-g { font-family:var(--font-d); font-size:1rem; letter-spacing:.04em; color:var(--white-60); }
+.seo-serp-g span { color:#4285F4; }
+.seo-serp-g span:nth-child(2) { color:#EA4335; }
+.seo-serp-g span:nth-child(3) { color:#FBBC05; }
+.seo-serp-g span:nth-child(4) { color:#34A853; }
+.seo-serp-q { font-family:var(--font-m); font-size:.72rem; color:var(--white-60); flex:1; }
+.seo-result { padding:1rem; border:1px solid var(--border); border-radius:8px; transition:border-color .3s; cursor:default; }
+.seo-result:hover { border-color:rgba(0,229,255,.2); }
+.seo-result.top { border-color:rgba(0,229,255,.3); background:rgba(0,229,255,.03); }
+.seo-result-pos { font-family:var(--font-m); font-size:.55rem; letter-spacing:.1em; color:var(--white-30); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.seo-result-pos .pos-badge { background:var(--cyan); color:var(--black); padding:1px 6px; border-radius:2px; font-size:.5rem; }
+.seo-result-url { font-family:var(--font-m); font-size:.6rem; color:#34A853; margin-bottom:4px; }
+.seo-result-title { font-family:var(--font-d); font-size:1.05rem; letter-spacing:.03em; color:#4285F4; margin-bottom:4px; line-height:1.2; }
+.seo-result.top .seo-result-title { color:var(--cyan); }
+.seo-result-desc { font-size:.75rem; color:var(--white-30); line-height:1.5; }
+
+/* Pillars SEO */
+.seo-pillars { padding:8rem 0; background:var(--black-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.seo-pillars-head { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end; margin-bottom:5rem; }
+.seo-pillars-head p { color:var(--white-60); font-size:1rem; line-height:1.78; }
+.seo-pillars-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.seo-pillar { background:var(--black-3); border:1px solid var(--border); border-radius:12px; padding:2.25rem; position:relative; overflow:hidden; transition:border-color .3s, transform .3s; }
+.seo-pillar:hover { border-color:rgba(0,229,255,.2); transform:translateY(-3px); }
+.seo-pillar::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--cyan); transform:scaleX(0); transform-origin:left; transition:transform .4s; }
+.seo-pillar:hover::after { transform:scaleX(1); }
+.seo-pillar-num { font-family:var(--font-d); font-size:4rem; letter-spacing:.02em; color:rgba(0,229,255,.07); line-height:1; margin-bottom:.5rem; }
+.seo-pillar-icon { width:44px; height:44px; background:rgba(0,229,255,.08); border:1px solid rgba(0,229,255,.2); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; font-size:1.1rem; }
+.seo-pillar-title { font-family:var(--font-d); font-size:1.35rem; letter-spacing:.04em; color:var(--white); margin-bottom:.6rem; }
+.seo-pillar-desc { font-size:.85rem; color:var(--white-60); line-height:1.7; }
+
+/* SEO vs GEO crosslink */
+.seo-crosslink { padding:5rem 0; background:var(--black); border-top:1px solid var(--border); }
+.seo-cl-inner { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+.seo-cl-card { border:1px solid var(--border); border-radius:12px; padding:2.5rem; position:relative; overflow:hidden; transition:border-color .3s,transform .3s; text-decoration:none; display:block; }
+.seo-cl-card:hover { transform:translateY(-3px); }
+.seo-cl-card.current { background:var(--black-3); cursor:default; }
+.seo-cl-card.current:hover { transform:none; }
+.seo-cl-card.goto { background:linear-gradient(135deg,rgba(200,255,0,.05),var(--black-2)); border-color:var(--accent-b); }
+.seo-cl-card.goto:hover { border-color:rgba(200,255,0,.4); box-shadow:0 8px 32px rgba(200,255,0,.08); }
+.seo-cl-tag { font-family:var(--font-m); font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; padding:3px 10px; border-radius:2px; display:inline-block; margin-bottom:1rem; }
+.seo-cl-card.current .seo-cl-tag { color:var(--white-30); border:1px solid var(--border); }
+.seo-cl-card.goto .seo-cl-tag { color:var(--black); background:var(--accent); }
+.seo-cl-title { font-family:var(--font-d); font-size:2.2rem; letter-spacing:.04em; color:var(--white); margin-bottom:.75rem; }
+.seo-cl-card.goto .seo-cl-title { color:var(--accent); }
+.seo-cl-desc { font-size:.88rem; color:var(--white-60); line-height:1.7; margin-bottom:1.4rem; }
+.seo-cl-arrow { font-family:var(--font-m); font-size:.7rem; letter-spacing:.12em; color:var(--accent); display:flex; align-items:center; gap:8px; }
+.seo-cl-arrow::after { content:'→'; transition:transform .3s; }
+.seo-cl-card.goto:hover .seo-cl-arrow::after { transform:translateX(4px); }
+
+/* SEO CTA */
+.seo-cta-band { padding:7rem 0; border-top:1px solid var(--border); position:relative; overflow:hidden; background:var(--black-2); }
+.seo-cta-band::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 50% 80% at 50% 50%,rgba(0,229,255,.04),transparent 70%); pointer-events:none; }
+
+/* responsive SEO */
+@media(max-width:1024px){
+  .seo-hero-inner { grid-template-columns:1fr; gap:3rem; }
+}
+@media(max-width:768px){
+  .seo-hero-inner { padding:0 1.25rem; }
+  .seo-pillars-head { grid-template-columns:1fr; gap:1.5rem; }
+  .seo-pillars-grid { grid-template-columns:1fr; }
+  .seo-cl-inner { grid-template-columns:1fr; }
+  .seo-h-stats { grid-template-columns:repeat(3,1fr); }
+}
+
 /* ── GEO DEEP SECTION ─────────────────────────────────────────── */
 #geo-deep { background:var(--black); }
 
@@ -606,6 +700,34 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 .note-box{background:var(--accent-d);border:1px solid var(--accent-b);border-radius:7px;padding:.9rem 1.15rem;font-family:var(--font-m);font-size:.72rem;color:var(--accent);line-height:1.6;letter-spacing:.03em;}
 
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Modo Bacán",
+  "url": "https://modobacan.cl",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://modobacan.cl/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://modobacan.cl/" },
+    { "@type": "ListItem", "position": 2, "name": "SEO", "item": "https://modobacan.cl/seo" },
+    { "@type": "ListItem", "position": 3, "name": "GEO", "item": "https://modobacan.cl/geo" },
+    { "@type": "ListItem", "position": 4, "name": "Servicios", "item": "https://modobacan.cl/servicios" },
+    { "@type": "ListItem", "position": 5, "name": "Precios", "item": "https://modobacan.cl/precios" },
+    { "@type": "ListItem", "position": 6, "name": "Contacto", "item": "https://modobacan.cl/contacto" }
+  ]
+}
+</script>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- Google Analytics 4 -->
@@ -681,6 +803,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   </a>
   <ul class="n-links">
     <li><a href="/servicios">Servicios</a></li>
+    <li><a href="/seo">SEO</a></li>
     <li><a href="/geo">GEO</a></li>
     <li><a href="/proceso">Proceso</a></li>
     <li><a href="/precios">Precios</a></li>
@@ -695,6 +818,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 
 <div class="mob-nav" id="mobNav">
   <a href="/servicios" onclick="closeMob()">Servicios</a>
+  <a href="/seo" onclick="closeMob()">SEO</a>
   <a href="/geo" onclick="closeMob()">GEO</a>
   <a href="/proceso" onclick="closeMob()">Proceso</a>
   <a href="/precios" onclick="closeMob()">Precios</a>
@@ -724,7 +848,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
         <div><div class="hs-n">4<span>+</span></div><div class="hs-l">Plataformas IA</div></div>
         <div><div class="hs-n">30<span>-90</span></div><div class="hs-l">Días para resultados</div></div>
         <div><div class="hs-n">95<span>%</span></div><div class="hs-l">Sin GEO aún</div></div>
-        <div><div class="hs-n">$299<span>k</span></div><div class="hs-l">Plan de entrada</div></div>
+        <div><div class="hs-n">100<span>%</span></div><div class="hs-l">Remoto · Todo Chile</div></div>
       </div>
     </div>
     <!-- Terminal -->
@@ -857,6 +981,176 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   </div>
 </section>
 
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECCIÓN /SEO — PÁGINA COMPLETA DEDICADA A SEO
+     ═══════════════════════════════════════════════════════════════ -->
+<div id="seo-deep">
+
+  <!-- 1. HERO SEO ──────────────────────────────────────── -->
+  <section style="background:var(--black);border-top:1px solid var(--border);">
+    <div class="seo-hero">
+      <div class="seo-hero-bg"></div>
+      <div class="seo-hero-grid"></div>
+      <div class="seo-hero-inner">
+
+        <!-- Left -->
+        <div>
+          <div class="seo-h-label rv"><div class="seo-h-dot"></div>Search Engine Optimization</div>
+          <h2 class="seo-h-title rv d1">
+            DOMINA<br>
+            <span class="seo-accent">GOOGLE</span><br>
+            <span class="seo-ghost">ORGÁNICO.</span>
+          </h2>
+          <p class="seo-h-lead rv d2">El 68% de las experiencias online comienzan con un buscador. SEO es la base de toda estrategia digital seria — y el complemento perfecto para GEO. Te posicionamos en ambos frentes.</p>
+          <div class="h-acts rv d3">
+            <a href="/contacto" class="btn-p">Quiero aparecer en Google →</a>
+            <a href="#seo-crosslink" class="btn-s">SEO + GEO juntos</a>
+          </div>
+          <div class="seo-h-stats rv" style="margin-top:2.5rem;">
+            <div class="seo-hs-item"><div class="seo-hs-n">68%</div><div class="seo-hs-l">clicks posición 1–3</div></div>
+            <div class="seo-hs-item"><div class="seo-hs-n">3–6</div><div class="seo-hs-l">meses resultados</div></div>
+            <div class="seo-hs-item"><div class="seo-hs-n">∞</div><div class="seo-hs-l">tráfico sin pagar</div></div>
+          </div>
+        </div>
+
+        <!-- Right — SERP mockup -->
+        <div class="seo-h-visual rv d2">
+          <div class="seo-serp">
+            <div class="seo-serp-bar">
+              <div class="seo-serp-g"><span>G</span><span>o</span><span>o</span><span style="color:#4285F4">g</span><span style="color:#EA4335">l</span><span style="color:#34A853">e</span></div>
+              <div class="seo-serp-q">"mejor agencia marketing chile"</div>
+            </div>
+            <div class="seo-result top">
+              <div class="seo-result-pos"><span class="pos-badge">N°1</span> modobacan.cl</div>
+              <div class="seo-result-url">https://modobacan.cl › agencia-marketing-chile</div>
+              <div class="seo-result-title">Modo Bacán · Agencia GEO y SEO en Chile</div>
+              <div class="seo-result-desc">Posicionamiento en Google e IA para pymes chilenas. Primera agencia GEO de Chile. Resultados en 30–90 días...</div>
+            </div>
+            <div class="seo-result">
+              <div class="seo-result-pos">N°2 · competencia.cl</div>
+              <div class="seo-result-url">https://competencia.cl</div>
+              <div class="seo-result-title" style="color:#4285F4">Agencia de marketing en Chile</div>
+              <div class="seo-result-desc">Servicios de marketing digital para empresas. Contacto y presupuesto online...</div>
+            </div>
+            <div class="seo-result">
+              <div class="seo-result-pos">N°3 · otra-agencia.cl</div>
+              <div class="seo-result-url">https://otra-agencia.cl</div>
+              <div class="seo-result-title" style="color:#4285F4">Marketing Digital · Agencia Chile</div>
+              <div class="seo-result-desc">Soluciones digitales para tu negocio. SEO, redes sociales, diseño web...</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PILARES SEO ────────────────────────────────────── -->
+  <div class="seo-pillars">
+    <div class="wrap">
+      <div class="seo-pillars-head">
+        <div class="rv">
+          <div class="s-label" style="color:var(--cyan);">Metodología SEO</div>
+          <h2>LOS 6 PILARES<br>DEL SEO QUE<br>FUNCIONA</h2>
+        </div>
+        <div class="rv d2">
+          <p>El SEO no es magia ni trucos. Es una disciplina técnica y estratégica. Trabajamos los seis pilares que Google realmente evalúa para determinar quién merece estar en la primera posición de Chile.</p>
+          <a href="/contacto" class="btn-s" style="margin-top:1.5rem;display:inline-flex;border-color:rgba(0,229,255,.3);color:var(--cyan);">Auditoría SEO gratis →</a>
+        </div>
+      </div>
+      <div class="seo-pillars-grid">
+        <div class="seo-pillar rv d1">
+          <div class="seo-pillar-num">01</div>
+          <div class="seo-pillar-icon">⚙️</div>
+          <div class="seo-pillar-title">SEO TÉCNICO</div>
+          <div class="seo-pillar-desc">Velocidad de carga, Core Web Vitals, estructura de URLs, sitemaps, robots.txt, canonical tags y arquitectura de sitio. La base sin la cual todo lo demás falla.</div>
+        </div>
+        <div class="seo-pillar rv d2">
+          <div class="seo-pillar-num">02</div>
+          <div class="seo-pillar-icon">🔑</div>
+          <div class="seo-pillar-title">KEYWORDS ESTRATÉGICAS</div>
+          <div class="seo-pillar-desc">Investigación de palabras clave con intención de búsqueda real para Chile. No solo volumen — priorizamos las que convierten. Mapeamos cada keyword a la página correcta.</div>
+        </div>
+        <div class="seo-pillar rv d3">
+          <div class="seo-pillar-num">03</div>
+          <div class="seo-pillar-icon">✍️</div>
+          <div class="seo-pillar-title">CONTENIDO ON-PAGE</div>
+          <div class="seo-pillar-desc">Títulos, meta descripciones, headers H1–H4, densidad semántica y estructura de contenido optimizada para rankear. Escribimos para personas primero, algoritmos después.</div>
+        </div>
+        <div class="seo-pillar rv d1" style="transition-delay:.4s">
+          <div class="seo-pillar-num">04</div>
+          <div class="seo-pillar-icon">🔗</div>
+          <div class="seo-pillar-title">LINK BUILDING</div>
+          <div class="seo-pillar-desc">Construcción de autoridad de dominio a través de backlinks de calidad. Directorios relevantes, notas de prensa, menciones en medios chilenos y estrategias de outreach.</div>
+        </div>
+        <div class="seo-pillar rv d2" style="transition-delay:.5s">
+          <div class="seo-pillar-num">05</div>
+          <div class="seo-pillar-icon">📍</div>
+          <div class="seo-pillar-title">SEO LOCAL</div>
+          <div class="seo-pillar-desc">Google Business optimizado, NAP consistente, reseñas estratégicas y schema LocalBusiness. Para aparecer cuando buscan "servicio + ciudad" en tu región de Chile.</div>
+        </div>
+        <div class="seo-pillar rv d3" style="transition-delay:.6s">
+          <div class="seo-pillar-num">06</div>
+          <div class="seo-pillar-icon">📊</div>
+          <div class="seo-pillar-title">ANALYTICS Y REPORTING</div>
+          <div class="seo-pillar-desc">Google Analytics 4, Search Console y reportes mensuales con métricas reales: posiciones, impresiones, CTR y tráfico orgánico. Sabes exactamente qué está funcionando.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SEO ↔ GEO CROSSLINK ─────────────────────────── -->
+  <section id="seo-crosslink" class="seo-crosslink">
+    <div class="wrap">
+      <div class="rv" style="text-align:center;margin-bottom:3.5rem;">
+        <div class="s-label" style="justify-content:center;color:var(--cyan);">La combinación perfecta</div>
+        <h2>SEO ES LA BASE.<br><span style="color:var(--accent);">GEO ES EL SIGUIENTE NIVEL.</span></h2>
+        <p style="color:var(--white-60);max-width:520px;margin:.8rem auto 0;line-height:1.75;font-size:1rem;">No son estrategias que compiten — se potencian. El SEO te da tráfico orgánico en Google. El GEO te da presencia cuando la IA responde. Juntos, cubren el 100% de cómo buscan hoy en Chile.</p>
+      </div>
+      <div class="seo-cl-inner rv d1">
+        <div class="seo-cl-card current">
+          <div class="seo-cl-tag">Estás aquí</div>
+          <div class="seo-cl-title">SEO</div>
+          <div class="seo-cl-desc">Posicionamiento en Google orgánico. Keywords, contenido, autoridad de dominio y SEO técnico para aparecer en los primeros resultados de búsqueda en Chile.</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.2rem;">
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Tráfico orgánico sostenible</li>
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Resultados en 3–6 meses</li>
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Base para toda estrategia digital</li>
+          </ul>
+        </div>
+        <a href="/geo" class="seo-cl-card goto">
+          <div class="seo-cl-tag">Siguiente paso</div>
+          <div class="seo-cl-title">GEO</div>
+          <div class="seo-cl-desc">Generative Engine Optimization. Para que ChatGPT, Perplexity y Gemini te mencionen cuando preguntan por tu industria en Chile. El futuro del posicionamiento digital.</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem;">
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Presencia en IA generativa</li>
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Resultados en 30–90 días</li>
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Ventaja first mover en Chile</li>
+          </ul>
+          <div class="seo-cl-arrow">Descubrir GEO</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CTA SEO ───────────────────────────────────────── -->
+  <section class="seo-cta-band">
+    <div class="wrap">
+      <div class="geo-cta-inner rv" style="text-align:center;">
+        <div class="s-label" style="justify-content:center;color:var(--cyan);">Empieza hoy</div>
+        <h2>¿TU COMPETENCIA<br>TE ESTÁ<br><span style="color:var(--cyan);">GANANDO EN GOOGLE?</span></h2>
+        <p style="color:var(--white-60);font-size:1rem;max-width:480px;margin:0 auto 2.5rem;line-height:1.75;">Hacemos una auditoría SEO gratuita de tu sitio y te mostramos exactamente qué está fallando y cómo arreglarlo. Sin compromiso.</p>
+        <div class="geo-cta-acts">
+          <a href="/contacto" class="btn-p">Auditoría SEO gratis →</a>
+          <a href="/geo" class="btn-s" style="border-color:var(--accent-b);color:var(--accent);">También quiero GEO ✦</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /#seo-deep -->
 
 <!-- ═══════════════════════════════════════════════════════════════
      SECCIÓN /GEO — PÁGINA COMPLETA DEDICADA A GEO
@@ -1146,6 +1440,41 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
     </div>
   </div>
 
+
+  <!-- GEO ↔ SEO CROSSLINK ─────────────────────────────── -->
+  <section id="geo-crosslink" style="padding:5rem 0;background:var(--black-2);border-top:1px solid var(--border);">
+    <div class="wrap">
+      <div class="rv" style="text-align:center;margin-bottom:3.5rem;">
+        <div class="s-label" style="justify-content:center;">GEO necesita una base</div>
+        <h2>GEO SIN SEO ES<br><span style="color:var(--accent);">LA MITAD DEL TRABAJO.</span></h2>
+        <p style="color:var(--white-60);max-width:520px;margin:.8rem auto 0;line-height:1.75;font-size:1rem;">GEO optimiza tu presencia en IA. SEO te posiciona en Google orgánico. La combinación de ambos es lo que llamamos <strong style="color:var(--accent);">posicionamiento total</strong> — el servicio más completo que ofrecemos.</p>
+      </div>
+      <div class="seo-cl-inner rv d1">
+        <div class="seo-cl-card current">
+          <div class="seo-cl-tag">Estás aquí</div>
+          <div class="seo-cl-title" style="color:var(--accent);">GEO</div>
+          <div class="seo-cl-desc">Posicionamiento en motores de IA. Cuando alguien le pregunta a ChatGPT, Perplexity o Gemini sobre tu industria en Chile, apareces tú.</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.2rem;">
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Presencia en IA generativa</li>
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Resultados en 30–90 días</li>
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Ventaja first mover en Chile</li>
+          </ul>
+        </div>
+        <a href="/seo" class="seo-cl-card" style="background:linear-gradient(135deg,rgba(0,229,255,.05),var(--black-2));border-color:rgba(0,229,255,.25);text-decoration:none;display:block;">
+          <div class="seo-cl-tag" style="color:var(--black);background:var(--cyan);">La base indispensable</div>
+          <div class="seo-cl-title" style="color:var(--cyan);">SEO</div>
+          <div class="seo-cl-desc">Posicionamiento orgánico en Google. El pilar que genera tráfico sostenible, fortalece tu autoridad de dominio y amplifica el impacto de tu estrategia GEO.</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem;">
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Tráfico orgánico sin pagar</li>
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Autoridad de dominio que refuerza el GEO</li>
+            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Resultados en 3–6 meses</li>
+          </ul>
+          <div class="seo-cl-arrow" style="color:var(--cyan);">Ver todo sobre SEO</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- 7. CTA FINAL GEO ─────────────────────────────── -->
   <section class="geo-cta-band">
     <div class="wrap">
@@ -1156,6 +1485,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
         <div class="geo-cta-acts">
           <a href="/contacto" class="btn-p">Agenda reunión gratuita →</a>
           <a href="/precios" class="btn-s">Ver planes y precios</a>
+          <a href="/seo" class="btn-s" style="border-color:rgba(0,229,255,.3);color:var(--cyan);">También necesito SEO →</a>
         </div>
       </div>
     </div>

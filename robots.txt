@@ -34,3 +34,6 @@ Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+
+User-agent: GeminiBot
+Allow: /

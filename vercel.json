@@ -2,7 +2,8 @@
   "rewrites": [
     { "source": "/inicio",    "destination": "/index.html" },
     { "source": "/servicios", "destination": "/index.html" },
-    { "source": "/geo",       "destination": "/index.html" },
+    { "source": "/geo",       "destination": "/geo.html" },
+    { "source": "/seo",       "destination": "/seo.html" },
     { "source": "/proceso",   "destination": "/index.html" },
     { "source": "/precios",   "destination": "/index.html" },
     { "source": "/faq",       "destination": "/index.html" },

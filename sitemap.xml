@@ -4,64 +4,66 @@
 
   <url>
     <loc>https://modobacan.cl/</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://modobacan.cl/"/>
   </url>
 
   <url>
-    <loc>https://modobacan.cl/#servicios</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://modobacan.cl/geo</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://modobacan.cl/geo"/>
+  </url>
+
+  <url>
+    <loc>https://modobacan.cl/seo</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://modobacan.cl/seo"/>
+  </url>
+
+  <url>
+    <loc>https://modobacan.cl/servicios</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://modobacan.cl/#geo</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://modobacan.cl/precios</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://modobacan.cl/#precios</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://modobacan.cl/#nosotros</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://modobacan.cl/proceso</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://modobacan.cl/#proceso</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://modobacan.cl/#faq</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://modobacan.cl/faq</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://modobacan.cl/#contacto</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://modobacan.cl/contacto</loc>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://modobacan.cl/llms.txt</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
