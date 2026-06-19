@@ -362,16 +362,22 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 .ft-geo { font-family:var(--font-m); font-size:.62rem; letter-spacing:.1em; color:var(--accent); background:var(--accent-d); border:1px solid var(--accent-b); padding:3px 11px; border-radius:2px; }
 
 /* WA */
-.wa { position:fixed; bottom:1.85rem; right:1.85rem; z-index:200; display:flex; align-items:center; background:var(--accent); border-radius:50px; padding:13px 15px; text-decoration:none; box-shadow:0 4px 18px rgba(200,255,0,.3); transition:background .4s, box-shadow .4s, padding .3s; overflow:hidden; }
-.wa:hover { padding-right:1.4rem; }
-.wa svg { width:20px; height:20px; fill:var(--black); flex-shrink:0; transition:fill .4s; }
-.wa-txt { font-family:var(--font-m); font-size:.7rem; font-weight:500; letter-spacing:.08em; color:var(--black); max-width:0; overflow:hidden; white-space:nowrap; transition:max-width .3s,margin .3s; text-transform:uppercase; }
+.wa { position:fixed; bottom:1.85rem; right:1.85rem; z-index:200; display:flex; align-items:center; background:var(--accent); border-radius:50px; padding:13px 15px; text-decoration:none; box-shadow:0 4px 18px rgba(200,255,0,.3); transition:background .5s ease, box-shadow .5s ease, padding .3s, transform .3s; overflow:hidden; }
+.wa:hover { padding-right:1.4rem; transform:scale(1.05); }
+.wa svg { width:20px; height:20px; fill:var(--black); flex-shrink:0; transition:fill .5s ease; }
+.wa-txt { font-family:var(--font-m); font-size:.7rem; font-weight:500; letter-spacing:.08em; color:var(--black); max-width:0; overflow:hidden; white-space:nowrap; transition:max-width .3s,margin .3s,color .5s; text-transform:uppercase; }
 .wa:hover .wa-txt { max-width:100px; margin-left:9px; }
-/* WA color variants — cambia según la sección visible */
-.wa.wa-geo  { background:var(--accent); box-shadow:0 4px 18px rgba(200,255,0,.35); }
-.wa.wa-seo  { background:var(--cyan); box-shadow:0 4px 18px rgba(0,229,255,.35); }
-.wa.wa-seo svg, .wa.wa-seo .wa-txt { fill:var(--black); color:var(--black); }
-.wa.wa-landing { background:#FF6B35; box-shadow:0 4px 18px rgba(255,107,53,.35); }
+/* Pulso al cambiar de color */
+@keyframes wa-pulse { 0%{transform:scale(1)} 40%{transform:scale(1.18)} 70%{transform:scale(.95)} 100%{transform:scale(1)} }
+.wa.color-change { animation:wa-pulse .45s ease; }
+/* WA color variants */
+.wa.wa-geo     { background:var(--accent); box-shadow:0 4px 22px rgba(200,255,0,.4); }
+.wa.wa-geo svg { fill:var(--black); }
+.wa.wa-geo .wa-txt { color:var(--black); }
+.wa.wa-seo     { background:var(--cyan); box-shadow:0 4px 22px rgba(0,229,255,.4); }
+.wa.wa-seo svg { fill:var(--black); }
+.wa.wa-seo .wa-txt { color:var(--black); }
+.wa.wa-landing { background:#FF6B35; box-shadow:0 4px 22px rgba(255,107,53,.4); }
 .wa.wa-landing svg { fill:#fff; }
 .wa.wa-landing .wa-txt { color:#fff; }
 
@@ -974,9 +980,9 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   </a>
   <ul class="n-links">
     <li><a href="/servicios">Servicios</a></li>
-    <li><a href="#seo-deep">SEO</a></li>
+    <li><a href="/seo">SEO</a></li>
     <li><a href="/geo">GEO</a></li>
-    <li><a href="#landing-deep">Landing Pages</a></li>
+    <li><a href="/landing">Landing Pages</a></li>
     <li><a href="/proceso">Proceso</a></li>
     <li><a href="/precios">Planes</a></li>
     <li><a href="/faq">FAQ</a></li>
@@ -990,9 +996,9 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 
 <div class="mob-nav" id="mobNav">
   <a href="/servicios" onclick="closeMob()">Servicios</a>
-  <a href="#seo-deep" onclick="closeMob()">SEO</a>
+  <a href="/seo" onclick="closeMob()">SEO</a>
   <a href="/geo" onclick="closeMob()">GEO</a>
-  <a href="#landing-deep" onclick="closeMob()">Landing Pages</a>
+  <a href="/landing" onclick="closeMob()">Landing Pages</a>
   <a href="/proceso" onclick="closeMob()">Proceso</a>
   <a href="/precios" onclick="closeMob()">Planes</a>
   <a href="/faq" onclick="closeMob()">FAQ</a>
@@ -1118,7 +1124,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 </section>
 
 <!-- GEO -->
-<section id="geo" class="sp" style="background:var(--black-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<section id="geo-intro" class="sp" style="background:var(--black-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="wrap">
     <div class="geo-wrap">
       <div class="geo-t rv">
@@ -2195,7 +2201,7 @@ document.getElementById('mbForm').addEventListener('submit',async function(e){
 
 <script>
 // ── URL LIMPIA SIN # ──────────────────────────────────────────────────────
-const ROUTES = {"/inicio": "inicio", "/servicios": "servicios", "/seo": "seo-deep", "/geo": "geo", "/landing": "landing-deep", "/proceso": "proceso", "/precios": "precios", "/faq": "faq", "/contacto": "contacto"};
+const ROUTES = {"/inicio": "inicio", "/servicios": "servicios", "/seo": "seo-deep", "/geo": "geo-deep", "/landing": "landing-deep", "/proceso": "proceso", "/precios": "precios", "/faq": "faq", "/contacto": "contacto"};
 
 function navigateTo(path) {
   const anchor = ROUTES[path];
@@ -2234,7 +2240,7 @@ document.addEventListener('click', function(e) {
 
 // Actualizar URL + nav activo al hacer scroll (IntersectionObserver)
 (function() {
-  const ids = ['inicio', 'servicios', 'seo-deep', 'geo', 'landing-deep', 'proceso', 'precios', 'faq', 'contacto'];
+  const ids = ['inicio', 'servicios', 'seo-deep', 'geo-deep', 'landing-deep', 'proceso', 'precios', 'faq', 'contacto'];
   const opts = { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' };
   const allNavLinks = document.querySelectorAll('.n-links a, .mob-nav a');
 
@@ -2270,14 +2276,16 @@ document.addEventListener('click', function(e) {
 function updateWaColor(sectionId) {
   const wa = document.querySelector('.wa');
   if (!wa) return;
-  wa.classList.remove('wa-geo', 'wa-seo', 'wa-landing');
-  if (sectionId === 'seo-deep') {
-    wa.classList.add('wa-seo');
-  } else if (sectionId === 'landing-deep') {
-    wa.classList.add('wa-landing');
-  } else if (sectionId === 'geo') {
-    wa.classList.add('wa-geo');
-  }
+  const prev = [...wa.classList].find(cls => cls.startsWith('wa-'));
+  const next = sectionId === 'seo-deep'     ? 'wa-seo'
+             : sectionId === 'landing-deep' ? 'wa-landing'
+             : sectionId === 'geo-deep'     ? 'wa-geo'
+             : null;
+  if (next === prev) return;
+  wa.classList.remove('wa-geo','wa-seo','wa-landing','color-change');
+  if (next) wa.classList.add(next);
+  void wa.offsetWidth;
+  wa.classList.add('color-change');
 }
 </script>
 
