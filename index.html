@@ -2238,16 +2238,26 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Actualizar URL + nav activo al hacer scroll (IntersectionObserver)
+// Actualizar URL + nav activo + WhatsApp al hacer scroll
 (function() {
-  const ids = ['inicio', 'servicios', 'seo-deep', 'geo-deep', 'landing-deep', 'proceso', 'precios', 'faq', 'contacto'];
-  const opts = { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' };
+  const map = [
+    { id: 'inicio',       path: '/inicio'    },
+    { id: 'servicios',    path: '/servicios' },
+    { id: 'seo-deep',     path: '/seo'       },
+    { id: 'geo-deep',     path: '/geo'       },
+    { id: 'landing-deep', path: '/landing'   },
+    { id: 'proceso',      path: '/proceso'   },
+    { id: 'precios',      path: '/precios'   },
+    { id: 'faq',          path: '/faq'       },
+    { id: 'contacto',     path: '/contacto'  },
+  ];
+
   const allNavLinks = document.querySelectorAll('.n-links a, .mob-nav a');
+  let lastPath = '';
 
   function setActiveLink(path) {
     allNavLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      if (href === path) {
+      if (link.getAttribute('href') === path) {
         link.classList.add('is-active');
       } else {
         link.classList.remove('is-active');
@@ -2255,22 +2265,32 @@ document.addEventListener('click', function(e) {
     });
   }
 
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const clean = Object.entries(ROUTES).find(([p,id]) => id === entry.target.id);
-        if (clean) {
-          window.history.replaceState(null, '', clean[0]);
-          setActiveLink(clean[0]);
-          updateWaColor(entry.target.id);
-        }
+  function onScroll() {
+    const offset = 120; // altura del nav
+    let current = map[0];
+
+    for (const item of map) {
+      const el = document.getElementById(item.id);
+      if (!el) continue;
+      const top = el.getBoundingClientRect().top;
+      if (top <= offset) {
+        current = item;
       }
-    });
-  }, opts);
-  document.querySelectorAll('[id]').forEach(el => {
-    if (ids.includes(el.id)) obs.observe(el);
-  });
+    }
+
+    if (current.path !== lastPath) {
+      lastPath = current.path;
+      window.history.replaceState(null, '', current.path);
+      setActiveLink(current.path);
+      updateWaColor(current.id);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  // Ejecutar una vez al cargar
+  setTimeout(onScroll, 200);
 })();
+
 
 // ── WhatsApp dinámico: cambia de color según la sección ─────────
 function updateWaColor(sectionId) {
