@@ -802,11 +802,6 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 .read-bar { position:fixed; top:0; left:0; height:3px; background:var(--accent); width:0%; z-index:200; transition:width .1s linear; }
 
 .art-hero { padding:9rem 0 3rem; background:var(--black); }
-.art-hero-img { width:100%; height:420px; border-radius:14px; overflow:hidden; position:relative; margin-top:2.5rem; border:1px solid var(--border); }
-.art-hero-img img { width:100%; height:100%; object-fit:cover; filter:grayscale(.2) brightness(.8); }
-.art-hero-img::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,rgba(13,13,13,.5)); }
-
-
 /* ══ ARTICLE OVERRIDES — alta especificidad para anular index CSS ══ */
 .art-body h2 {
   font-family: var(--font-d) !important;
@@ -1000,15 +995,6 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 }
 
 /* Hero image */
-.art-hero-img {
-  width: 100% !important; border-radius: 12px !important;
-  overflow: hidden !important; margin-top: 2rem !important;
-  border: 1px solid var(--border) !important;
-  position: relative !important;
-}
-.art-hero-img img { width:100% !important; height:360px !important; object-fit:cover !important; object-position:center top !important; display:block !important; filter:brightness(.82) !important; }
-.art-hero-img::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,rgba(13,13,13,.4)); pointer-events:none; }
-
 /* Article body wrapper */
 .art-body { max-width:760px !important; margin:0 auto !important; padding:3rem 0 5rem !important; }
 
@@ -1044,8 +1030,6 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   .art-body h2 { font-size:clamp(1.2rem,5vw,1.6rem) !important; margin:1.75rem 0 .75rem !important; }
   .art-body h3 { font-size:clamp(1rem,4vw,1.25rem) !important; }
   .art-body p { font-size:.92rem !important; }
-  .art-hero-img img { height:200px !important; }
-  .art-hero-img { border-radius:8px !important; margin-top:1.25rem !important; }
   .art-stats-row { grid-template-columns:repeat(3,1fr) !important; }
   .art-stat-n { font-size:1.5rem !important; }
   .art-stat { padding:1rem .5rem !important; }
@@ -1084,15 +1068,16 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 .blog-card-excerpt { font-family:'Cabinet Grotesk',sans-serif !important; font-size:.8rem !important; color:var(--white-60) !important; line-height:1.6 !important; }
 
 /* Fix hero image — no black space */
-.art-hero-img { width:100% !important; border-radius:10px !important; overflow:hidden !important; margin-top:1.5rem !important; border:1px solid var(--border) !important; line-height:0 !important; }
-.art-hero-img img { width:100% !important; height:280px !important; object-fit:cover !important; object-position:center 20% !important; display:block !important; filter:brightness(.82) !important; }
-
 @media(max-width:768px){
   .art-related-grid { grid-template-columns:1fr !important; }
   .blog-card-img { height:180px !important; }
-  .art-hero-img img { height:210px !important; }
-}
+  }
 
+
+/* ── HERO IMAGE FIX ─── */
+.art-hero-img { display:block; width:100%; border-radius:10px; overflow:hidden; margin-top:1.5rem; border:1px solid rgba(245,240,232,.08); line-height:0; }
+.art-hero-img img { display:block; width:100%; height:320px; object-fit:cover; object-position:center 30%; filter:brightness(.85); }
+@media(max-width:768px){ .art-hero-img img { height:200px; } }
 </style>
 </head>
 <body>
