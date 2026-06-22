@@ -1092,6 +1092,36 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   .art-stat { padding:.85rem !important; }
 }
 
+
+/* ── RELATED CARDS CSS ─────────────────────────────────────── */
+.blog-card { background:var(--black-3) !important; border:1px solid var(--border) !important; border-radius:12px !important; overflow:hidden !important; text-decoration:none !important; display:flex !important; flex-direction:column !important; transition:border-color .3s, transform .3s !important; }
+.blog-card:hover { border-color:var(--accent-b) !important; transform:translateY(-4px) !important; }
+.blog-card-img { height:160px !important; overflow:hidden !important; border-bottom:1px solid var(--border) !important; position:relative !important; display:block !important; }
+.blog-card-img img { width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important; display:block !important; filter:grayscale(.2) brightness(.75) !important; transition:transform .5s !important; }
+.blog-card:hover .blog-card-img img { transform:scale(1.06) !important; }
+.blog-card-img.geo::after { content:'' !important; position:absolute !important; inset:0 !important; background:linear-gradient(135deg,rgba(200,255,0,.18),transparent 70%) !important; }
+.blog-card-img.seo::after { content:'' !important; position:absolute !important; inset:0 !important; background:linear-gradient(135deg,rgba(0,229,255,.16),transparent 70%) !important; }
+.blog-card-img.lp::after  { content:'' !important; position:absolute !important; inset:0 !important; background:linear-gradient(135deg,rgba(255,107,53,.18),transparent 70%) !important; }
+.blog-card-img.mkt::after { content:'' !important; position:absolute !important; inset:0 !important; background:linear-gradient(135deg,rgba(139,92,246,.16),transparent 70%) !important; }
+.blog-card-body { padding:1.25rem !important; flex:1 !important; display:flex !important; flex-direction:column !important; }
+.blog-card-tag { font-family:'Cabinet Grotesk',sans-serif !important; font-size:.55rem !important; letter-spacing:.14em !important; text-transform:uppercase !important; padding:3px 8px !important; border-radius:2px !important; display:inline-block !important; margin-bottom:.6rem !important; width:fit-content !important; }
+.blog-card-tag.geo { color:var(--accent) !important; background:rgba(200,255,0,.1) !important; border:1px solid rgba(200,255,0,.25) !important; }
+.blog-card-tag.seo { color:#00E5FF !important; background:rgba(0,229,255,.08) !important; border:1px solid rgba(0,229,255,.2) !important; }
+.blog-card-tag.lp  { color:#FF6B35 !important; background:rgba(255,107,53,.08) !important; border:1px solid rgba(255,107,53,.2) !important; }
+.blog-card-tag.mkt { color:#8B5CF6 !important; background:rgba(139,92,246,.08) !important; border:1px solid rgba(139,92,246,.2) !important; }
+.blog-card-title { font-family:'Cabinet Grotesk',sans-serif !important; font-size:.95rem !important; font-weight:700 !important; color:var(--white) !important; line-height:1.4 !important; margin-bottom:.5rem !important; }
+.blog-card-excerpt { font-family:'Cabinet Grotesk',sans-serif !important; font-size:.8rem !important; color:var(--white-60) !important; line-height:1.6 !important; }
+
+/* Fix hero image — no black space */
+.art-hero-img { width:100% !important; border-radius:10px !important; overflow:hidden !important; margin-top:1.5rem !important; border:1px solid var(--border) !important; line-height:0 !important; }
+.art-hero-img img { width:100% !important; height:280px !important; object-fit:cover !important; object-position:center 20% !important; display:block !important; filter:brightness(.82) !important; }
+
+@media(max-width:768px){
+  .art-related-grid { grid-template-columns:1fr !important; }
+  .blog-card-img { height:180px !important; }
+  .art-hero-img img { height:210px !important; }
+}
+
 </style>
 </head>
 <body>
