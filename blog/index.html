@@ -76,7 +76,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-i
 
 /* CATEGORY FILTERS */
 .blog-cats { display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; margin:2rem 0 3.5rem; }
-.blog-cat { font-family:var(--font-m); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; padding:6px 16px; border-radius:2px; border:1px solid var(--border); color:var(--white-60); background:transparent; cursor:pointer; transition:all .2s; }
+.blog-cat { font-family:var(--font-m); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; padding:6px 16px; border-radius:2px; border:1px solid var(--border); color:var(--white-60); background:transparent; cursor:pointer; transition:all .2s; appearance:none; -webkit-appearance:none; outline:none; line-height:normal; }
 .blog-cat:hover, .blog-cat.active { border-color:var(--accent); color:var(--accent); background:var(--accent-d); }
 
 /* BLOG GRID */
@@ -346,27 +346,20 @@ document.getElementById('burger').addEventListener('click', () => document.getEl
 function closeMob() { document.getElementById('mobNav').classList.remove('open'); }
 
 // Category filter
-const cats = document.querySelectorAll('.blog-cat');
-const cards = document.querySelectorAll('.blog-card');
-const featured = document.querySelector('.blog-featured');
+document.addEventListener('DOMContentLoaded', function() {
+  const cats = document.querySelectorAll('.blog-cat');
+  const cards = document.querySelectorAll('.blog-card');
+  const featured = document.querySelector('.blog-featured');
 
-cats.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Active state
-    cats.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat = btn.dataset.cat;
-
-    // Featured card — show only on 'all'
-    if (featured) featured.style.display = cat === 'all' ? '' : 'none';
-
-    // Filter cards
-    cards.forEach(card => {
-      if (cat === 'all' || card.dataset.cat === cat) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+  cats.forEach(btn => {
+    btn.addEventListener('click', () => {
+      cats.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      if (featured) featured.style.display = cat === 'all' ? '' : 'none';
+      cards.forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+      });
     });
   });
 });
