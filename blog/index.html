@@ -232,7 +232,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
     <div class="blog-grid">
 
       <!-- FEATURED -->
-      <a href="/blog/que-es-geo" class="blog-featured">
+      <a href="/blog/que-es-geo" class="blog-featured blog-card" data-cat="geo">
         <div class="blog-featured-img">
           <img src="https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Inteligencia artificial generativa" referrerpolicy="no-referrer" loading="lazy">
         </div>
@@ -347,18 +347,26 @@ function closeMob() { document.getElementById('mobNav').classList.remove('open')
 
 // Category filter
 document.addEventListener('DOMContentLoaded', function() {
-  const cats = document.querySelectorAll('.blog-cat');
-  const cards = document.querySelectorAll('.blog-card');
-  const featured = document.querySelector('.blog-featured');
+  var cats = document.querySelectorAll('.blog-cat');
+  var cards = document.querySelectorAll('.blog-card');
 
-  cats.forEach(btn => {
-    btn.addEventListener('click', () => {
-      cats.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      if (featured) featured.style.display = cat === 'all' ? '' : 'none';
-      cards.forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  cats.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      // Update active button
+      cats.forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+
+      var cat = this.getAttribute('data-cat');
+
+      // Show/hide cards
+      cards.forEach(function(card) {
+        var cardCat = card.getAttribute('data-cat');
+        if (cat === 'all' || cardCat === cat) {
+          card.style.display = '';
+          card.style.visibility = 'visible';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
   });
