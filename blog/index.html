@@ -43,21 +43,27 @@ img { max-width:100%; display:block; }
 .wrap { max-width:1280px; margin:0 auto; padding:0 3rem; }
 
 /* NAV */
-nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.25rem 3rem; background:rgba(13,13,13,.88); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
-.n-logo { display:flex; align-items:center; gap:.75rem; text-decoration:none; }
+/* ── NAV ─────────────────────────────────────────────────────── */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.1rem 3rem; background:rgba(13,13,13,.88); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); gap:2rem; }
+.n-logo { display:flex; align-items:center; gap:.75rem; text-decoration:none; flex-shrink:0; }
 .n-icon { width:36px; height:36px; background:var(--accent); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .n-icon svg { width:18px; height:18px; }
-.n-name { font-family:var(--font-d); font-size:1.1rem; letter-spacing:.08em; color:var(--white); display:block; line-height:1; }
-.n-sub { font-family:var(--font-m); font-size:.55rem; letter-spacing:.14em; color:var(--white-30); text-transform:uppercase; display:block; margin-top:2px; }
-.n-links { display:flex; align-items:center; gap:2rem; list-style:none; }
-.n-links a { font-family:var(--font-m); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--white-60); transition:color .2s; }
+.n-name { font-family:var(--font-d); font-size:1.05rem; letter-spacing:.1em; color:var(--white); display:block; line-height:1; }
+.n-sub { font-family:var(--font-m); font-size:.52rem; letter-spacing:.18em; color:var(--accent); text-transform:uppercase; display:block; margin-top:2px; }
+.n-links { display:flex; align-items:center; gap:1.8rem; list-style:none; flex:1; justify-content:center; }
+.n-links a { font-family:var(--font-m); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--white-60); text-decoration:none; transition:color .25s; position:relative; }
+.n-links a::after { content:''; position:absolute; bottom:-3px; left:0; right:0; height:1px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform .3s; }
 .n-links a:hover { color:var(--white); }
-.n-cta { font-family:var(--font-m); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; background:var(--accent); color:var(--black); padding:.6rem 1.2rem; border-radius:4px; font-weight:700; }
-.n-burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
-.n-burger span { display:block; width:22px; height:2px; background:var(--white); border-radius:2px; }
-.mob-nav { display:none; position:fixed; inset:0; top:0; background:rgba(13,13,13,.98); z-index:99; flex-direction:column; align-items:center; justify-content:center; gap:2rem; }
+.n-links a:hover::after { transform:scaleX(1); }
+.n-links a.is-active { color:var(--accent); }
+.n-links a.is-active::after { transform:scaleX(1); }
+.n-cta { font-family:var(--font-m); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; background:var(--accent); color:var(--black); padding:.6rem 1.3rem; border-radius:4px; font-weight:700; text-decoration:none; flex-shrink:0; white-space:nowrap; }
+.n-burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; flex-shrink:0; }
+.n-burger span { display:block; width:22px; height:2px; background:var(--white); border-radius:2px; transition:all .3s; }
+.mob-nav { display:none; position:fixed; inset:0; background:rgba(13,13,13,.98); z-index:99; flex-direction:column; align-items:center; justify-content:center; gap:2rem; padding:2rem; }
 .mob-nav.open { display:flex; }
-.mob-nav a { font-family:var(--font-d); font-size:2rem; letter-spacing:.1em; color:var(--white); }
+.mob-nav a { font-family:var(--font-d); font-size:2.2rem; letter-spacing:.08em; color:var(--white); text-decoration:none; transition:color .2s; }
+.mob-nav a:hover { color:var(--accent); }
 
 /* BLOG HERO */
 .blog-hero { padding:9rem 0 4rem; background:var(--black); position:relative; overflow:hidden; }
@@ -70,7 +76,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-i
 
 /* CATEGORY FILTERS */
 .blog-cats { display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; margin:2rem 0 3.5rem; }
-.blog-cat { font-family:var(--font-m); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; padding:6px 16px; border-radius:2px; border:1px solid var(--border); color:var(--white-60); text-decoration:none; transition:all .2s; }
+.blog-cat { font-family:var(--font-m); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; padding:6px 16px; border-radius:2px; border:1px solid var(--border); color:var(--white-60); background:transparent; cursor:pointer; transition:all .2s; }
 .blog-cat:hover, .blog-cat.active { border-color:var(--accent); color:var(--accent); background:var(--accent-d); }
 
 /* BLOG GRID */
@@ -211,11 +217,11 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       <p>GEO, SEO y marketing digital sin filtros. Todo lo que necesitas saber para aparecer en Google y en la IA.</p>
     </div>
     <div class="blog-cats">
-      <a href="/blog" class="blog-cat active">Todos</a>
-      <a href="/blog" class="blog-cat">GEO</a>
-      <a href="/blog" class="blog-cat">SEO</a>
-      <a href="/blog" class="blog-cat">Landing Pages</a>
-      <a href="/blog" class="blog-cat">Marketing</a>
+      <button class="blog-cat active" data-cat="all">Todos</button>
+      <button class="blog-cat" data-cat="geo">GEO</button>
+      <button class="blog-cat" data-cat="seo">SEO</button>
+      <button class="blog-cat" data-cat="lp">Landing Pages</button>
+      <button class="blog-cat" data-cat="mkt">Marketing</button>
     </div>
   </div>
 </div>
@@ -239,7 +245,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 2 -->
-      <a href="/blog/seo-vs-geo" class="blog-card">
+      <a href="/blog/seo-vs-geo" class="blog-card" data-cat="geo">
         <div class="blog-card-img geo"><img src="https://images.pexels.com/photos/7567557/pexels-photo-7567557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="SEO vs GEO" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag geo">GEO</span>
@@ -250,8 +256,8 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 3 -->
-      <a href="/blog/aparecer-en-chatgpt" class="blog-card">
-        <div class="blog-card-img geo"><img src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ChatGPT negocios Chile" referrerpolicy="no-referrer" loading="lazy"></div>
+      <a href="/blog/aparecer-en-chatgpt" class="blog-card" data-cat="geo">
+        <div class="blog-card-img geo"><img src="https://images.pexels.com/photos/7567444/pexels-photo-7567444.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ChatGPT negocios Chile" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag geo">GEO</span>
           <div class="blog-card-title">Cómo hacer que ChatGPT mencione tu negocio</div>
@@ -261,7 +267,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 4 -->
-      <a href="/blog/seo-local-chile" class="blog-card">
+      <a href="/blog/seo-local-chile" class="blog-card" data-cat="seo">
         <div class="blog-card-img seo"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=600" alt="SEO local Chile" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag seo">SEO</span>
@@ -272,7 +278,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 5 -->
-      <a href="/blog/landing-page-que-convierte" class="blog-card">
+      <a href="/blog/landing-page-que-convierte" class="blog-card" data-cat="lp">
         <div class="blog-card-img lp"><img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Landing page que convierte" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag lp">Landing Pages</span>
@@ -283,7 +289,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 6 -->
-      <a href="/blog/marketing-digital-pymes-chile" class="blog-card">
+      <a href="/blog/marketing-digital-pymes-chile" class="blog-card" data-cat="mkt">
         <div class="blog-card-img mkt"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marketing digital pymes Chile" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag mkt">Marketing</span>
@@ -332,10 +338,38 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
 </a>
 
 <script>
+// Nav scroll
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 50 ? 'rgba(13,13,13,.98)' : 'rgba(13,13,13,.88)'; });
+// Mobile nav
 document.getElementById('burger').addEventListener('click', () => document.getElementById('mobNav').classList.toggle('open'));
 function closeMob() { document.getElementById('mobNav').classList.remove('open'); }
+
+// Category filter
+const cats = document.querySelectorAll('.blog-cat');
+const cards = document.querySelectorAll('.blog-card');
+const featured = document.querySelector('.blog-featured');
+
+cats.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Active state
+    cats.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+
+    // Featured card — show only on 'all'
+    if (featured) featured.style.display = cat === 'all' ? '' : 'none';
+
+    // Filter cards
+    cards.forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
 </script>
 </body>
 </html>
