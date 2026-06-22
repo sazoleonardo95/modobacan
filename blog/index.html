@@ -67,7 +67,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-i
 
 /* BLOG HERO */
 .blog-hero { padding:9rem 0 4rem; background:var(--black); position:relative; overflow:hidden; }
-.blog-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 50% 60% at 50% 0%,rgba(200,255,0,.06),transparent 65%); }
+.blog-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 50% 60% at 50% 0%,rgba(200,255,0,.06),transparent 65%); pointer-events:none; }
 .blog-hero-inner { position:relative; text-align:center; }
 .blog-hero-inner h1 { font-family:var(--font-d); font-size:clamp(3rem,8vw,7rem); line-height:.9; letter-spacing:.04em; margin-bottom:1rem; }
 .blog-hero-inner p { color:var(--white-60); font-size:1rem; max-width:500px; margin:0 auto; line-height:1.75; }
@@ -346,31 +346,20 @@ document.getElementById('burger').addEventListener('click', () => document.getEl
 function closeMob() { document.getElementById('mobNav').classList.remove('open'); }
 
 // Category filter
-document.addEventListener('DOMContentLoaded', function() {
-  var cats = document.querySelectorAll('.blog-cat');
-  var cards = document.querySelectorAll('.blog-card');
+var cats = document.querySelectorAll('.blog-cat');
+var cards = document.querySelectorAll('.blog-card');
 
-  cats.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      // Update active button
-      cats.forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
-
-      var cat = this.getAttribute('data-cat');
-
-      // Show/hide cards
-      cards.forEach(function(card) {
-        var cardCat = card.getAttribute('data-cat');
-        if (cat === 'all' || cardCat === cat) {
-          card.style.display = '';
-          card.style.visibility = 'visible';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
+for (var i = 0; i < cats.length; i++) {
+  cats[i].addEventListener('click', function() {
+    for (var j = 0; j < cats.length; j++) cats[j].classList.remove('active');
+    this.classList.add('active');
+    var cat = this.getAttribute('data-cat');
+    for (var k = 0; k < cards.length; k++) {
+      var cardCat = cards[k].getAttribute('data-cat');
+      cards[k].style.display = (cat === 'all' || cardCat === cat) ? '' : 'none';
+    }
   });
-});
+}
 </script>
 </body>
 </html>
