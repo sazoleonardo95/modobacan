@@ -78,6 +78,10 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-i
 .blog-cats { display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; margin:2rem 0 3.5rem; }
 .blog-cat { font-family:var(--font-m); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; padding:6px 16px; border-radius:2px; border:1px solid var(--border); color:var(--white-60); background:transparent; cursor:pointer; transition:all .2s; appearance:none; -webkit-appearance:none; outline:none; line-height:normal; }
 .blog-cat:hover, .blog-cat.active { border-color:var(--accent); color:var(--accent); background:var(--accent-d); }
+.blog-cat[data-cat="nicho"].active, .blog-cat[data-cat="nicho"]:hover { border-color:rgba(139,92,246,.5); color:#8B5CF6; background:rgba(139,92,246,.08); }
+.blog-cat.sub { font-size:.55rem; padding:4px 12px; border-color:rgba(139,92,246,.2); color:rgba(139,92,246,.6); display:none; }
+.blog-cat.sub.visible { display:inline-flex; }
+.blog-cat.sub.active, .blog-cat.sub:hover { border-color:rgba(139,92,246,.5); color:#8B5CF6; background:rgba(139,92,246,.08); }
 
 /* BLOG GRID */
 .blog-section { background:var(--black-2); border-top:1px solid var(--border); padding:4rem 0 6rem; }
@@ -108,6 +112,8 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-i
 .blog-card-img.seo::after { background:linear-gradient(135deg,rgba(0,229,255,.18),transparent 70%); }
 .blog-card-img.lp::after  { background:linear-gradient(135deg,rgba(255,107,53,.2),transparent 70%); }
 .blog-card-img.mkt::after { background:linear-gradient(135deg,rgba(139,92,246,.18),transparent 70%); }
+.blog-card-img.nicho::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(139,92,246,.22),transparent 70%); }
+.blog-card-tag.nicho { color:#8B5CF6 !important; background:rgba(139,92,246,.08) !important; border:1px solid rgba(139,92,246,.2) !important; }
 .blog-card-body { padding:1.5rem; flex:1; display:flex; flex-direction:column; }
 .blog-card-tag { font-family:var(--font-m); font-size:.55rem; letter-spacing:.14em; text-transform:uppercase; padding:3px 8px; border-radius:2px; display:inline-block; margin-bottom:.75rem; width:fit-content; }
 .blog-card-tag.geo { color:var(--accent); background:var(--accent-d); border:1px solid var(--accent-b); }
@@ -222,6 +228,12 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       <button class="blog-cat" data-cat="seo">SEO</button>
       <button class="blog-cat" data-cat="lp">Landing Pages</button>
       <button class="blog-cat" data-cat="mkt">Marketing</button>
+      <button class="blog-cat" data-cat="nicho">Industrias</button>
+      <button class="blog-cat sub" data-cat="veterinaria">🐾 Veterinarias</button>
+      <button class="blog-cat sub" data-cat="dental">🦷 Dental</button>
+      <button class="blog-cat sub" data-cat="gastronomia">🍽️ Gastronomía</button>
+      <button class="blog-cat sub" data-cat="construccion">🏗️ Constructoras</button>
+      <button class="blog-cat sub" data-cat="juridico">⚖️ Jurídico</button>
     </div>
   </div>
 </div>
@@ -232,7 +244,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
     <div class="blog-grid">
 
       <!-- FEATURED -->
-      <a href="/blog/que-es-geo" class="blog-featured blog-card" data-cat="geo">
+      <a href="/blog/que-es-geo" class="blog-featured blog-card" data-tags="geo">
         <div class="blog-featured-img">
           <img src="https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Inteligencia artificial generativa" referrerpolicy="no-referrer" loading="lazy">
         </div>
@@ -245,7 +257,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 2 -->
-      <a href="/blog/seo-vs-geo" class="blog-card" data-cat="geo">
+      <a href="/blog/seo-vs-geo" class="blog-card" data-tags="geo">
         <div class="blog-card-img geo"><img src="https://images.pexels.com/photos/7567557/pexels-photo-7567557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="SEO vs GEO" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag geo">GEO</span>
@@ -256,7 +268,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 3 -->
-      <a href="/blog/aparecer-en-chatgpt" class="blog-card" data-cat="geo">
+      <a href="/blog/aparecer-en-chatgpt" class="blog-card" data-tags="geo">
         <div class="blog-card-img geo"><img src="https://images.pexels.com/photos/7567444/pexels-photo-7567444.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ChatGPT negocios Chile" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag geo">GEO</span>
@@ -267,7 +279,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 4 -->
-      <a href="/blog/seo-local-chile" class="blog-card" data-cat="seo">
+      <a href="/blog/seo-local-chile" class="blog-card" data-tags="seo">
         <div class="blog-card-img seo"><img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=600" alt="SEO local Chile" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag seo">SEO</span>
@@ -278,7 +290,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 5 -->
-      <a href="/blog/landing-page-que-convierte" class="blog-card" data-cat="lp">
+      <a href="/blog/landing-page-que-convierte" class="blog-card" data-tags="lp">
         <div class="blog-card-img lp"><img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Landing page que convierte" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag lp">Landing Pages</span>
@@ -289,13 +301,65 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
       </a>
 
       <!-- Card 6 -->
-      <a href="/blog/marketing-digital-pymes-chile" class="blog-card" data-cat="mkt">
+      <a href="/blog/marketing-digital-pymes-chile" class="blog-card" data-tags="mkt">
         <div class="blog-card-img mkt"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marketing digital pymes Chile" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag mkt">Marketing</span>
           <div class="blog-card-title">Marketing digital para pymes chilenas en 2026</div>
           <div class="blog-card-excerpt">La guía honesta sobre por dónde empezar con presupuesto limitado.</div>
           <div class="blog-card-meta"><span class="blog-card-date">Abril 2026</span><span class="blog-card-read">9 min</span></div>
+        </div>
+      </a>
+
+
+      <!-- INDUSTRIAS -->
+      <a href="/blog/marketing-veterinarias-chile" class="blog-card" data-tags="nicho mkt veterinaria">
+        <div class="blog-card-img nicho"><img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marketing veterinarias Chile" referrerpolicy="no-referrer" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag nicho">Industrias</span>
+          <div class="blog-card-title">Marketing digital para veterinarias en Chile</div>
+          <div class="blog-card-excerpt">Cómo atraer más dueños de mascotas con SEO local, GEO y redes sociales.</div>
+          <div class="blog-card-meta"><span class="blog-card-date">Junio 2026</span><span class="blog-card-read">6 min</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/marketing-clinicas-dentales-chile" class="blog-card" data-tags="nicho mkt dental">
+        <div class="blog-card-img nicho"><img src="https://images.pexels.com/photos/3779409/pexels-photo-3779409.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marketing clínicas dentales Chile" referrerpolicy="no-referrer" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag nicho">Industrias</span>
+          <div class="blog-card-title">Marketing digital para clínicas dentales en Chile</div>
+          <div class="blog-card-excerpt">Estrategias para atraer más pacientes a tu clínica odontológica.</div>
+          <div class="blog-card-meta"><span class="blog-card-date">Junio 2026</span><span class="blog-card-read">7 min</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/marketing-gastronomico-chile" class="blog-card" data-tags="nicho mkt gastronomia">
+        <div class="blog-card-img nicho"><img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marketing gastronómico Chile" referrerpolicy="no-referrer" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag nicho">Industrias</span>
+          <div class="blog-card-title">Marketing gastronómico para restaurantes en Chile</div>
+          <div class="blog-card-excerpt">Cómo atraer más comensales con Google Business, Instagram y SEO local.</div>
+          <div class="blog-card-meta"><span class="blog-card-date">Junio 2026</span><span class="blog-card-read">7 min</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/marketing-constructoras-chile" class="blog-card" data-tags="nicho mkt construccion">
+        <div class="blog-card-img nicho"><img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marketing constructoras Chile" referrerpolicy="no-referrer" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag nicho">Industrias</span>
+          <div class="blog-card-title">Marketing digital para constructoras en Chile</div>
+          <div class="blog-card-excerpt">Cómo conseguir más proyectos y cotizaciones con presencia digital.</div>
+          <div class="blog-card-meta"><span class="blog-card-date">Junio 2026</span><span class="blog-card-read">6 min</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/marketing-juridico-chile" class="blog-card" data-tags="nicho mkt juridico">
+        <div class="blog-card-img nicho"><img src="https://images.pexels.com/photos/5668785/pexels-photo-5668785.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marketing jurídico abogados Chile" referrerpolicy="no-referrer" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag nicho">Industrias</span>
+          <div class="blog-card-title">Marketing jurídico para abogados en Chile</div>
+          <div class="blog-card-excerpt">Cómo conseguir más clientes para tu estudio jurídico con SEO y GEO.</div>
+          <div class="blog-card-meta"><span class="blog-card-date">Junio 2026</span><span class="blog-card-read">6 min</span></div>
         </div>
       </a>
 
@@ -345,18 +409,34 @@ window.addEventListener('scroll', () => { nav.style.background = window.scrollY 
 document.getElementById('burger').addEventListener('click', () => document.getElementById('mobNav').classList.toggle('open'));
 function closeMob() { document.getElementById('mobNav').classList.remove('open'); }
 
-// Category filter
+// Category filter with multi-tag support
 var cats = document.querySelectorAll('.blog-cat');
 var cards = document.querySelectorAll('.blog-card');
+var subBtns = document.querySelectorAll('.blog-cat.sub');
 
 for (var i = 0; i < cats.length; i++) {
   cats[i].addEventListener('click', function() {
+    // Update active state
     for (var j = 0; j < cats.length; j++) cats[j].classList.remove('active');
     this.classList.add('active');
+
     var cat = this.getAttribute('data-cat');
+
+    // Show/hide sub-industry buttons
+    if (cat === 'nicho') {
+      for (var s = 0; s < subBtns.length; s++) subBtns[s].classList.add('visible');
+    } else if (cat === 'all') {
+      for (var s = 0; s < subBtns.length; s++) {
+        subBtns[s].classList.remove('visible');
+        subBtns[s].classList.remove('active');
+      }
+    }
+
+    // Filter cards using data-tags (space-separated)
     for (var k = 0; k < cards.length; k++) {
-      var cardCat = cards[k].getAttribute('data-cat');
-      cards[k].style.display = (cat === 'all' || cardCat === cat) ? '' : 'none';
+      var tags = (cards[k].getAttribute('data-tags') || '').split(' ');
+      var show = cat === 'all' || tags.indexOf(cat) !== -1;
+      cards[k].style.display = show ? '' : 'none';
     }
   });
 }
