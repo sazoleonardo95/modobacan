@@ -1148,7 +1148,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
       <div class="art-meta-item">📅 Abril 20 2026</div>
       <div class="art-meta-item">⏱ 9 min de lectura</div>
     </div>
-    <div class="art-hero-img rv d3">
+    <div class="art-hero-img">
       <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Marketing digital pymes chilenas" referrerpolicy="no-referrer" crossorigin="anonymous" loading="eager">
     </div>
   </div>
@@ -1263,6 +1263,223 @@ window.addEventListener('scroll',()=>{
   const total=a.offsetHeight-window.innerHeight;
   bar.style.width=Math.min(Math.max(-t/total*100,0),100)+'%';
 });
+</script>
+<!-- ── CHAT WIDGET ──────────────────────────────────────────────── -->
+<div id="mbChat" style="position:fixed;bottom:1.85rem;right:1.85rem;z-index:300;font-family:'Cabinet Grotesk',sans-serif;">
+
+  <!-- Bubble -->
+  <div id="mbBubble" onclick="mbToggle()" style="width:52px;height:52px;background:#C8FF00;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 18px rgba(200,255,0,.35);transition:transform .2s;position:relative;" onmouseenter="this.style.transform='scale(1.08)'" onmouseleave="this.style.transform='scale(1)'">
+    <svg id="mbIconChat" viewBox="0 0 24 24" style="width:22px;height:22px;fill:#0D0D0D;transition:opacity .2s;"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    <svg id="mbIconClose" viewBox="0 0 24 24" style="width:20px;height:20px;fill:#0D0D0D;display:none;position:absolute;"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    <div id="mbBadge" style="position:absolute;top:-2px;right:-2px;width:16px;height:16px;background:#E24B4A;border-radius:50%;border:2px solid #0D0D0D;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;">1</div>
+  </div>
+
+  <!-- Window -->
+  <div id="mbWindow" style="display:none;position:absolute;bottom:64px;right:0;width:300px;background:#1A1A1A;border:1px solid rgba(245,240,232,.08);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.7);flex-direction:column;">
+
+    <!-- Header -->
+    <div style="background:#C8FF00;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:28px;height:28px;background:#0D0D0D;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;"><path d="M12 3V12" stroke="#C8FF00" stroke-width="2.5" stroke-linecap="round"/><path d="M7.5 5.5A8 8 0 1 0 16.5 5.5" stroke="#C8FF00" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:800;letter-spacing:.06em;color:#0D0D0D;">MODO BACÁN</div>
+          <div style="font-size:10px;color:rgba(13,13,13,.6);letter-spacing:.04em;">● En línea ahora</div>
+        </div>
+      </div>
+      <button onclick="mbToggle()" style="background:none;border:none;cursor:pointer;color:rgba(13,13,13,.7);font-size:20px;line-height:1;padding:0;">×</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="mbMsgs" style="padding:14px;display:flex;flex-direction:column;gap:8px;max-height:260px;overflow-y:auto;"></div>
+
+    <!-- Input -->
+    <div style="padding:10px 12px;border-top:1px solid rgba(245,240,232,.06);display:flex;gap:8px;align-items:center;">
+      <input id="mbInput" type="text" placeholder="Escribe tu mensaje..." onkeydown="if(event.key==='Enter')mbSend()" style="flex:1;background:#111;border:1px solid rgba(245,240,232,.1);border-radius:8px;padding:7px 10px;color:#F5F0E8;font-size:12px;font-family:inherit;outline:none;">
+      <button onclick="mbSend()" style="width:30px;height:30px;background:#C8FF00;border:none;border-radius:7px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#0D0D0D;"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.mb-msg-bot { max-width:85%;background:#222;color:rgba(245,240,232,.85);border-radius:12px 12px 12px 3px;padding:9px 12px;font-size:13px;line-height:1.55;align-self:flex-start; }
+.mb-msg-bot strong { color:#C8FF00; }
+.mb-msg-user { max-width:85%;background:#C8FF00;color:#0D0D0D;border-radius:12px 12px 3px 12px;padding:9px 12px;font-size:13px;font-weight:600;align-self:flex-end; }
+.mb-opt { background:transparent;border:1px solid rgba(200,255,0,.3);border-radius:8px;padding:8px 12px;color:#C8FF00;font-size:12px;font-family:'Cabinet Grotesk',sans-serif;cursor:pointer;text-align:left;transition:all .2s;width:100%; }
+.mb-opt:hover { background:rgba(200,255,0,.08);border-color:rgba(200,255,0,.6); }
+.mb-opts { display:flex;flex-direction:column;gap:6px;align-self:stretch; }
+.mb-typing { display:flex;gap:4px;align-items:center;padding:4px 2px; }
+.mb-typing span { width:6px;height:6px;background:rgba(245,240,232,.3);border-radius:50%;animation:mbBounce .9s ease infinite; }
+.mb-typing span:nth-child(2){animation-delay:.15s}
+.mb-typing span:nth-child(3){animation-delay:.3s}
+@keyframes mbBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+</style>
+
+<script>
+var mbOpen = false;
+var mbGoal = '';
+var mbPhone = '+56954343686';
+
+// Mapeo objetivo → solución + mensaje WA
+var mbSolutions = {
+  'Conseguir más clientes': {
+    sol: 'GEO + Landing Page',
+    msg: 'Necesito conseguir más clientes para mi negocio',
+    followup: '¿De qué rubro es tu negocio y en qué ciudad? Con eso te armo una estrategia de <strong>GEO + Landing Page</strong> enfocada en conversión.'
+  },
+  'Aparecer en Google': {
+    sol: 'SEO + GEO',
+    msg: 'Quiero aparecer en Google y en las IAs',
+    followup: 'Para aparecer en Google <em>y</em> en ChatGPT/Perplexity usamos <strong>SEO + GEO</strong> juntos. ¿En qué industria y ciudad estás?'
+  },
+  'Mejorar mi sitio web': {
+    sol: 'Landing Page / Rediseño',
+    msg: 'Quiero mejorar o rediseñar mi sitio web',
+    followup: 'Revisamos tu sitio actual y te proponemos mejoras concretas orientadas a conversión. ¿Tienes sitio web actualmente o necesitas uno desde cero?'
+  },
+  'Automatizar consultas': {
+    sol: 'Chat Widget + WhatsApp',
+    msg: 'Quiero automatizar las consultas de mis clientes',
+    followup: 'Implementamos un sistema de chat + WhatsApp que califica y deriva consultas automáticamente. ¿Cuántas consultas recibes actualmente por semana?'
+  }
+};
+
+function mbToggle() {
+  mbOpen = !mbOpen;
+  var w = document.getElementById('mbWindow');
+  var iconChat = document.getElementById('mbIconChat');
+  var iconClose = document.getElementById('mbIconClose');
+  var badge = document.getElementById('mbBadge');
+  if (mbOpen) {
+    w.style.display = 'flex';
+    iconChat.style.display = 'none';
+    iconClose.style.display = 'block';
+    if (badge) badge.style.display = 'none';
+    if (!document.getElementById('mbMsgs').hasChildNodes()) mbInit();
+  } else {
+    w.style.display = 'none';
+    iconChat.style.display = 'block';
+    iconClose.style.display = 'none';
+  }
+}
+
+function mbInit() {
+  mbAddBot('¡Hola! 👋 Soy el asistente de <strong>Modo Bacán</strong>.<br>¿Cuál es tu objetivo principal?');
+  setTimeout(function() {
+    var opts = document.createElement('div');
+    opts.className = 'mb-opts';
+    opts.id = 'mbOpts1';
+    ['Conseguir más clientes','Aparecer en Google','Mejorar mi sitio web','Automatizar consultas'].forEach(function(label) {
+      var btn = document.createElement('button');
+      btn.className = 'mb-opt';
+      var icons = {'Conseguir más clientes':'🚀','Aparecer en Google':'🔍','Mejorar mi sitio web':'🌐','Automatizar consultas':'⚡'};
+      btn.textContent = icons[label] + ' ' + label;
+      btn.onclick = function() { mbSelectGoal(label); };
+      opts.appendChild(btn);
+    });
+    var msgs = document.getElementById('mbMsgs');
+    msgs.appendChild(opts);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 600);
+}
+
+function mbSelectGoal(goal) {
+  mbGoal = goal;
+  document.getElementById('mbOpts1').remove();
+  mbAddUser(goal);
+  mbShowTyping();
+  setTimeout(function() {
+    mbRemoveTyping();
+    var data = mbSolutions[goal];
+    mbAddBot(data.followup);
+    setTimeout(function() {
+      mbAddBot('¿Te escribimos por <strong>WhatsApp</strong> ahora mismo para ayudarte?');
+      var opts = document.createElement('div');
+      opts.className = 'mb-opts';
+      var btn1 = document.createElement('button');
+      btn1.className = 'mb-opt';
+      btn1.textContent = '✓ Sí, escríbeme por WhatsApp';
+      btn1.onclick = function() { mbGoWA(data.msg); };
+      var btn2 = document.createElement('button');
+      btn2.className = 'mb-opt';
+      btn2.style.borderColor = 'rgba(245,240,232,.15)';
+      btn2.style.color = 'rgba(245,240,232,.4)';
+      btn2.textContent = '← Elegir otro objetivo';
+      btn2.onclick = function() {
+        opts.remove();
+        mbAddUser('← Volver');
+        document.getElementById('mbMsgs').innerHTML = '';
+        mbInit();
+      };
+      opts.appendChild(btn1);
+      opts.appendChild(btn2);
+      document.getElementById('mbMsgs').appendChild(opts);
+      document.getElementById('mbMsgs').scrollTop = 9999;
+    }, 800);
+  }, 1200);
+}
+
+function mbSend() {
+  var input = document.getElementById('mbInput');
+  var txt = input.value.trim();
+  if (!txt) return;
+  input.value = '';
+  mbAddUser(txt);
+  mbShowTyping();
+  setTimeout(function() {
+    mbRemoveTyping();
+    mbAddBot('¡Gracias! Para darte la mejor respuesta, ¿te contactamos ahora por <strong>WhatsApp</strong>?');
+    var btn = document.createElement('button');
+    btn.className = 'mb-opt';
+    btn.style.alignSelf = 'flex-start';
+    btn.textContent = '✓ Ir a WhatsApp →';
+    btn.onclick = function() { mbGoWA(txt); };
+    document.getElementById('mbMsgs').appendChild(btn);
+    document.getElementById('mbMsgs').scrollTop = 9999;
+  }, 1100);
+}
+
+function mbGoWA(context) {
+  var msg = encodeURIComponent('Hola Modo Bacán, contacto desde la web. ' + (mbGoal ? 'Mi objetivo: ' + mbGoal + '. ' : '') + context);
+  window.open('https://wa.me/56954343686?text=' + msg, '_blank');
+}
+
+function mbAddBot(html) {
+  var msgs = document.getElementById('mbMsgs');
+  var div = document.createElement('div');
+  div.className = 'mb-msg-bot';
+  div.innerHTML = html;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function mbAddUser(text) {
+  var msgs = document.getElementById('mbMsgs');
+  var div = document.createElement('div');
+  div.className = 'mb-msg-user';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function mbShowTyping() {
+  var msgs = document.getElementById('mbMsgs');
+  var div = document.createElement('div');
+  div.className = 'mb-msg-bot';
+  div.id = 'mbTyping';
+  div.innerHTML = '<div class="mb-typing"><span></span><span></span><span></span></div>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function mbRemoveTyping() {
+  var t = document.getElementById('mbTyping');
+  if (t) t.remove();
+}
 </script>
 </body>
 </html>
