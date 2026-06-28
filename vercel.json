@@ -1,0 +1,27 @@
+{
+  "rewrites": [
+    { "source": "/inicio",    "destination": "/index.html" },
+    { "source": "/servicios", "destination": "/index.html" },
+    { "source": "/geo",       "destination": "/geo.html" },
+    { "source": "/seo",       "destination": "/seo.html" },
+    { "source": "/landing",   "destination": "/landing.html" },
+    { "source": "/brief-landing", "destination": "/brief-landing.html" },
+    { "source": "/blog",                              "destination": "/blog/index.html" },
+    { "source": "/blog/que-es-geo",                   "destination": "/blog/que-es-geo.html" },
+    { "source": "/blog/seo-vs-geo",                   "destination": "/blog/seo-vs-geo.html" },
+    { "source": "/blog/aparecer-en-chatgpt",          "destination": "/blog/aparecer-en-chatgpt.html" },
+    { "source": "/blog/seo-local-chile",              "destination": "/blog/seo-local-chile.html" },
+    { "source": "/blog/landing-page-que-convierte",   "destination": "/blog/landing-page-que-convierte.html" },
+    { "source": "/blog/marketing-digital-pymes-chile","destination": "/blog/marketing-digital-pymes-chile.html" },
+    { "source": "/blog/marketing-veterinarias-chile",    "destination": "/blog/marketing-veterinarias-chile.html" },
+    { "source": "/blog/marketing-clinicas-dentales-chile", "destination": "/blog/marketing-clinicas-dentales-chile.html" },
+    { "source": "/blog/marketing-gastronomico-chile",      "destination": "/blog/marketing-gastronomico-chile.html" },
+    { "source": "/blog/marketing-constructoras-chile",     "destination": "/blog/marketing-constructoras-chile.html" },
+    { "source": "/blog/marketing-juridico-chile",          "destination": "/blog/marketing-juridico-chile.html" },
+    { "source": "/proceso",   "destination": "/index.html" },
+    { "source": "/precios",   "destination": "/index.html" },
+    { "source": "/faq",       "destination": "/index.html" },
+    { "source": "/contacto",  "destination": "/index.html" },
+    { "source": "/(.*)",      "destination": "/index.html" }
+  ]
+}
