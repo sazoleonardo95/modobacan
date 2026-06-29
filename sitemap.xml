@@ -70,6 +70,14 @@
 
 
   <url>
+    <loc>https://modobacan.cl/test-visibilidad</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://modobacan.cl/test-visibilidad"/>
+  </url>
+
+  <url>
     <loc>https://modobacan.cl/blog</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>

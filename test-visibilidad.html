@@ -828,6 +828,25 @@ function showAfter() {
     return;
   }
 
+  // Guardar lead en Google Sheets via SheetDB
+  var fechaNow = new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' });
+  fetch('https://sheetdb.io/api/v1/ffqf9iaiedcsv', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      data: [{
+        'Fecha':    fechaNow,
+        'Nombre':   nombre,
+        'WhatsApp': wa,
+        'Negocio':  negocio || '(no ingresado)',
+        'Rubro':    rubro   || '(no seleccionado)',
+        'Ciudad':   ciudad  || '(no seleccionada)'
+      }]
+    })
+  }).catch(function() {
+    // Silencioso — no interrumpir la experiencia si falla
+  });
+
   // Armar link WA con contexto
   var waMsg = encodeURIComponent(
     'Hola Modo Bacán 👋 Hice el test de visibilidad en IA.\n' +
