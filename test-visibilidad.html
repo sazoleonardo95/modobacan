@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de Visibilidad en IA | Modo Bacán</title>
+<meta name="description" content="Descubre si tu negocio aparece en ChatGPT, Perplexity y Gemini. Test gratuito de visibilidad en IA para empresas chilenas.">
+<link rel="canonical" href="https://modobacan.cl/test-visibilidad">
+<meta property="og:title" content="¿Tu negocio aparece en la IA? Descúbrelo gratis">
+<meta property="og:description" content="Test gratuito: ve cómo te buscan en ChatGPT, Perplexity y Gemini — y si estás ahí.">
+<meta property="og:url" content="https://modobacan.cl/test-visibilidad">
+<meta name="theme-color" content="#0D0D0D">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabinet+Grotesk:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --black:    #0D0D0D;
+  --black-2:  #111111;
+  --black-3:  #1A1A1A;
+  --black-4:  #222222;
+  --white:    #F5F0E8;
+  --white-60: rgba(245,240,232,0.6);
+  --white-30: rgba(245,240,232,0.3);
+  --white-10: rgba(245,240,232,0.1);
+  --accent:   #C8FF00;
+  --accent-d: rgba(200,255,0,0.10);
+  --accent-b: rgba(200,255,0,0.25);
+  --border:   rgba(245,240,232,0.08);
+  --font-d:   'Bebas Neue', sans-serif;
+  --font-b:   'Cabinet Grotesk', sans-serif;
+  --font-m:   'JetBrains Mono', monospace;
+  --chatgpt:  #10A37F;
+  --perp:     #20B2AA;
+  --gemini:   #8B5CF6;
+  --red:      #E24B4A;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-b);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9990; opacity: .5;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(13,13,13,.92); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.n-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+.n-icon { width: 30px; height: 30px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+.n-name { font-family: var(--font-d); font-size: 1.2rem; letter-spacing: .06em; color: var(--white); }
+.n-back { font-family: var(--font-m); font-size: .68rem; color: var(--white-30); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: color .2s; }
+.n-back:hover { color: var(--accent); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 120px 2rem 4rem;
+  text-align: center;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(200,255,0,.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-m); font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent); border: 1px solid var(--accent-b); background: var(--accent-d);
+  padding: 5px 13px; border-radius: 2px; margin-bottom: 1.5rem;
+}
+.hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: blink 1.5s ease infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.hero h1 {
+  font-family: var(--font-d);
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  line-height: .92; letter-spacing: .02em;
+  margin-bottom: 1.25rem;
+}
+.hero h1 .ghost { color: transparent; -webkit-text-stroke: 1px rgba(245,240,232,.3); }
+.hero h1 .lime { color: var(--accent); }
+.hero-sub {
+  font-size: 1.05rem; color: var(--white-60);
+  max-width: 520px; line-height: 1.72; margin-bottom: 2.5rem;
+}
+
+/* FORM */
+.test-form {
+  background: var(--black-3);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%; max-width: 560px;
+  margin: 0 auto;
+  position: relative; z-index: 1;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.fg { display: flex; flex-direction: column; gap: 6px; }
+.fl { font-family: var(--font-m); font-size: .62rem; color: var(--white-30); letter-spacing: .12em; text-transform: uppercase; }
+.fi, .fs {
+  background: var(--black-4); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px;
+  color: var(--white); font-family: var(--font-b); font-size: .9rem;
+  outline: none; transition: border-color .2s; width: 100%;
+}
+.fi:focus, .fs:focus { border-color: rgba(200,255,0,.4); }
+.fi::placeholder { color: var(--white-30); }
+.fs option { background: #1A1A1A; }
+.btn-test {
+  width: 100%; margin-top: 1.25rem;
+  background: var(--accent); color: var(--black);
+  border: none; border-radius: 8px;
+  padding: 1rem; font-family: var(--font-m);
+  font-size: .82rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+  cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-test:hover { background: #d4ff1a; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(200,255,0,.3); }
+.btn-test:disabled { opacity: .5; cursor: default; transform: none; box-shadow: none; }
+
+/* SECCIÓN DE RESULTADOS */
+#results { display: none; padding: 4rem 2rem; }
+.results-wrap { max-width: 1200px; margin: 0 auto; }
+
+/* SCANNING */
+#scanning {
+  display: none;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.scan-title {
+  font-family: var(--font-d); font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: .04em; margin-bottom: .5rem;
+}
+.scan-sub { font-family: var(--font-m); font-size: .72rem; color: var(--white-30); letter-spacing: .1em; margin-bottom: 3rem; }
+.scan-platforms { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.scan-plat {
+  display: flex; flex-direction: column; align-items: center; gap: .75rem;
+  background: var(--black-3); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.5rem 2rem;
+  min-width: 140px; position: relative; overflow: hidden;
+  transition: border-color .4s;
+}
+.scan-plat.done { border-color: rgba(200,255,0,.3); }
+.scan-plat-logo { font-size: 2rem; }
+.scan-plat-name { font-family: var(--font-m); font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--white-30); }
+.scan-bar { width: 100%; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; margin-top: .5rem; }
+.scan-bar-fill { height: 100%; width: 0; border-radius: 2px; transition: width .05s linear; }
+.scan-plat:nth-child(1) .scan-bar-fill { background: var(--chatgpt); }
+.scan-plat:nth-child(2) .scan-bar-fill { background: var(--perp); }
+.scan-plat:nth-child(3) .scan-bar-fill { background: var(--gemini); }
+.scan-status { font-family: var(--font-m); font-size: .6rem; color: var(--white-30); letter-spacing: .1em; margin-top: 4px; }
+.scan-status.ok { color: var(--accent); }
+
+/* RESULTADO: SIN GEO */
+#resultBefore { display: none; }
+.result-alarm {
+  text-align: center; padding: 2rem 0 3rem;
+}
+.alarm-icon { font-size: 3rem; margin-bottom: 1rem; }
+.alarm-title {
+  font-family: var(--font-d); font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: .03em; color: var(--red); margin-bottom: .5rem;
+}
+.alarm-sub { font-size: 1rem; color: var(--white-60); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+
+/* VELOCÍMETRO */
+.gauge-wrap { display: flex; justify-content: center; margin: 2.5rem 0; }
+.gauge { position: relative; width: 200px; height: 110px; }
+.gauge svg { width: 200px; height: 110px; }
+.gauge-val {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-d); font-size: 2.4rem; letter-spacing: .02em;
+  color: var(--red); line-height: 1;
+}
+.gauge-label {
+  text-align: center; font-family: var(--font-m);
+  font-size: .62rem; color: var(--white-30); letter-spacing: .12em; text-transform: uppercase;
+  margin-top: .25rem;
+}
+
+/* PANELS IA */
+.panels-label {
+  text-align: center; font-family: var(--font-m);
+  font-size: .65rem; color: var(--white-30); letter-spacing: .14em; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.panels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-bottom: 2rem; }
+.ai-panel {
+  background: var(--black-3); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden;
+}
+.ai-panel-header {
+  padding: 10px 14px; display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.ai-panel-dot { width: 8px; height: 8px; border-radius: 50%; }
+.ai-panel.chatgpt .ai-panel-dot { background: var(--chatgpt); }
+.ai-panel.perp .ai-panel-dot { background: var(--perp); }
+.ai-panel.gemini .ai-panel-dot { background: var(--gemini); }
+.ai-panel-name { font-family: var(--font-m); font-size: .65rem; color: var(--white-30); letter-spacing: .1em; }
+.ai-panel-body { padding: 14px; font-size: .8rem; line-height: 1.75; color: var(--white-60); min-height: 180px; }
+.ai-panel-body .competitor { color: var(--white); font-weight: 700; }
+.ai-panel-body .missing { color: var(--red); font-style: italic; }
+.ai-panel-body .highlighted { color: var(--accent); font-weight: 700; }
+.ai-cursor { display: inline-block; width: 2px; height: 13px; background: var(--accent); animation: blink 1s step-end infinite; vertical-align: middle; margin-left: 1px; }
+
+/* CONTADOR DE PÉRDIDAS */
+.loss-banner {
+  background: rgba(226,75,74,.08); border: 1px solid rgba(226,75,74,.2);
+  border-radius: 12px; padding: 1.25rem 1.75rem;
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 2rem;
+}
+.loss-ico { font-size: 1.5rem; flex-shrink: 0; }
+.loss-txt { font-size: .88rem; color: var(--white-60); line-height: 1.6; }
+.loss-txt strong { color: var(--red); font-size: 1.1rem; }
+.loss-count { font-family: var(--font-d); font-size: 2rem; color: var(--red); letter-spacing: .02em; flex-shrink: 0; min-width: 60px; text-align: center; }
+
+/* CAPTURA DE LEAD */
+.lead-capture {
+  background: linear-gradient(135deg, rgba(200,255,0,.06), var(--black-3));
+  border: 1px solid var(--accent-b); border-radius: 16px;
+  padding: 2.5rem; text-align: center; margin: 2rem 0;
+}
+.lead-capture h3 {
+  font-family: var(--font-d); font-size: clamp(1.5rem, 3vw, 2.5rem);
+  letter-spacing: .04em; color: var(--white); margin-bottom: .5rem;
+}
+.lead-capture p { font-size: .9rem; color: var(--white-60); margin-bottom: 1.75rem; line-height: 1.65; }
+.lead-form { display: flex; flex-direction: column; gap: .85rem; max-width: 400px; margin: 0 auto; }
+.lead-form .fi { text-align: left; }
+.btn-reveal {
+  background: var(--accent); color: var(--black);
+  border: none; border-radius: 8px; padding: 1rem 1.5rem;
+  font-family: var(--font-m); font-size: .8rem; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase; cursor: pointer;
+  transition: all .2s; width: 100%;
+}
+.btn-reveal:hover { background: #d4ff1a; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(200,255,0,.3); }
+.lead-note { font-family: var(--font-m); font-size: .6rem; color: var(--white-30); letter-spacing: .08em; margin-top: .75rem; }
+
+/* RESULTADO: CON GEO */
+#resultAfter { display: none; }
+.success-banner {
+  text-align: center; padding: 2rem 0 2.5rem;
+}
+.success-title {
+  font-family: var(--font-d); font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: .03em; color: var(--accent); margin-bottom: .5rem;
+}
+.success-sub { font-size: 1rem; color: var(--white-60); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+
+/* CTA FINAL */
+.cta-final {
+  text-align: center; padding: 3rem 0;
+}
+.cta-final h3 {
+  font-family: var(--font-d); font-size: clamp(1.8rem, 4vw, 3.2rem);
+  letter-spacing: .03em; margin-bottom: .75rem;
+}
+.cta-final p { font-size: .95rem; color: var(--white-60); margin-bottom: 2rem; line-height: 1.65; }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25D366; color: #fff;
+  border: none; border-radius: 8px; padding: 1rem 2rem;
+  font-family: var(--font-m); font-size: .8rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  cursor: pointer; text-decoration: none; transition: all .2s;
+  font-size: .82rem;
+}
+.btn-wa:hover { background: #1fb356; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,.3); }
+.btn-wa svg { flex-shrink: 0; }
+
+/* GAUGE VERDE */
+.gauge-val.green { color: var(--accent); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .panels-grid { grid-template-columns: 1fr; }
+  .scan-platforms { gap: 1rem; }
+  .form-row { grid-template-columns: 1fr; }
+  nav { padding: 1rem 1.25rem; }
+  .loss-banner { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://modobacan.cl" class="n-logo">
+    <div class="n-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M12 3V12" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M7.5 5.5A8 8 0 1 0 16.5 5.5" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+    <span class="n-name">MODO BACÁN</span>
+  </a>
+  <a href="https://modobacan.cl" class="n-back">← Volver al inicio</a>
+</nav>
+
+<!-- HERO + FORM -->
+<section class="hero">
+  <div class="hero-badge"><span></span> Test gratuito · Sin registro</div>
+  <h1>¿TU NEGOCIO<br>EXISTE PARA<br><span class="lime">LA IA?</span></h1>
+  <p class="hero-sub">Descubre cómo te ven ChatGPT, Perplexity y Gemini cuando alguien busca lo que tú ofreces. En 30 segundos.</p>
+
+  <div class="test-form">
+    <div class="form-row">
+      <div class="fg">
+        <label class="fl">Tu rubro</label>
+        <select class="fs" id="inputRubro">
+          <option value="">Selecciona tu rubro</option>
+          <option>Clínica veterinaria</option>
+          <option>Clínica dental</option>
+          <option>Restaurante / Cafetería</option>
+          <option>Constructora</option>
+          <option>Estudio jurídico</option>
+          <option>Clínica médica</option>
+          <option>Hotel / Hospedaje</option>
+          <option>Gimnasio / Deporte</option>
+          <option>Inmobiliaria</option>
+          <option>Retail / Tienda</option>
+          <option>Otro negocio</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="fl">Tu ciudad</label>
+        <select class="fs" id="inputCiudad">
+          <option value="">Selecciona tu ciudad</option>
+          <option>Santiago</option>
+          <option>Valparaíso</option>
+          <option>Concepción</option>
+          <option>Temuco</option>
+          <option>Antofagasta</option>
+          <option>La Serena</option>
+          <option>Rancagua</option>
+          <option>Talca</option>
+          <option>Curicó</option>
+          <option>Iquique</option>
+          <option>Puerto Montt</option>
+          <option>Arica</option>
+        </select>
+      </div>
+    </div>
+    <div class="fg">
+      <label class="fl">Nombre de tu negocio</label>
+      <input class="fi" type="text" id="inputNegocio" placeholder="Ej: Veterinaria San Francisco">
+    </div>
+    <button class="btn-test" id="btnTest" onclick="startTest()">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      Analizar mi visibilidad en IA →
+    </button>
+  </div>
+</section>
+
+<!-- SCANNING -->
+<section id="scanning">
+  <div class="scan-title">CONSULTANDO LAS IAs</div>
+  <div class="scan-sub">Analizando tu presencia en tiempo real...</div>
+  <div class="scan-platforms">
+    <div class="scan-plat" id="sp1">
+      <div class="scan-plat-logo">🤖</div>
+      <div class="scan-plat-name">ChatGPT</div>
+      <div class="scan-bar"><div class="scan-bar-fill" id="bar1"></div></div>
+      <div class="scan-status" id="st1">Consultando...</div>
+    </div>
+    <div class="scan-plat" id="sp2">
+      <div class="scan-plat-logo">🔍</div>
+      <div class="scan-plat-name">Perplexity</div>
+      <div class="scan-bar"><div class="scan-bar-fill" id="bar2"></div></div>
+      <div class="scan-status" id="st2">En cola...</div>
+    </div>
+    <div class="scan-plat" id="sp3">
+      <div class="scan-plat-logo">✨</div>
+      <div class="scan-plat-name">Gemini</div>
+      <div class="scan-bar"><div class="scan-bar-fill" id="bar3"></div></div>
+      <div class="scan-status" id="st3">En cola...</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<div id="results">
+  <div class="results-wrap">
+
+    <!-- SIN GEO -->
+    <div id="resultBefore">
+      <div class="result-alarm">
+        <div class="alarm-icon">⚠️</div>
+        <div class="alarm-title">TU MARCA ES INVISIBLE</div>
+        <p class="alarm-sub" id="alarmSub">Tu negocio no aparece cuando alguien busca en las IAs. Tus competidores sí.</p>
+      </div>
+
+      <!-- Gauge -->
+      <div class="gauge-wrap">
+        <div>
+          <div class="gauge">
+            <svg viewBox="0 0 200 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Track -->
+              <path d="M 20 100 A 80 80 0 0 1 180 100" stroke="rgba(245,240,232,0.08)" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <!-- Fill rojo -->
+              <path id="gaugeFill" d="M 20 100 A 80 80 0 0 1 180 100" stroke="#E24B4A" stroke-width="14" stroke-linecap="round" fill="none" stroke-dasharray="251" stroke-dashoffset="220"/>
+              <!-- Needle -->
+              <line id="gaugeNeedle" x1="100" y1="100" x2="100" y2="30" stroke="#E24B4A" stroke-width="2.5" stroke-linecap="round" transform="rotate(-80 100 100)"/>
+            </svg>
+            <div class="gauge-val" id="gaugeVal">12</div>
+          </div>
+          <div class="gauge-label">VISIBILIDAD EN IA / 100</div>
+        </div>
+      </div>
+
+      <!-- Contador de pérdidas -->
+      <div class="loss-banner">
+        <div class="loss-ico">📉</div>
+        <div class="loss-txt">Mientras lees esto, personas buscaron <strong id="lossRubro">tu rubro</strong> en <strong id="lossCiudad">tu ciudad</strong> en una IA y no te encontraron.</div>
+        <div class="loss-count" id="lossCount">0</div>
+      </div>
+
+      <!-- Label panels -->
+      <div class="panels-label">ASÍ APARECE TU RUBRO EN LAS IAs — TÚ NO ESTÁS</div>
+
+      <!-- Panels IA -->
+      <div class="panels-grid">
+        <div class="ai-panel chatgpt">
+          <div class="ai-panel-header">
+            <div class="ai-panel-dot"></div>
+            <span class="ai-panel-name">ChatGPT · GPT-4o</span>
+          </div>
+          <div class="ai-panel-body" id="panel1"></div>
+        </div>
+        <div class="ai-panel perp">
+          <div class="ai-panel-header">
+            <div class="ai-panel-dot"></div>
+            <span class="ai-panel-name">Perplexity AI</span>
+          </div>
+          <div class="ai-panel-body" id="panel2"></div>
+        </div>
+        <div class="ai-panel gemini">
+          <div class="ai-panel-header">
+            <div class="ai-panel-dot"></div>
+            <span class="ai-panel-name">Google Gemini</span>
+          </div>
+          <div class="ai-panel-body" id="panel3"></div>
+        </div>
+      </div>
+
+      <!-- Lead capture -->
+      <div class="lead-capture">
+        <h3>¿QUIERES VER CÓMO<br>QUEDARÍAS <span style="color:var(--accent)">CON GEO?</span></h3>
+        <p>Ingresa tu WhatsApp y te mostramos cómo tu negocio aparecería en primer lugar en las 3 IAs. Gratis, sin compromiso.</p>
+        <div class="lead-form">
+          <input class="fi" type="text" id="leadNombre" placeholder="Tu nombre">
+          <input class="fi" type="tel" id="leadWA" placeholder="+56 9 XXXX XXXX">
+          <button class="btn-reveal" onclick="showAfter()">Ver cómo quedaría con GEO →</button>
+        </div>
+        <div class="lead-note">No spam. Solo el resultado y una propuesta si te interesa.</div>
+      </div>
+    </div>
+
+    <!-- CON GEO -->
+    <div id="resultAfter">
+      <div class="success-banner">
+        <div style="font-size:3rem;margin-bottom:1rem;">🚀</div>
+        <div class="success-title">ASÍ QUEDAS CON GEO</div>
+        <p class="success-sub" id="successSub">Tu negocio aparece primero cuando alguien busca en ChatGPT, Perplexity y Gemini.</p>
+      </div>
+
+      <!-- Gauge verde -->
+      <div class="gauge-wrap">
+        <div>
+          <div class="gauge">
+            <svg viewBox="0 0 200 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 20 100 A 80 80 0 0 1 180 100" stroke="rgba(245,240,232,0.08)" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path id="gaugeFill2" d="M 20 100 A 80 80 0 0 1 180 100" stroke="#C8FF00" stroke-width="14" stroke-linecap="round" fill="none" stroke-dasharray="251" stroke-dashoffset="251"/>
+              <line id="gaugeNeedle2" x1="100" y1="100" x2="100" y2="30" stroke="#C8FF00" stroke-width="2.5" stroke-linecap="round" transform="rotate(-80 100 100)"/>
+            </svg>
+            <div class="gauge-val green" id="gaugeVal2">0</div>
+          </div>
+          <div class="gauge-label">VISIBILIDAD EN IA / 100</div>
+        </div>
+      </div>
+
+      <!-- Label -->
+      <div class="panels-label" style="color:rgba(200,255,0,.6);">ASÍ TE VEN LAS IAs CON MODO BACÁN — TÚ EN PRIMER LUGAR</div>
+
+      <!-- Panels con GEO -->
+      <div class="panels-grid">
+        <div class="ai-panel chatgpt" style="border-color:rgba(16,163,127,.3);">
+          <div class="ai-panel-header">
+            <div class="ai-panel-dot"></div>
+            <span class="ai-panel-name">ChatGPT · GPT-4o</span>
+          </div>
+          <div class="ai-panel-body" id="panel1b"></div>
+        </div>
+        <div class="ai-panel perp" style="border-color:rgba(32,178,170,.3);">
+          <div class="ai-panel-header">
+            <div class="ai-panel-dot"></div>
+            <span class="ai-panel-name">Perplexity AI</span>
+          </div>
+          <div class="ai-panel-body" id="panel2b"></div>
+        </div>
+        <div class="ai-panel gemini" style="border-color:rgba(139,92,246,.3);">
+          <div class="ai-panel-header">
+            <div class="ai-panel-dot"></div>
+            <span class="ai-panel-name">Google Gemini</span>
+          </div>
+          <div class="ai-panel-body" id="panel3b"></div>
+        </div>
+      </div>
+
+      <!-- CTA final -->
+      <div class="cta-final">
+        <h3>¿LISTO PARA<br><span style="color:var(--accent)">ACTIVAR TU GEO?</span></h3>
+        <p>Agenda una llamada gratuita de 30 minutos. Te mostramos el plan exacto para que tu negocio aparezca así en las IAs.</p>
+        <a id="btnWA" href="#" target="_blank" rel="noopener" class="btn-wa">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quiero aparecer así — WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+var rubro = '', ciudad = '', negocio = '';
+var lossInterval = null;
+var lossBase = 0;
+
+/* ── DATOS POR RUBRO ─────────────────────────── */
+var rubroData = {
+  'Clínica veterinaria': {
+    busqueda: 'mejores veterinarias en',
+    competidores: ['VetCentro', 'Clínica Animal Plus', 'PetSalud'],
+    busquedasMes: 2400,
+    emoji: '🐾'
+  },
+  'Clínica dental': {
+    busqueda: 'mejores dentistas en',
+    competidores: ['DentalPro', 'Sonrisa Perfecta', 'OdontoCentro'],
+    busquedasMes: 3100,
+    emoji: '🦷'
+  },
+  'Restaurante / Cafetería': {
+    busqueda: 'mejores restaurantes en',
+    competidores: ['Sabores del Sur', 'El Rincón Gourmet', 'Café Central'],
+    busquedasMes: 5800,
+    emoji: '🍽️'
+  },
+  'Constructora': {
+    busqueda: 'mejores constructoras en',
+    competidores: ['BuildPro Chile', 'Constructora Sur', 'MegaBuild'],
+    busquedasMes: 1200,
+    emoji: '🏗️'
+  },
+  'Estudio jurídico': {
+    busqueda: 'mejores abogados en',
+    competidores: ['Abogados & Asociados', 'LegalPro Chile', 'JurídicoSur'],
+    busquedasMes: 1800,
+    emoji: '⚖️'
+  },
+  'Clínica médica': {
+    busqueda: 'mejores clínicas médicas en',
+    competidores: ['MédicoCentro', 'Clínica Salud Total', 'SaludPro'],
+    busquedasMes: 2900,
+    emoji: '🏥'
+  },
+  'Hotel / Hospedaje': {
+    busqueda: 'mejores hoteles en',
+    competidores: ['Hotel Plaza Central', 'Hospedaje Del Valle', 'Hotel Sur'],
+    busquedasMes: 4200,
+    emoji: '🏨'
+  },
+  'Gimnasio / Deporte': {
+    busqueda: 'mejores gimnasios en',
+    competidores: ['FitCentro', 'GymPro', 'SportLife'],
+    busquedasMes: 2100,
+    emoji: '💪'
+  },
+  'Inmobiliaria': {
+    busqueda: 'mejores inmobiliarias en',
+    competidores: ['InmoPro', 'PropiedadesSur', 'RealEstateChile'],
+    busquedasMes: 1600,
+    emoji: '🏠'
+  },
+  'Retail / Tienda': {
+    busqueda: 'mejores tiendas en',
+    competidores: ['TiendaCentro', 'ComercioSur', 'ShopPro'],
+    busquedasMes: 3400,
+    emoji: '🛍️'
+  },
+  'Otro negocio': {
+    busqueda: 'mejores negocios en',
+    competidores: ['Empresa Norte', 'Servicios Sur', 'ProBusiness'],
+    busquedasMes: 1500,
+    emoji: '🏢'
+  }
+};
+
+/* ── INICIO DEL TEST ─────────────────────────── */
+function startTest() {
+  rubro = document.getElementById('inputRubro').value;
+  ciudad = document.getElementById('inputCiudad').value;
+  negocio = document.getElementById('inputNegocio').value.trim();
+
+  if (!rubro || !ciudad) {
+    alert('Selecciona tu rubro y ciudad para continuar.');
+    return;
+  }
+  if (!negocio) {
+    negocio = 'Tu negocio';
+  }
+
+  document.querySelector('.hero').style.display = 'none';
+  document.getElementById('scanning').style.display = 'block';
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('resultBefore').style.display = 'none';
+  document.getElementById('resultAfter').style.display = 'none';
+
+  runScan();
+}
+
+/* ── ANIMACIÓN DE SCAN ───────────────────────── */
+function runScan() {
+  var bars = ['bar1', 'bar2', 'bar3'];
+  var statuses = ['st1', 'st2', 'st3'];
+  var panels = ['sp1', 'sp2', 'sp3'];
+  var delays = [0, 1200, 2400];
+  var durations = [1100, 1000, 1300];
+
+  bars.forEach(function(id, i) {
+    setTimeout(function() {
+      // Activar status
+      document.getElementById(statuses[i]).textContent = 'Consultando...';
+      animateBar(id, durations[i], function() {
+        document.getElementById(statuses[i]).textContent = '✓ Analizado';
+        document.getElementById(statuses[i]).classList.add('ok');
+        document.getElementById(panels[i]).classList.add('done');
+      });
+    }, delays[i]);
+  });
+
+  // Mostrar resultados después del scan
+  setTimeout(function() {
+    document.getElementById('scanning').style.display = 'none';
+    showBefore();
+  }, 4500);
+}
+
+function animateBar(id, duration, cb) {
+  var bar = document.getElementById(id);
+  var start = null;
+  function step(ts) {
+    if (!start) start = ts;
+    var prog = Math.min((ts - start) / duration, 1);
+    bar.style.width = (prog * 100) + '%';
+    if (prog < 1) requestAnimationFrame(step);
+    else cb();
+  }
+  requestAnimationFrame(step);
+}
+
+/* ── MOSTRAR RESULTADO SIN GEO ───────────────── */
+function showBefore() {
+  var data = rubroData[rubro] || rubroData['Otro negocio'];
+
+  // Actualizar textos
+  document.getElementById('alarmSub').textContent =
+    negocio + ' no aparece cuando alguien busca "' + data.busqueda + ' ' + ciudad + '" en las IAs. Tus competidores sí.';
+  document.getElementById('lossRubro').textContent = rubro.toLowerCase();
+  document.getElementById('lossCiudad').textContent = ciudad;
+
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('resultBefore').style.display = 'block';
+
+  // Animar gauge rojo
+  setTimeout(function() { animateGauge('gaugeFill', 'gaugeNeedle', 'gaugeVal', 12, false); }, 300);
+
+  // Contador de pérdidas
+  lossBase = 0;
+  document.getElementById('lossCount').textContent = '0';
+  lossInterval = setInterval(function() {
+    lossBase++;
+    document.getElementById('lossCount').textContent = lossBase;
+  }, 8000);
+
+  // Typewriter en los 3 paneles
+  var c = data.competidores;
+  var busq = data.busqueda + ' ' + ciudad;
+
+  setTimeout(function() {
+    typePanel('panel1',
+      'Según mis datos, las opciones más recomendadas para "' + busq + '" son:\n\n' +
+      '1. ' + c[0] + ' — amplia experiencia y buenas reseñas.\n' +
+      '2. ' + c[1] + ' — muy valorado por la comunidad local.\n' +
+      '3. ' + c[2] + ' — destacado por su atención al cliente.\n\n' +
+      '⚠ No encontré información suficiente sobre otros establecimientos en la zona.',
+      ['1. ' + c[0], '2. ' + c[1], '3. ' + c[2]], [], true);
+  }, 200);
+
+  setTimeout(function() {
+    typePanel('panel2',
+      'Basándome en fuentes recientes, para "' + busq + '" destacan:\n\n' +
+      '• ' + c[0] + ': presencia digital consolidada.\n' +
+      '• ' + c[1] + ': recomendado en foros locales.\n' +
+      '• ' + c[2] + ': buen posicionamiento web.\n\n' +
+      'No se encontraron menciones de otros proveedores locales.',
+      ['• ' + c[0], '• ' + c[1], '• ' + c[2]], [], true);
+  }, 600);
+
+  setTimeout(function() {
+    typePanel('panel3',
+      'Para "' + busq + '", te sugiero considerar:\n\n' +
+      c[0] + ': ampliamente mencionado en búsquedas.\n' +
+      c[1] + ': buena reputación en la zona.\n' +
+      c[2] + ': activo en plataformas digitales.\n\n' +
+      'No tengo datos suficientes de otros negocios del área.',
+      [c[0], c[1], c[2]], [], true);
+  }, 1000);
+
+  window.scrollTo({ top: document.getElementById('results').offsetTop - 80, behavior: 'smooth' });
+}
+
+/* ── TYPEWRITER ──────────────────────────────── */
+function typePanel(panelId, text, boldTerms, highlightTerms, showMissing) {
+  var panel = document.getElementById(panelId);
+  panel.innerHTML = '';
+  var i = 0;
+  var speed = 18;
+
+  function next() {
+    if (i >= text.length) {
+      // Render final con formato
+      renderPanel(panelId, text, boldTerms, highlightTerms, showMissing);
+      return;
+    }
+    i++;
+    // Mostrar texto plano mientras escribe
+    panel.textContent = text.substring(0, i);
+    // Cursor
+    var cursor = document.createElement('span');
+    cursor.className = 'ai-cursor';
+    panel.appendChild(cursor);
+    panel.scrollTop = panel.scrollHeight;
+    setTimeout(next, speed);
+  }
+  next();
+}
+
+function renderPanel(panelId, text, boldTerms, highlightTerms, showMissing) {
+  var panel = document.getElementById(panelId);
+  var html = text
+    .replace(/\n/g, '<br>')
+    .replace(/⚠[^\n<]*/g, function(m) { return '<span class="missing">' + m + '</span>'; });
+
+  boldTerms.forEach(function(t) {
+    html = html.replace(new RegExp(escapeReg(t), 'g'), '<span class="competitor">' + t + '</span>');
+  });
+  highlightTerms.forEach(function(t) {
+    html = html.replace(new RegExp(escapeReg(t), 'g'), '<span class="highlighted">' + t + '</span>');
+  });
+  panel.innerHTML = html;
+}
+
+function escapeReg(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/* ── GAUGE ───────────────────────────────────── */
+function animateGauge(fillId, needleId, valId, targetVal, isGreen) {
+  var fill = document.getElementById(fillId);
+  var needle = document.getElementById(needleId);
+  var valEl = document.getElementById(valId);
+  var maxDash = 251;
+  var current = 0;
+  var duration = 1400;
+  var start = null;
+
+  function step(ts) {
+    if (!start) start = ts;
+    var prog = Math.min((ts - start) / duration, 1);
+    var eased = 1 - Math.pow(1 - prog, 3);
+    var val = Math.round(eased * targetVal);
+    // dashoffset: 251 = 0%, 0 = 100%
+    var offset = maxDash - (val / 100) * maxDash;
+    fill.setAttribute('stroke-dashoffset', offset);
+    // Needle: -80deg = 0, +80deg = 100
+    var angle = -80 + (val / 100) * 160;
+    needle.setAttribute('transform', 'rotate(' + angle + ' 100 100)');
+    valEl.textContent = val;
+    if (prog < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* ── MOSTRAR RESULTADO CON GEO ───────────────── */
+function showAfter() {
+  var nombre = document.getElementById('leadNombre').value.trim();
+  var wa = document.getElementById('leadWA').value.trim();
+
+  if (!nombre || !wa) {
+    alert('Ingresa tu nombre y WhatsApp para ver el resultado.');
+    return;
+  }
+
+  // Armar link WA con contexto
+  var waMsg = encodeURIComponent(
+    'Hola Modo Bacán 👋 Hice el test de visibilidad en IA.\n' +
+    'Mi negocio: ' + negocio + '\n' +
+    'Rubro: ' + rubro + '\n' +
+    'Ciudad: ' + ciudad + '\n' +
+    'Me interesa saber cómo mejorar mi presencia en las IAs.'
+  );
+  document.getElementById('btnWA').href = 'https://wa.me/56954343686?text=' + waMsg;
+
+  // Ocultar before, mostrar after
+  document.getElementById('resultBefore').style.display = 'none';
+  document.getElementById('resultAfter').style.display = 'block';
+  if (lossInterval) clearInterval(lossInterval);
+
+  document.getElementById('successSub').textContent =
+    negocio + ' aparece primero cuando alguien busca en ChatGPT, Perplexity y Gemini. Así se ven tus clientes.';
+
+  // Animar gauge verde
+  setTimeout(function() { animateGauge('gaugeFill2', 'gaugeNeedle2', 'gaugeVal2', 87, true); }, 300);
+
+  var data = rubroData[rubro] || rubroData['Otro negocio'];
+  var c = data.competidores;
+  var busq = data.busqueda + ' ' + ciudad;
+
+  // Panels con negocio destacado
+  setTimeout(function() {
+    typePanel('panel1b',
+      'La mejor opción para "' + busq + '" es ' + negocio + ', destacado por su excelente servicio y fuerte presencia digital.\n\nOtras alternativas incluyen ' + c[0] + ' y ' + c[1] + ', aunque con menor presencia en línea.',
+      [c[0], c[1]], [negocio], false);
+  }, 300);
+
+  setTimeout(function() {
+    typePanel('panel2b',
+      'Para "' + busq + '", ' + negocio + ' es la referencia principal según múltiples fuentes. Su reputación digital y menciones en línea lo posicionan como la opción #1.\n\nSe mencionan también ' + c[0] + ' y ' + c[2] + ' como alternativas.',
+      [c[0], c[2]], [negocio], false);
+  }, 700);
+
+  setTimeout(function() {
+    typePanel('panel3b',
+      negocio + ' es la recomendación más frecuente para "' + busq + '". Cuenta con presencia verificada en plataformas digitales y reseñas positivas.\n\nOtras menciones: ' + c[1] + ' y ' + c[2] + '.',
+      [c[1], c[2]], [negocio], false);
+  }, 1100);
+
+  window.scrollTo({ top: document.getElementById('resultAfter').offsetTop - 80, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
