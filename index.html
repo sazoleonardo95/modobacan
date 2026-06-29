@@ -141,6 +141,14 @@ body::after {
 #c2 { width:34px; height:34px; border:1px solid rgba(200,255,0,.4); z-index:9998; transition:width .25s,height .25s; }
 
 /* NAV */
+/* Scroll progress bar */
+#scrollProgress {
+  position:fixed; top:0; left:0; height:2px; width:0%;
+  background:linear-gradient(90deg,var(--accent),rgba(200,255,0,.4));
+  z-index:999; pointer-events:none; transition:width .1s linear;
+  box-shadow:0 0 8px rgba(200,255,0,.4);
+}
+
 nav {
   position:fixed; top:0; left:0; right:0; z-index:200;
   display:flex; align-items:center; justify-content:space-between;
@@ -282,8 +290,9 @@ h2 { font-family:var(--font-d); font-size:clamp(2.4rem,5vw,4.5rem); letter-spaci
 .pc::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(200,255,0,.025),transparent 60%); opacity:0; transition:opacity .3s; }
 .pc:hover { transform:translateY(-5px); border-color:rgba(245,240,232,.12); }
 .pc:hover::before { opacity:1; }
-.pc.hot { border-color:var(--accent-b); background:linear-gradient(135deg,rgba(200,255,0,.04),var(--black-3) 40%); }
+.pc.hot { border-color:rgba(200,255,0,.35); background:linear-gradient(135deg,rgba(200,255,0,.06),var(--black-3) 40%); box-shadow:0 0 40px rgba(200,255,0,.08), 0 0 0 1px rgba(200,255,0,.15); animation:hotPulse 3s ease infinite; }
 .pc.hot::before { opacity:1; }
+@keyframes hotPulse { 0%,100%{box-shadow:0 0 30px rgba(200,255,0,.08),0 0 0 1px rgba(200,255,0,.15)} 50%{box-shadow:0 0 55px rgba(200,255,0,.15),0 0 0 1px rgba(200,255,0,.3)} }
 .pc-badge { position:absolute; top:1.4rem; right:1.4rem; font-family:var(--font-m); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; background:var(--accent); color:var(--black); padding:2px 9px; border-radius:2px; font-weight:500; }
 .pc-em { font-size:1.4rem; margin-bottom:.9rem; }
 .pc-name { font-family:var(--font-d); font-size:1.75rem; letter-spacing:.05em; color:var(--white); margin-bottom:.4rem; }
@@ -340,14 +349,22 @@ h2 { font-family:var(--font-d); font-size:clamp(2.4rem,5vw,4.5rem); letter-spaci
 .con-form { background:var(--black-3); border:1px solid var(--border); border-radius:12px; padding:2.25rem; }
 .fg { margin-bottom:1.15rem; }
 .fl { display:block; font-family:var(--font-m); font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--white-30); margin-bottom:7px; }
-.fi, .fs, .fta { width:100%; background:var(--black-4); border:1px solid var(--border); border-radius:5px; padding:.8rem .95rem; font-size:.88rem; color:var(--white); font-family:var(--font-b); outline:none; transition:border-color .2s; appearance:none; }
+.fi, .fs, .fta { width:100%; background:var(--black-4); border:1px solid var(--border); border-radius:5px; padding:.8rem .95rem; font-size:.88rem; color:var(--white); font-family:var(--font-b); outline:none; transition:border-color .25s,box-shadow .25s; appearance:none; }
 .fi::placeholder, .fta::placeholder { color:var(--white-30); }
-.fi:focus, .fta:focus, .fs:focus { border-color:rgba(200,255,0,.4); }
+.fi:focus, .fta:focus, .fs:focus { border-color:rgba(200,255,0,.4); box-shadow:0 0 0 3px rgba(200,255,0,.06); }
+.fi.valid { border-color:rgba(74,222,128,.5); }
+.fi.invalid { border-color:rgba(248,113,113,.5); }
+.fi.valid:focus { box-shadow:0 0 0 3px rgba(74,222,128,.08); }
+.fi.invalid:focus { box-shadow:0 0 0 3px rgba(248,113,113,.08); }
 .fs { cursor:pointer; }
 .fs option { background:var(--black-3); }
 .fta { resize:vertical; min-height:105px; }
-.fsub { width:100%; background:var(--accent); color:var(--black); border:none; padding:.95rem; border-radius:4px; font-family:var(--font-m); font-size:.75rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; transition:all .25s; margin-top:.4rem; }
+.fsub { width:100%; background:var(--accent); color:var(--black); border:none; padding:.95rem; border-radius:4px; font-family:var(--font-m); font-size:.75rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; transition:all .25s; margin-top:.4rem; display:flex; align-items:center; justify-content:center; gap:8px; position:relative; overflow:hidden; }
 .fsub:hover { background:#d4ff1a; box-shadow:0 4px 20px rgba(200,255,0,.3); }
+.fsub:disabled { opacity:.7; cursor:default; }
+.fsub-spinner { width:14px; height:14px; border:2px solid rgba(13,13,13,.3); border-top-color:#0D0D0D; border-radius:50%; animation:spin .7s linear infinite; display:none; flex-shrink:0; }
+.fsub.loading .fsub-spinner { display:block; }
+@keyframes spin { to { transform:rotate(360deg); } }
 
 /* FOOTER */
 footer { background:var(--black-2); border-top:1px solid var(--border); padding:3rem 0; }
@@ -956,6 +973,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 </script>
 </head>
 <body>
+<div id="scrollProgress"></div>
 
 <div class="cur" id="c1"></div>
 <div class="cur" id="c2"></div>
@@ -2122,7 +2140,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
             </select>
           </div>
           <div class="fg"><label class="fl">Cuéntame más</label><textarea name="mensaje" class="fta" placeholder="¿En qué está tu negocio hoy y qué quieres lograr?" required></textarea></div>
-          <button type="submit" class="fsub" id="mbBtn">Enviar mensaje →</button>
+          <button type="submit" class="fsub" id="mbBtn"><span class="fsub-spinner"></span><span id="mbBtnTxt">Enviar mensaje →</span></button>
         </form>
         <div id="mbOk" style="display:none;text-align:center;padding:2.5rem 0;">
           <div style="font-size:2.8rem;margin-bottom:.9rem;">✅</div>
@@ -2447,13 +2465,38 @@ document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 document.getElementById('mbForm').addEventListener('submit',async function(e){
   e.preventDefault();
   const btn=document.getElementById('mbBtn');
-  btn.textContent='Enviando...'; btn.disabled=true;
+  const btnTxt=document.getElementById('mbBtnTxt');
+  btn.classList.add('loading');
+  btn.disabled=true;
+  btnTxt.textContent='Enviando...';
   try{
     const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(this)});
     const d=await r.json();
     if(d.success){this.style.display='none';document.getElementById('mbOk').style.display='block';}
-    else{btn.textContent='Error — intenta de nuevo';btn.disabled=false;}
-  }catch{btn.textContent='Error — intenta de nuevo';btn.disabled=false;}
+    else{btn.classList.remove('loading');btnTxt.textContent='Error — intenta de nuevo';btn.disabled=false;}
+  }catch{btn.classList.remove('loading');btnTxt.textContent='Error — intenta de nuevo';btn.disabled=false;}
+});
+
+// Validación en tiempo real de inputs
+document.querySelectorAll('#mbForm .fi').forEach(function(input) {
+  input.addEventListener('blur', function() {
+    if (!this.value.trim()) { this.classList.remove('valid','invalid'); return; }
+    if (this.type === 'email') {
+      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value);
+      this.classList.toggle('valid', ok);
+      this.classList.toggle('invalid', !ok);
+    } else {
+      var ok = this.value.trim().length >= 2;
+      this.classList.toggle('valid', ok);
+      this.classList.toggle('invalid', !ok);
+    }
+  });
+  input.addEventListener('input', function() {
+    if (this.classList.contains('invalid') && this.value.trim().length >= 2) {
+      this.classList.remove('invalid');
+      if (this.type !== 'email') this.classList.add('valid');
+    }
+  });
 });
 </script>
 
@@ -2715,6 +2758,107 @@ if (countEl) {
   setTimeout(bumpCount, 3000);
 }
 
+
+})();
+</script>
+
+
+<!-- ── UX IMPROVEMENTS ──────────────────────────────────────────── -->
+<script>
+(function(){
+
+/* 1. SCROLL PROGRESS BAR */
+var prog = document.getElementById('scrollProgress');
+if (prog) {
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (scrollTop / docH) * 100 : 0;
+    prog.style.width = pct + '%';
+  }, { passive: true });
+}
+
+/* 2. NAV ACTIVO POR SECCIÓN */
+var navLinks = document.querySelectorAll('.n-links a[href^="#"], .n-links a[href^="/#"]');
+var sections = [];
+navLinks.forEach(function(link) {
+  var href = link.getAttribute('href').replace('/', '');
+  var id = href.replace('#', '');
+  var el = document.getElementById(id);
+  if (el) sections.push({ el: el, link: link });
+});
+
+if (sections.length) {
+  window.addEventListener('scroll', function() {
+    var scrollY = window.scrollY + 120;
+    var current = null;
+    sections.forEach(function(s) {
+      if (s.el.offsetTop <= scrollY) current = s;
+    });
+    sections.forEach(function(s) { s.link.classList.remove('is-active'); });
+    if (current) current.link.classList.add('is-active');
+  }, { passive: true });
+}
+
+/* 3. NÚMEROS ANIMADOS EN STATS DEL HERO */
+var statsAnimated = false;
+var statsEl = document.querySelector('.h-stats');
+
+function animateStats() {
+  if (statsAnimated) return;
+  statsAnimated = true;
+
+  var statNums = document.querySelectorAll('.hs-n:not(#liveSearches)');
+  statNums.forEach(function(el) {
+    var raw = el.textContent.trim();
+    // Extraer número y sufijo
+    var match = raw.match(/^([0-9]+)(.*)$/);
+    if (!match) return;
+    var target = parseInt(match[1]);
+    var suffix = match[2] || '';
+    var duration = 1200;
+    var start = null;
+
+    function countUp(ts) {
+      if (!start) start = ts;
+      var prog = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - prog, 3);
+      var current = Math.round(ease * target);
+      // Preservar el span interior si existe
+      var span = el.querySelector('span');
+      if (span) {
+        el.textContent = current;
+        el.appendChild(span);
+      } else {
+        el.textContent = current + suffix;
+      }
+      if (prog < 1) requestAnimationFrame(countUp);
+    }
+    requestAnimationFrame(countUp);
+  });
+}
+
+if (statsEl) {
+  var statsObs = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting) {
+      animateStats();
+      statsObs.disconnect();
+    }
+  }, { threshold: 0.3 });
+  statsObs.observe(statsEl);
+}
+
+/* 4. SMOOTH SCROLL para todos los anclas internos */
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var id = this.getAttribute('href').replace('#', '');
+    var target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
 
 })();
 </script>
