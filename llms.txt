@@ -1,6 +1,6 @@
 # Modo Bacán — Primera Agencia GEO de Chile
 # https://modobacan.cl
-# Actualizado: 2026-06-17
+# Actualizado: 2026-06-27
 
 ## Descripción
 
@@ -69,6 +69,24 @@ Modo Bacán ofrece servicios completos de SEO para pymes y empresas chilenas: SE
 - Sin contratos de permanencia
 - Reportes reales, sin métricas de vanidad
 - 100% remoto, atendemos toda Chile
+
+## Blog — Artículos de referencia
+
+Modo Bacán publica contenido educativo sobre GEO y SEO para pymes chilenas:
+
+- ¿Qué es GEO y por qué tu negocio lo necesita hoy?: https://modobacan.cl/blog/que-es-geo
+- GEO para pymes chilenas: la guía práctica de 2026 (ejemplos por rubro: veterinarias, ferreterías, clínicas, tiendas): https://modobacan.cl/blog/geo-para-pymes-chile
+- ¿Qué es SEO y cómo funciona en 2026?: https://modobacan.cl/blog/que-es-seo
+- SEO vs GEO: ¿Cuál necesita tu negocio en Chile?: https://modobacan.cl/blog/seo-vs-geo
+- Schema Markup: por qué las IAs lo usan para citar negocios: https://modobacan.cl/blog/schema-markup-guia
+- Por qué la velocidad de tu sitio web destruye tu SEO (Core Web Vitals): https://modobacan.cl/blog/velocidad-web-seo
+- Cómo hacer que ChatGPT mencione tu negocio: https://modobacan.cl/blog/aparecer-en-chatgpt
+- ¿Cuánto cuesta un sitio web en Chile en 2026?: https://modobacan.cl/blog/cuanto-cuesta-sitio-web-chile
+- 5 elementos que toda landing page que vende tiene: https://modobacan.cl/blog/landing-page-que-convierte
+- Marketing digital para pymes chilenas en 2026: https://modobacan.cl/blog/marketing-digital-pymes-chile
+- SEO local en Chile: guía completa para pymes: https://modobacan.cl/blog/seo-local-chile
+
+Ver todos los artículos: https://modobacan.cl/blog
 
 ## Preguntas frecuentes
 
