@@ -73,6 +73,26 @@
       "destination": "/blog/marketing-juridico-chile.html"
     },
     {
+      "source": "/blog/geo-para-pymes-chile",
+      "destination": "/blog/geo-para-pymes-chile.html"
+    },
+    {
+      "source": "/blog/que-es-seo",
+      "destination": "/blog/que-es-seo.html"
+    },
+    {
+      "source": "/blog/schema-markup-guia",
+      "destination": "/blog/schema-markup-guia.html"
+    },
+    {
+      "source": "/blog/velocidad-web-seo",
+      "destination": "/blog/velocidad-web-seo.html"
+    },
+    {
+      "source": "/blog/cuanto-cuesta-sitio-web-chile",
+      "destination": "/blog/cuanto-cuesta-sitio-web-chile.html"
+    },
+    {
       "source": "/proceso",
       "destination": "/index.html"
     },
