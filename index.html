@@ -1069,7 +1069,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
         <div><div class="hs-n">4<span>+</span></div><div class="hs-l">Plataformas IA</div></div>
         <div><div class="hs-n">30<span>-90</span></div><div class="hs-l">Días para resultados</div></div>
         <div><div class="hs-n" id="liveSearches">0</div><div class="hs-l">Búsquedas ahora 🔴</div></div>
-        <div><div class="hs-n">100<span>%</span></div><div class="hs-l">Remoto · Todo Chile</div></div>
+        <div><div class="hs-n">10<span>+</span></div><div class="hs-l">Clientes activos</div></div>
       </div>
     </div>
     <!-- Terminal -->
@@ -2460,44 +2460,74 @@ function closeMob(){document.getElementById('mobNav').classList.remove('open');}
 
 // ── 1. CONTADOR ANIMADO ─────────────────────────────────────────
 (function(){
-  function parseNum(str){
-    var clean = str.replace(/[^0-9.]/g,'');
-    return parseFloat(clean)||0;
-  }
-  function animateCounter(el, target, suffix, duration){
-    var start = 0, startTime = null;
+  function animCount(el, from, to, suffix, duration){
+    var start = null;
     function step(ts){
-      if(!startTime) startTime = ts;
-      var progress = Math.min((ts-startTime)/duration, 1);
-      var ease = 1 - Math.pow(1-progress, 3);
-      var val = Math.round(start + (target-start)*ease);
+      if(!start) start = ts;
+      var p = Math.min((ts-start)/duration, 1);
+      var ease = 1-Math.pow(1-p,3);
+      var val = Math.round(from+(to-from)*ease);
       el.textContent = val + suffix;
-      if(progress < 1) requestAnimationFrame(step);
-      else el.textContent = val + suffix;
+      if(p<1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
+
   var counterObs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(!e.isIntersecting) return;
       var el = e.target;
-      var original = el.dataset.original || el.textContent;
-      el.dataset.original = original;
-      var lower = original.toLowerCase();
-      if(lower.indexOf('d')>-1 && lower.indexOf('%')===-1){
-        animateCounter(el, parseNum(original), 'd', 1200);
-      } else if(original.indexOf('%')>-1){
-        animateCounter(el, parseNum(original), '%', 1400);
-      } else if(!isNaN(parseNum(original)) && parseNum(original)>0){
-        animateCounter(el, parseNum(original), '', 1200);
-      }
+      if(el.dataset.counted) return;
+      el.dataset.counted = '1';
       counterObs.unobserve(el);
+
+      var type = el.dataset.counterType;
+      var num = parseInt(el.dataset.counterNum, 10);
+
+      if(type === 'plus'){
+        animCount(el, 0, num, '+', 1200);
+      } else if(type === 'percent'){
+        animCount(el, 0, num, '%', 1400);
+      } else if(type === 'plain'){
+        animCount(el, 0, num, '', 1200);
+      } else if(type === 'days'){
+        animCount(el, 0, num, 'd', 1200);
+      }
     });
-  },{threshold:.5});
-  document.querySelectorAll('.hs-n,.seo-hs-n,.geo-hs-n').forEach(function(el){
-    var txt = el.textContent.trim();
-    if(txt==='∞' || txt.indexOf('-')>-1 || txt.indexOf('+')>-1) return;
-    counterObs.observe(el);
+  },{threshold:.6});
+
+  // Preparar todos los elementos stat
+  var configs = [
+    // Hero stats — tienen <span> interno
+    {sel:'.hs-n', special: true},
+    // SEO y GEO stats — texto directo
+    {sel:'.seo-hs-n', special: false},
+    {sel:'.geo-hs-n', special: false},
+  ];
+
+  configs.forEach(function(cfg){
+    document.querySelectorAll(cfg.sel).forEach(function(el){
+      var raw = el.textContent.trim();
+      // Skip especiales
+      if(raw==='∞' || raw.indexOf('-')>-1) return;
+
+      var num, type;
+      if(raw.indexOf('+')>-1){
+        return; // dejar fijos los que tienen +
+      } else if(raw.toLowerCase().indexOf('d')>-1 && raw.indexOf('%')===-1){
+        num = parseInt(raw); type='days';
+      } else if(raw.indexOf('%')>-1){
+        num = parseInt(raw); type='percent';
+      } else if(!isNaN(parseInt(raw))){
+        num = parseInt(raw); type='plain';
+      } else return;
+
+      el.dataset.counterType = type;
+      el.dataset.counterNum = num;
+      // Limpiar spans internos y dejar solo el número inicial
+      el.textContent = '0' + (type==='plus'?'+': type==='percent'?'%': type==='days'?'d':'');
+      counterObs.observe(el);
+    });
   });
 })();
 
