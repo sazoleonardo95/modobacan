@@ -2458,6 +2458,141 @@ window.addEventListener('scroll',()=>{
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('mobNav').classList.toggle('open'));
 function closeMob(){document.getElementById('mobNav').classList.remove('open');}
 
+// ── 1. CONTADOR ANIMADO ─────────────────────────────────────────
+(function(){
+  function parseNum(str){
+    var clean = str.replace(/[^0-9.]/g,'');
+    return parseFloat(clean)||0;
+  }
+  function animateCounter(el, target, suffix, duration){
+    var start = 0, startTime = null;
+    function step(ts){
+      if(!startTime) startTime = ts;
+      var progress = Math.min((ts-startTime)/duration, 1);
+      var ease = 1 - Math.pow(1-progress, 3);
+      var val = Math.round(start + (target-start)*ease);
+      el.textContent = val + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+      else el.textContent = val + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  var counterObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target;
+      var original = el.dataset.original || el.textContent;
+      el.dataset.original = original;
+      var lower = original.toLowerCase();
+      if(lower.indexOf('d')>-1 && lower.indexOf('%')===-1){
+        animateCounter(el, parseNum(original), 'd', 1200);
+      } else if(original.indexOf('%')>-1){
+        animateCounter(el, parseNum(original), '%', 1400);
+      } else if(!isNaN(parseNum(original)) && parseNum(original)>0){
+        animateCounter(el, parseNum(original), '', 1200);
+      }
+      counterObs.unobserve(el);
+    });
+  },{threshold:.5});
+  document.querySelectorAll('.hs-n,.seo-hs-n,.geo-hs-n').forEach(function(el){
+    var txt = el.textContent.trim();
+    if(txt==='∞' || txt.indexOf('-')>-1 || txt.indexOf('+')>-1) return;
+    counterObs.observe(el);
+  });
+})();
+
+// ── 2. ESTELA CURSOR ────────────────────────────────────────────
+(function(){
+  if(window.matchMedia('(max-width:768px)').matches) return;
+  var particles = [];
+  var colors = ['rgba(200,255,0,.5)','rgba(200,255,0,.3)','rgba(200,255,0,.15)'];
+  document.addEventListener('mousemove',function(e){
+    if(Math.random()>0.35) return;
+    var p = document.createElement('div');
+    var size = Math.random()*5+2;
+    p.style.cssText = 'position:fixed;border-radius:50%;pointer-events:none;z-index:9997;transition:opacity .5s,transform .5s;'+
+      'left:'+(e.clientX-size/2)+'px;top:'+(e.clientY-size/2)+'px;'+
+      'width:'+size+'px;height:'+size+'px;'+
+      'background:'+colors[Math.floor(Math.random()*colors.length)]+';';
+    document.body.appendChild(p);
+    particles.push(p);
+    requestAnimationFrame(function(){
+      p.style.opacity='0';
+      p.style.transform='translate('+( (Math.random()-0.5)*20)+'px,'+((Math.random()-0.5)*20)+'px) scale(0)';
+    });
+    setTimeout(function(){
+      if(p.parentNode) p.parentNode.removeChild(p);
+      particles = particles.filter(function(x){return x!==p;});
+    },500);
+    if(particles.length>30){
+      var old = particles.shift();
+      if(old.parentNode) old.parentNode.removeChild(old);
+    }
+  });
+})();
+
+// ── 3. TEXTO ROTATIVO HERO ──────────────────────────────────────
+(function(){
+  var ghost = document.querySelector('.h-head .ghost');
+  if(!ghost) return;
+  var words = ['EN GOOGLE','EN CHATGPT','EN PERPLEXITY','EN GEMINI','EN GOOGLE IA'];
+  var i = 0;
+  function next(){
+    ghost.style.opacity='0';
+    ghost.style.transform='translateY(-8px)';
+    setTimeout(function(){
+      i = (i+1)%words.length;
+      ghost.textContent = words[i];
+      ghost.style.opacity='1';
+      ghost.style.transform='translateY(0)';
+    },300);
+  }
+  ghost.style.cssText += 'transition:opacity .3s ease,transform .3s ease;display:inline-block;';
+  setInterval(next, 2400);
+})();
+
+// ── 4. HOVER PREVIEW BLOG CARDS ────────────────────────────────
+(function(){
+  if(window.matchMedia('(max-width:768px)').matches) return;
+  var tooltip = document.createElement('div');
+  tooltip.id = 'blogTooltip';
+  tooltip.style.cssText = 'position:fixed;z-index:9995;background:rgba(17,17,17,.97);border:1px solid rgba(200,255,0,.2);border-radius:10px;padding:12px 16px;max-width:240px;pointer-events:none;opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s;font-family:Cabinet Grotesk,sans-serif;font-size:13px;line-height:1.55;color:rgba(245,240,232,.7);box-shadow:0 12px 40px rgba(0,0,0,.5);';
+  document.body.appendChild(tooltip);
+  document.querySelectorAll('.blog-card').forEach(function(card){
+    var excerpt = card.querySelector('.blog-card-excerpt');
+    if(!excerpt) return;
+    card.addEventListener('mouseenter',function(e){
+      tooltip.textContent = excerpt.textContent.trim();
+      tooltip.style.opacity='1';
+      tooltip.style.transform='translateY(0)';
+    });
+    card.addEventListener('mousemove',function(e){
+      var x = e.clientX+18, y = e.clientY-10;
+      if(x+240>window.innerWidth) x = e.clientX-258;
+      tooltip.style.left=x+'px';
+      tooltip.style.top=y+'px';
+    });
+    card.addEventListener('mouseleave',function(){
+      tooltip.style.opacity='0';
+      tooltip.style.transform='translateY(6px)';
+    });
+  });
+})();
+
+// ── 5. BARRA LECTURA DEGRADADO ─────────────────────────────────
+(function(){
+  var bar = document.getElementById('readBar');
+  if(!bar) return;
+  bar.style.background = 'linear-gradient(90deg, rgba(200,255,0,.4) 0%, #C8FF00 100%)';
+  bar.style.transition = 'width .1s linear';
+  bar.style.boxShadow = '0 0 8px rgba(200,255,0,.5)';
+  window.addEventListener('scroll',function(){
+    var h = document.documentElement;
+    var pct = h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+    bar.style.width = Math.min(pct,100)+'%';
+  });
+})();
+
 // Dropdown Servicios: soporte tap para tablets/táctiles (sin hover real)
 (function(){
   var drop = document.querySelector('.n-drop');
