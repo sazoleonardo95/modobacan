@@ -164,9 +164,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .ba-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:2.5rem;}
 .ba-label::before{content:'';width:22px;height:1px;background:var(--accent);}
 .ba-wrap{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border);cursor:col-resize;user-select:none;}
-.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;}
 .ba-before{z-index:1;}
-.ba-after{z-index:2;clip-path:inset(0 50% 0 0);transition:clip-path .05s linear;}
+.ba-after{z-index:2;clip-path:inset(0 50% 0 0);transition:clip-path .05s linear;object-position:center 20%;}
 .ba-divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--accent);z-index:3;transform:translateX(-50%);box-shadow:0 0 12px rgba(200,255,0,.6);transition:left .05s linear;}
 .ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;background:var(--accent);border-radius:50%;z-index:4;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(200,255,0,.4);transition:left .05s linear;}
 .ba-handle svg{width:18px;height:18px;fill:var(--black);}
@@ -489,7 +489,7 @@ footer{background:var(--black-3);border-top:1px solid var(--border);padding:4rem
         <div style="font-size:.75rem;color:var(--w30);letter-spacing:.1em;">Antes de Modo Bacán</div>
       </div>
       <!-- AFTER: sitio terminado -->
-      <img src="/emercar-screenshot-mobile.png" alt="Sitio Emercar terminado" class="ba-img ba-after" id="baAfter" loading="lazy">
+      <img src="/emercar-screenshot.png" alt="Sitio Emercar terminado" class="ba-img ba-after" id="baAfter" loading="lazy" style="object-position:center 35%;">
       <div class="ba-divider" id="baDivider"></div>
       <div class="ba-handle" id="baHandle">
         <svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg>
