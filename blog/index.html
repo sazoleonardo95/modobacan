@@ -35,7 +35,10 @@
   --font-c:'JetBrains Mono',monospace;
 }
 html { scroll-behavior:smooth; }
-body { background:var(--black); color:var(--white); font-family:var(--font-m); -webkit-font-smoothing:antialiased; }
+body { background:var(--black); color:var(--white); font-family:var(--font-m); -webkit-font-smoothing:antialiased; cursor:none; }
+.cur { position:fixed; border-radius:50%; pointer-events:none; transform:translate(-50%,-50%); mix-blend-mode:difference; }
+#c1 { width:10px; height:10px; background:var(--accent); z-index:9999; transition:width .15s,height .15s; }
+#c2 { width:34px; height:34px; border:1px solid rgba(200,255,0,.4); z-index:9998; transition:width .25s,height .25s; }
 a { color:inherit; text-decoration:none; }
 img { max-width:100%; display:block; }
 
@@ -189,6 +192,8 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
 <body>
 
 <!-- NAV -->
+<div class="cur" id="c1"></div>
+<div class="cur" id="c2"></div>
 <nav id="mainNav">
   <a href="/" class="n-logo">
     <div class="n-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3V12" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round"/><path d="M7.5 5.5A8 8 0 1 0 16.5 5.5" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></div>
@@ -200,9 +205,9 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
     <li><a href="/geo">GEO</a></li>
     <li><a href="/landing">Landing Pages</a></li>
     <li><a href="/blog" style="color:var(--accent)">Blog</a></li>
-    <li><a href="/contacto">Contacto</a></li>
+    <li><a href="/#contacto">Contacto</a></li>
   </ul>
-  <a href="/contacto" class="n-cta">Hablemos →</a>
+  <a href="/#contacto" class="n-cta">Hablemos →</a>
   <button class="n-burger" id="burger"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-nav" id="mobNav">
@@ -211,7 +216,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
   <a href="/geo" onclick="closeMob()">GEO</a>
   <a href="/landing" onclick="closeMob()">Landing Pages</a>
   <a href="/blog" onclick="closeMob()" style="color:var(--accent)">Blog</a>
-  <a href="/contacto" onclick="closeMob()" style="color:var(--accent)">→ Hablemos</a>
+  <a href="/#contacto" onclick="closeMob()" style="color:var(--accent)">→ Hablemos</a>
 </div>
 
 <!-- HERO -->
@@ -363,7 +368,6 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
         </div>
       </a>
 
-      <!-- Card: GEO para pymes -->
       <a href="/blog/geo-para-pymes-chile" class="blog-card" data-tags="geo">
         <div class="blog-card-img geo"><img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="GEO para pymes chilenas" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
@@ -374,9 +378,8 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
         </div>
       </a>
 
-      <!-- Card: Qué es SEO -->
       <a href="/blog/que-es-seo" class="blog-card" data-tags="seo">
-        <div class="blog-card-img seo"><img src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Qué es SEO" referrerpolicy="no-referrer" loading="lazy"></div>
+        <div class="blog-card-img seo"><img src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Qué es SEO 2026" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag seo">SEO</span>
           <div class="blog-card-title">¿Qué es SEO y cómo funciona en 2026?</div>
@@ -385,9 +388,8 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
         </div>
       </a>
 
-      <!-- Card: Schema Markup -->
       <a href="/blog/schema-markup-guia" class="blog-card" data-tags="geo seo">
-        <div class="blog-card-img geo"><img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Schema Markup" referrerpolicy="no-referrer" loading="lazy"></div>
+        <div class="blog-card-img geo"><img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Schema Markup guía" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag geo">GEO · SEO Técnico</span>
           <div class="blog-card-title">Schema Markup: por qué las IAs lo usan para citar negocios</div>
@@ -396,7 +398,6 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
         </div>
       </a>
 
-      <!-- Card: Velocidad web -->
       <a href="/blog/velocidad-web-seo" class="blog-card" data-tags="seo">
         <div class="blog-card-img lp"><img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Velocidad web y SEO" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
@@ -407,9 +408,8 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
         </div>
       </a>
 
-      <!-- Card: Cuánto cuesta un sitio web -->
       <a href="/blog/cuanto-cuesta-sitio-web-chile" class="blog-card" data-tags="lp mkt">
-        <div class="blog-card-img mkt"><img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cuánto cuesta un sitio web en Chile" referrerpolicy="no-referrer" loading="lazy"></div>
+        <div class="blog-card-img mkt"><img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cuánto cuesta un sitio web Chile" referrerpolicy="no-referrer" loading="lazy"></div>
         <div class="blog-card-body">
           <span class="blog-card-tag mkt">Negocio</span>
           <div class="blog-card-title">¿Cuánto cuesta un sitio web en Chile en 2026?</div>
@@ -428,7 +428,7 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
     <div class="s-label" style="justify-content:center;"><span class="h-dot"></span>¿Quieres resultados?</div>
     <h2>APLICA ESTO EN<br><span style="color:var(--accent);">TU NEGOCIO.</span></h2>
     <p>Lo que lees en el blog es lo que hacemos para nuestros clientes. Consulta gratuita sin compromiso.</p>
-    <a href="/contacto" class="btn-p">Consulta gratuita →</a>
+    <a href="/#contacto" class="btn-p">Consulta gratuita →</a>
   </div>
 </div>
 
@@ -450,6 +450,8 @@ footer { background:var(--black-3); border-top:1px solid var(--border); padding:
     </div>
   </div>
 </footer>
+
+
 
 <script>
 // Nav scroll
@@ -707,6 +709,96 @@ function mbRemoveTyping() {
   var t = document.getElementById('mbTyping');
   if (t) t.remove();
 }
+</script>
+
+<script>
+// ── CURSOR PERSONALIZADO ────────────────────────────────────────
+(function(){
+  if(window.matchMedia('(max-width:768px)').matches) return;
+  var c1=document.getElementById('c1'), c2=document.getElementById('c2');
+  var mx=0,my=0,fx=0,fy=0;
+  document.addEventListener('mousemove',function(e){
+    mx=e.clientX; my=e.clientY;
+    c1.style.left=mx+'px'; c1.style.top=my+'px';
+  });
+  (function anim(){
+    fx+=(mx-fx)*.12; fy+=(my-fy)*.12;
+    c2.style.left=fx+'px'; c2.style.top=fy+'px';
+    requestAnimationFrame(anim);
+  })();
+  document.querySelectorAll('a,button').forEach(function(el){
+    el.addEventListener('mouseenter',function(){c1.style.width='18px';c1.style.height='18px';c2.style.width='48px';c2.style.height='48px';});
+    el.addEventListener('mouseleave',function(){c1.style.width='10px';c1.style.height='10px';c2.style.width='34px';c2.style.height='34px';});
+  });
+})();
+
+// ── BARRA DE LECTURA ────────────────────────────────────────────
+(function(){
+  var bar = document.createElement('div');
+  bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;pointer-events:none;'+
+    'background:linear-gradient(90deg,rgba(200,255,0,.4) 0%,#C8FF00 100%);'+
+    'box-shadow:0 0 8px rgba(200,255,0,.5);transition:width .1s linear;';
+  document.body.appendChild(bar);
+  window.addEventListener('scroll',function(){
+    var h = document.documentElement;
+    var pct = h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+    bar.style.width = Math.min(pct,100)+'%';
+  });
+})();
+
+// ── HOVER PREVIEW BLOG CARDS ────────────────────────────────────
+(function(){
+  if(window.matchMedia('(max-width:768px)').matches) return;
+  var tooltip = document.createElement('div');
+  tooltip.style.cssText = 'position:fixed;z-index:9995;background:rgba(17,17,17,.97);border:1px solid rgba(200,255,0,.2);'+
+    'border-radius:10px;padding:12px 16px;max-width:240px;pointer-events:none;opacity:0;'+
+    'transform:translateY(6px);transition:opacity .2s,transform .2s;'+
+    'font-family:Cabinet Grotesk,sans-serif;font-size:13px;line-height:1.55;'+
+    'color:rgba(245,240,232,.7);box-shadow:0 12px 40px rgba(0,0,0,.5);';
+  document.body.appendChild(tooltip);
+  document.querySelectorAll('.blog-card').forEach(function(card){
+    var excerpt = card.querySelector('.blog-card-excerpt');
+    if(!excerpt) return;
+    card.addEventListener('mouseenter',function(){
+      tooltip.textContent = excerpt.textContent.trim();
+      tooltip.style.opacity='1';
+      tooltip.style.transform='translateY(0)';
+    });
+    card.addEventListener('mousemove',function(e){
+      var x = e.clientX+18, y = e.clientY-10;
+      if(x+240>window.innerWidth) x = e.clientX-258;
+      tooltip.style.left=x+'px';
+      tooltip.style.top=y+'px';
+    });
+    card.addEventListener('mouseleave',function(){
+      tooltip.style.opacity='0';
+      tooltip.style.transform='translateY(6px)';
+    });
+  });
+})();
+
+// ── ESTELA CURSOR ───────────────────────────────────────────────
+(function(){
+  if(window.matchMedia('(max-width:768px)').matches) return;
+  document.addEventListener('mousemove',function(e){
+    var p = document.createElement('div');
+    var size = Math.random()*6+3;
+    var opacity = Math.random()*0.5+0.3;
+    p.style.cssText = 'position:fixed;border-radius:50%;pointer-events:none;z-index:9997;'+
+      'left:'+(e.clientX-size/2)+'px;top:'+(e.clientY-size/2)+'px;'+
+      'width:'+size+'px;height:'+size+'px;'+
+      'background:rgba(200,255,0,'+opacity+');'+
+      'transition:opacity .6s ease,transform .6s ease;';
+    document.body.appendChild(p);
+    setTimeout(function(){
+      p.style.opacity='0';
+      p.style.transform='scale(0) translate('+((Math.random()-0.5)*16)+'px,'+((Math.random()-0.5)*16)+'px)';
+    },20);
+    setTimeout(function(){
+      if(p.parentNode) p.parentNode.removeChild(p);
+    },640);
+  });
+})();
 </script>
 </body>
 </html>
