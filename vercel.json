@@ -113,6 +113,14 @@
       "destination": "/blog/aparecer-google-abogado-chile.html"
     },
     {
+      "source": "/casos/emercar",
+      "destination": "/casos/emercar.html"
+    },
+    {
+      "source": "/casos",
+      "destination": "/casos/index.html"
+    },
+    {
       "source": "/proceso",
       "destination": "/index.html"
     },

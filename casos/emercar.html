@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caso Emercar — De cero a presencia digital profesional | Modo Bacán</title>
+<meta name="description" content="Cómo Emercar, distribuidora de alimentos en Temuco, pasó de no existir en internet a tener un sitio web profesional, optimizado para SEO y GEO en menos de 7 días.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://modobacan.cl/casos/emercar">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://modobacan.cl/casos/emercar">
+<meta property="og:title" content="Caso Emercar — De cero a presencia digital profesional">
+<meta property="og:image" content="https://modobacan.cl/og-image.png">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabinet+Grotesk:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23C8FF00'/><path d='M16 6v10' stroke='%230D0D0D' stroke-width='3' stroke-linecap='round'/><path d='M10 9.5A9 9 0 1 0 22 9.5' stroke='%230D0D0D' stroke-width='3' stroke-linecap='round' fill='none'/></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --black:#0D0D0D;--black-2:#111;--black-3:#1A1A1A;--black-4:#222;
+  --white:#F5F0E8;--w60:rgba(245,240,232,.6);--w30:rgba(245,240,232,.3);--w10:rgba(245,240,232,.1);
+  --accent:#C8FF00;--ad:rgba(200,255,0,.12);--ab:rgba(200,255,0,.28);
+  --orange:#FF6B35;--ob:rgba(255,107,53,.25);--od:rgba(255,107,53,.08);
+  --border:rgba(245,240,232,.08);
+  --fd:'Bebas Neue',sans-serif;--fb:'Cabinet Grotesk',sans-serif;
+}
+body{background:var(--black);color:var(--white);font-family:var(--fb);overflow-x:hidden;cursor:none;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9990;opacity:.5;}
+.cur{position:fixed;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#c1{width:10px;height:10px;background:var(--accent);z-index:9999;transition:width .15s,height .15s;}
+#c2{width:34px;height:34px;border:1px solid rgba(200,255,0,.4);z-index:9998;transition:width .25s,height .25s;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1280px;margin:0 auto;padding:0 3rem;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(13,13,13,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .3s;}
+.n-logo{display:flex;align-items:center;gap:10px;}
+.n-icon{width:34px;height:34px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;transition:transform .3s;}
+.n-logo:hover .n-icon{transform:rotate(12deg) scale(1.08);}
+.n-name{font-family:var(--fd);font-size:1.35rem;letter-spacing:.06em;color:var(--white);line-height:1;}
+.n-sub{font-size:.58rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;display:block;}
+.n-links{display:flex;gap:2.5rem;list-style:none;}
+.n-links a{font-size:.72rem;color:var(--w60);letter-spacing:.1em;text-transform:uppercase;transition:color .2s;position:relative;}
+.n-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--accent);transition:width .3s;}
+.n-links a:hover{color:var(--white);}
+.n-links a:hover::after{width:100%;}
+.n-cta{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--black);padding:.55rem 1.35rem;border-radius:4px;font-weight:700;transition:all .2s;}
+.n-cta:hover{background:#d4ff1a;transform:translateY(-1px);}
+.n-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.n-burger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;}
+.mob-nav{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(13,13,13,.98);backdrop-filter:blur(20px);padding:2rem;border-bottom:1px solid var(--border);flex-direction:column;gap:1.25rem;z-index:199;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-size:.8rem;color:var(--w60);letter-spacing:.1em;text-transform:uppercase;}
+
+/* ── HERO PARALLAX ─────────────────────────────────────────────── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:80px;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-glow{position:absolute;top:-20%;left:-10%;width:70%;height:70%;background:radial-gradient(ellipse,rgba(200,255,0,.08) 0%,transparent 70%);pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,255,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.025) 1px,transparent 1px);background-size:60px 60px;}
+.hero-lines{position:absolute;inset:0;overflow:hidden;}
+.hero-line{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,255,0,.15),transparent);animation:scanline 4s linear infinite;}
+.hero-line:nth-child(2){animation-delay:1.3s;opacity:.5;}
+.hero-line:nth-child(3){animation-delay:2.6s;opacity:.3;}
+@keyframes scanline{0%{top:-2px;opacity:0;}10%{opacity:1;}90%{opacity:.3;}100%{top:100%;opacity:0;}}
+.hero-inner{position:relative;z-index:2;width:100%;padding:4rem 0;}
+.hero-breadcrumb{font-size:.62rem;color:var(--w30);letter-spacing:.06em;margin-bottom:1.5rem;}
+.hero-breadcrumb a{color:var(--w30);}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);background:var(--ad);border:1px solid var(--ab);padding:5px 14px;border-radius:2px;margin-bottom:2rem;}
+.hero-tag-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 1.5s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+
+/* PARALLAX LAYERS */
+.p-layer{will-change:transform;}
+.hero-title{font-family:var(--fd);font-size:clamp(3rem,8vw,7.5rem);line-height:.9;letter-spacing:.02em;color:var(--white);margin-bottom:1.5rem;}
+.hero-title .outline{color:transparent;-webkit-text-stroke:1.5px rgba(245,240,232,.2);}
+.hero-title .lime{color:var(--accent);}
+.hero-subtitle{font-size:1.05rem;color:var(--w60);line-height:1.75;max-width:520px;margin-bottom:3rem;}
+.hero-meta{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid var(--border);}
+.hero-meta-item{display:flex;flex-direction:column;gap:3px;}
+.hero-meta-label{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--w30);}
+.hero-meta-val{font-family:var(--fd);font-size:1rem;letter-spacing:.04em;color:var(--white);}
+
+/* FLOATING BADGE */
+.hero-badge{position:absolute;right:5%;top:35%;background:var(--black-3);border:1px solid var(--ab);border-radius:12px;padding:1.25rem 1.5rem;text-align:center;animation:float 3s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.hero-badge-n{font-family:var(--fd);font-size:3rem;color:var(--accent);line-height:1;}
+.hero-badge-l{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--w30);margin-top:2px;}
+
+/* ── STATS EXPLOSION ───────────────────────────────────────────── */
+.stats-band{padding:5rem 0;position:relative;overflow:hidden;}
+.stats-band::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,255,0,.03),transparent 50%,rgba(200,255,0,.02));}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.stat-card{background:var(--black-3);padding:2.5rem 1.5rem;text-align:center;position:relative;overflow:hidden;transition:background .3s;}
+.stat-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(200,255,0,.06),transparent 70%);opacity:0;transition:opacity .4s;}
+.stat-card:hover{background:var(--black-4);}
+.stat-card:hover::after{opacity:1;}
+.stat-n{font-family:var(--fd);font-size:3.5rem;color:var(--accent);line-height:1;margin-bottom:6px;display:block;transition:transform .2s;}
+.stat-card:hover .stat-n{transform:scale(1.08);}
+.stat-l{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--w30);}
+.stat-card.exploded .stat-n{animation:explode .4s ease;}
+@keyframes explode{0%{transform:scale(1);}40%{transform:scale(1.3);}70%{transform:scale(.95);}100%{transform:scale(1);}}
+
+/* ── CHALLENGE / SOLUTION ──────────────────────────────────────── */
+.split-section{padding:6rem 0;}
+.split-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:3rem;}
+.split-label::before{content:'';width:22px;height:1px;background:var(--accent);}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.split-card{border-radius:14px;padding:2.5rem;position:relative;overflow:hidden;}
+.split-card.prob{background:var(--od);border:1px solid var(--ob);}
+.split-card.sol{background:var(--ad);border:1px solid var(--ab);}
+.split-card-icon{font-size:2rem;margin-bottom:1rem;}
+.split-card h3{font-family:var(--fd);font-size:1.6rem;letter-spacing:.04em;margin-bottom:1.25rem;}
+.split-card.prob h3{color:var(--orange);}
+.split-card.sol h3{color:var(--accent);}
+.split-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+.split-list li{font-size:.9rem;color:var(--w60);padding-left:1.4rem;position:relative;line-height:1.5;}
+.split-card.prob .split-list li::before{content:'×';position:absolute;left:0;color:var(--orange);font-weight:700;}
+.split-card.sol .split-list li::before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700;}
+
+/* ── TIMELINE INTERACTIVO ──────────────────────────────────────── */
+.timeline-section{padding:6rem 0;background:var(--black-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.timeline-inner{max-width:900px;margin:0 auto;}
+.timeline-track{position:relative;padding-left:3rem;}
+.timeline-track::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--border);}
+.timeline-track::after{content:'';position:absolute;left:10px;top:0;width:2px;height:0;background:var(--accent);transition:height .1s linear;box-shadow:0 0 8px rgba(200,255,0,.4);}
+.tl-item{position:relative;padding-bottom:3rem;opacity:.35;transition:opacity .4s;}
+.tl-item.active{opacity:1;}
+.tl-dot{position:absolute;left:-3rem;top:0;width:22px;height:22px;border-radius:50%;background:var(--black-3);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .4s;z-index:1;}
+.tl-item.active .tl-dot{background:var(--accent);border-color:var(--accent);box-shadow:0 0 16px rgba(200,255,0,.5);}
+.tl-dot svg{width:10px;height:10px;fill:var(--black);opacity:0;transition:opacity .3s;}
+.tl-item.active .tl-dot svg{opacity:1;}
+.tl-day{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;opacity:0;transform:translateX(-8px);transition:all .4s;}
+.tl-item.active .tl-day{opacity:1;transform:none;}
+.tl-title{font-family:var(--fd);font-size:1.4rem;letter-spacing:.04em;color:var(--white);margin-bottom:.5rem;}
+.tl-desc{font-size:.88rem;color:var(--w60);line-height:1.65;max-width:560px;}
+.tl-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem;}
+.tl-tag{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--w30);border:1px solid var(--border);padding:3px 10px;border-radius:20px;}
+.tl-item.active .tl-tag{color:var(--accent);border-color:var(--ab);}
+
+/* ── BROWSER MOCKUP ────────────────────────────────────────────── */
+.mockup-section{padding:6rem 0;}
+.mockup-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:2.5rem;}
+.mockup-label::before{content:'';width:22px;height:1px;background:var(--accent);}
+.browser{background:var(--black-3);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5);}
+.browser-bar{background:var(--black-4);border-bottom:1px solid var(--border);padding:.75rem 1rem;display:flex;align-items:center;gap:1rem;}
+.browser-dots{display:flex;gap:6px;}
+.browser-dot{width:10px;height:10px;border-radius:50%;}
+.browser-dot.r{background:rgba(255,95,87,.7);}
+.browser-dot.y{background:rgba(255,189,46,.7);}
+.browser-dot.g{background:rgba(40,202,65,.7);}
+.browser-url{flex:1;background:rgba(245,240,232,.05);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--w30);letter-spacing:.02em;}
+.browser-screen{height:460px;overflow-y:scroll;position:relative;cursor:ns-resize;scrollbar-width:thin;scrollbar-color:rgba(200,255,0,.2) transparent;}
+.browser-screen::-webkit-scrollbar{width:4px;}
+.browser-screen::-webkit-scrollbar-thumb{background:rgba(200,255,0,.2);border-radius:2px;}
+.browser-screen img{width:100%;display:block;object-fit:cover;}
+.browser-hint{text-align:center;font-size:.62rem;color:var(--w30);letter-spacing:.06em;margin-top:.75rem;}
+
+/* BEFORE / AFTER REVEAL */
+.ba-section{padding:6rem 0;background:var(--black-2);border-top:1px solid var(--border);}
+.ba-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:2.5rem;}
+.ba-label::before{content:'';width:22px;height:1px;background:var(--accent);}
+.ba-wrap{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border);cursor:col-resize;user-select:none;}
+.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.ba-before{z-index:1;}
+.ba-after{z-index:2;clip-path:inset(0 50% 0 0);transition:clip-path .05s linear;}
+.ba-divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--accent);z-index:3;transform:translateX(-50%);box-shadow:0 0 12px rgba(200,255,0,.6);transition:left .05s linear;}
+.ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;background:var(--accent);border-radius:50%;z-index:4;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(200,255,0,.4);transition:left .05s linear;}
+.ba-handle svg{width:18px;height:18px;fill:var(--black);}
+.ba-labels{display:flex;justify-content:space-between;margin-top:1rem;}
+.ba-lbl{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--w30);}
+.ba-height{height:420px;}
+
+/* ── ENTREGABLES ───────────────────────────────────────────────── */
+.del-section{padding:6rem 0;}
+.del-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;}
+.del-card{background:var(--black-3);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:all .3s;position:relative;overflow:hidden;}
+.del-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,255,0,.04),transparent);opacity:0;transition:opacity .3s;}
+.del-card:hover{border-color:var(--ab);transform:translateY(-4px);}
+.del-card:hover::before{opacity:1;}
+.del-icon{font-size:1.6rem;margin-bottom:.75rem;}
+.del-name{font-family:var(--fd);font-size:1.1rem;letter-spacing:.04em;color:var(--white);margin-bottom:.35rem;}
+.del-desc{font-size:.8rem;color:var(--w60);line-height:1.55;}
+
+/* ── TRUST BAR ─────────────────────────────────────────────────── */
+.trust-bar{padding:2rem 0;background:var(--black-4);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--w30);}
+.trust-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;flex-shrink:0;}
+
+/* ── RESULTADOS 30 DÍAS ────────────────────────────────────────── */
+.results-section{padding:6rem 0;background:var(--black-2);border-top:1px solid var(--border);}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+.result-card{background:var(--black-3);border:1px solid var(--border);border-radius:14px;padding:2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
+.result-card:hover{border-color:var(--ab);transform:translateY(-4px);}
+.result-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),rgba(200,255,0,.3));}
+.result-icon{font-size:1.6rem;margin-bottom:.75rem;}
+.result-n{font-family:var(--fd);font-size:2.8rem;color:var(--accent);line-height:1;margin-bottom:4px;}
+.result-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--w30);margin-bottom:.6rem;}
+.result-desc{font-size:.82rem;color:var(--w60);line-height:1.55;}
+.result-badge{display:inline-flex;align-items:center;gap:5px;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--ad);border:1px solid var(--ab);padding:3px 10px;border-radius:20px;margin-top:.6rem;}
+
+/* ── ¿TU NEGOCIO SE PARECE? ────────────────────────────────────── */
+.similar-section{padding:6rem 0;}
+.similar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}
+.similar-card{background:var(--black-3);border:1px solid var(--border);border-radius:12px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:all .3s;cursor:default;}
+.similar-card:hover{border-color:var(--ab);background:var(--black-4);}
+.similar-icon{font-size:1.8rem;flex-shrink:0;}
+.similar-name{font-family:var(--fd);font-size:1.1rem;letter-spacing:.04em;color:var(--white);margin-bottom:.25rem;}
+.similar-desc{font-size:.8rem;color:var(--w60);line-height:1.5;}
+.similar-match{display:inline-flex;align-items:center;gap:5px;font-size:.58rem;letter-spacing:.08em;color:var(--accent);margin-top:.5rem;}
+.similar-match::before{content:'✓';font-weight:700;}
+
+/* ── MINI PLANES ───────────────────────────────────────────────── */
+.planes-section{padding:6rem 0;background:var(--black-2);border-top:1px solid var(--border);}
+.planes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;}
+.plan-card{background:var(--black-3);border:1px solid var(--border);border-radius:14px;padding:2rem;position:relative;transition:all .3s;}
+.plan-card:hover{transform:translateY(-4px);border-color:var(--ab);}
+.plan-card.featured{border-color:var(--ab);background:linear-gradient(135deg,rgba(200,255,0,.05),var(--black-3));}
+.plan-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--black);font-size:.55rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 12px;border-radius:20px;white-space:nowrap;}
+.plan-icon{font-size:1.5rem;margin-bottom:.75rem;}
+.plan-name{font-family:var(--fd);font-size:1.4rem;letter-spacing:.06em;color:var(--white);margin-bottom:.25rem;}
+.plan-desc{font-size:.78rem;color:var(--w60);line-height:1.5;margin-bottom:1.25rem;}
+.plan-feats{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem;}
+.plan-feats li{font-size:.78rem;color:var(--w60);padding-left:1.1rem;position:relative;line-height:1.4;}
+.plan-feats li::before{content:'→';position:absolute;left:0;color:var(--accent);}
+.plan-cta{display:block;text-align:center;padding:.75rem;border-radius:6px;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:all .2s;}
+.plan-card.featured .plan-cta{background:var(--accent);color:var(--black);}
+.plan-card.featured .plan-cta:hover{background:#d4ff1a;}
+.plan-card:not(.featured) .plan-cta{border:1px solid var(--border);color:var(--w60);}
+.plan-card:not(.featured) .plan-cta:hover{border-color:var(--ab);color:var(--white);}
+
+.quote-section{padding:4rem 0;}
+.quote-box{background:var(--black-3);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 16px 16px 0;padding:2.5rem 3rem;position:relative;overflow:hidden;}
+.quote-box::before{content:'"';position:absolute;top:-20px;right:30px;font-family:var(--fd);font-size:12rem;color:rgba(200,255,0,.04);line-height:1;pointer-events:none;}
+.quote-text{font-family:var(--fd);font-size:clamp(1.2rem,3vw,1.8rem);letter-spacing:.02em;color:var(--white);line-height:1.4;margin-bottom:1.25rem;}
+.quote-author{font-size:.75rem;color:var(--w30);letter-spacing:.06em;}
+
+/* ── CTA FINAL ANIMADO ─────────────────────────────────────────── */
+.cta-final{padding:6rem 0;}
+.cta-box{border-radius:20px;padding:4rem;text-align:center;position:relative;overflow:hidden;border:1px solid var(--ab);}
+.cta-box-bg{position:absolute;inset:0;z-index:0;}
+.cta-glow-1{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,.15),transparent 70%);top:-100px;left:-100px;animation:breathe 4s ease-in-out infinite;}
+.cta-glow-2{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,.1),transparent 70%);bottom:-80px;right:-60px;animation:breathe 4s ease-in-out infinite reverse;animation-delay:2s;}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.7;}50%{transform:scale(1.2);opacity:1;}}
+.cta-box-inner{position:relative;z-index:1;}
+.cta-box h2{font-family:var(--fd);font-size:clamp(2rem,5vw,4rem);color:var(--white);margin-bottom:.75rem;letter-spacing:.03em;}
+.cta-box h2 span{color:var(--accent);}
+.cta-box p{font-size:1rem;color:var(--w60);max-width:500px;margin:0 auto 2.5rem;line-height:1.75;}
+.cta-acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--black);padding:1rem 2.25rem;border-radius:4px;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:all .25s;}
+.btn-p:hover{background:#d4ff1a;transform:translateY(-3px);box-shadow:0 12px 30px rgba(200,255,0,.3);}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);padding:1rem 2.25rem;border-radius:4px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);transition:all .25s;}
+.btn-s:hover{border-color:rgba(245,240,232,.25);background:rgba(245,240,232,.04);}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.rv.vis{opacity:1;transform:none;}
+.d1{transition-delay:.06s;}.d2{transition-delay:.12s;}.d3{transition-delay:.18s;}.d4{transition-delay:.24s;}.d5{transition-delay:.3s;}.d6{transition-delay:.36s;}
+
+/* FOOTER */
+footer{background:var(--black-3);border-top:1px solid var(--border);padding:4rem 0 2rem;}
+.ft-in{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.ft-brand{display:flex;align-items:center;gap:.75rem;font-family:var(--fd);font-size:1rem;letter-spacing:.08em;margin-bottom:.75rem;}
+.ft-bico{width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.ft-bd{font-size:.8rem;color:var(--w30);line-height:1.65;}
+.ft-col ul{list-style:none;}
+.ft-col ul li{margin-bottom:.5rem;}
+.ft-col ul a{font-size:.82rem;color:var(--w30);transition:color .2s;}
+.ft-col ul a:hover{color:var(--accent);}
+.ft-ct{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--w60);margin-bottom:1rem;}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;border-top:1px solid var(--border);}
+.ft-copy{font-size:.75rem;color:var(--w30);}
+
+@media(max-width:1024px){.hero-badge{display:none;}}
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem;}
+  .n-links,.n-cta{display:none;}
+  .n-burger{display:flex;}
+  .wrap{padding:0 1.25rem;}
+  .hero{min-height:auto;padding:6rem 0 3rem;}
+  .hero-title{font-size:clamp(2.5rem,10vw,4rem);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .split-grid{grid-template-columns:1fr;}
+  .del-grid{grid-template-columns:1fr 1fr;}
+  .browser-screen{height:280px;}
+  .ba-height{height:220px;}
+  .cta-acts{flex-direction:column;align-items:center;}
+  .ft-in{grid-template-columns:1fr 1fr;gap:1.5rem;}
+  .quote-box{padding:1.5rem;}
+}
+@media(max-width:480px){
+  .del-grid{grid-template-columns:1fr;}
+  .ft-in{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="cur" id="c1"></div>
+<div class="cur" id="c2"></div>
+
+<nav id="mainNav">
+  <a href="/" class="n-logo">
+    <div class="n-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3V12" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round"/><path d="M7.5 5.5A8 8 0 1 0 16.5 5.5" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></div>
+    <div><span class="n-name">MODO BACÁN</span><span class="n-sub">Agencia GEO · Chile</span></div>
+  </a>
+  <ul class="n-links">
+    <li><a href="/servicios">Servicios</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/precios">Planes</a></li>
+    <li><a href="/casos" style="color:var(--accent);">Casos</a></li>
+    <li><a href="/#contacto">Contacto</a></li>
+  </ul>
+  <a href="/#contacto" class="n-cta">Hablemos →</a>
+  <button class="n-burger" id="burger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="/" onclick="closeMob()">Inicio</a>
+  <a href="/servicios" onclick="closeMob()">Servicios</a>
+  <a href="/blog" onclick="closeMob()">Blog</a>
+  <a href="/precios" onclick="closeMob()">Planes</a>
+  <a href="/#contacto" onclick="closeMob()" style="color:var(--accent)">→ Hablemos</a>
+</div>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section class="hero" id="heroSection">
+  <div class="hero-bg">
+    <div class="hero-glow p-layer" data-speed="0.3"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-lines">
+      <div class="hero-line"></div>
+      <div class="hero-line"></div>
+      <div class="hero-line"></div>
+    </div>
+  </div>
+  <div class="wrap" style="width:100%;">
+    <div class="hero-inner">
+      <div class="hero-breadcrumb rv"><a href="/">Inicio</a> / <a href="/casos">Casos</a> / Emercar</div>
+      <div class="hero-tag rv d1"><div class="hero-tag-dot"></div> Caso de éxito · 2026</div>
+      <h1 class="hero-title p-layer rv d2" data-speed="0.15">
+        <span class="outline">DE CERO A</span><br>
+        <span class="lime">PRESENCIA</span><br>
+        DIGITAL.
+      </h1>
+      <p class="hero-subtitle rv d3">Emercar, distribuidora de alimentos en Temuco, no existía en internet. Hoy tiene un sitio profesional, optimizado para Google y listo para aparecer en ChatGPT y Perplexity — entregado en <strong style="color:var(--white);">7 días</strong>.</p>
+      <div class="hero-meta rv d4">
+        <div class="hero-meta-item"><span class="hero-meta-label">Cliente</span><span class="hero-meta-val">Emercar</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-label">Rubro</span><span class="hero-meta-val">Dist. Alimentos</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-label">Ciudad</span><span class="hero-meta-val">Temuco</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-label">Entrega</span><span class="hero-meta-val">7 días</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-label">Servicios</span><span class="hero-meta-val">Web + SEO + GEO</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-badge rv d5">
+    <div class="hero-badge-n">7</div>
+    <div class="hero-badge-l">días de entrega</div>
+  </div>
+</section>
+
+<!-- ── STATS ─────────────────────────────────────────────────────── -->
+<section class="stats-band">
+  <div class="wrap">
+    <div class="stats-grid rv">
+      <div class="stat-card"><span class="stat-n" data-target="0" data-suf="">0</span><div class="stat-l">Presencia digital antes</div></div>
+      <div class="stat-card"><span class="stat-n" data-target="7" data-suf="d">0d</span><div class="stat-l">Tiempo de entrega</div></div>
+      <div class="stat-card"><span class="stat-n" data-target="100" data-suf="%">0%</span><div class="stat-l">Mobile-first</div></div>
+      <div class="stat-card"><span class="stat-n" data-target="3" data-suf=" IAs">0 IAs</span><div class="stat-l">Plataformas optimizadas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ───────────────────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-dot"></div>+10 clientes activos</div>
+    <div class="trust-item"><div class="trust-dot"></div>Entrega en 5–7 días</div>
+    <div class="trust-item"><div class="trust-dot"></div>Sin contrato de permanencia</div>
+    <div class="trust-item"><div class="trust-dot"></div>100% remoto · Todo Chile</div>
+    <div class="trust-item"><div class="trust-dot"></div>SEO + GEO incluido</div>
+  </div>
+</div>
+
+<!-- ── DESAFÍO / SOLUCIÓN ─────────────────────────────────────────── -->
+<section class="split-section">
+  <div class="wrap">
+    <div class="split-label rv">El contexto</div>
+    <div class="split-grid">
+      <div class="split-card prob rv d1">
+        <div class="split-card-icon">⚡</div>
+        <h3>El desafío</h3>
+        <ul class="split-list">
+          <li>Sin sitio web ni dominio propio</li>
+          <li>Cero presencia en Google</li>
+          <li>Sin perfil en Google Business</li>
+          <li>Competencia establecida en Temuco</li>
+          <li>Clientes no podían encontrarlos</li>
+          <li>Necesitaban resultados rápidos</li>
+        </ul>
+      </div>
+      <div class="split-card sol rv d2">
+        <div class="split-card-icon">🚀</div>
+        <h3>La solución</h3>
+        <ul class="split-list">
+          <li>Sitio web a medida mobile-first</li>
+          <li>SEO técnico desde el día uno</li>
+          <li>Schema Markup para IAs</li>
+          <li>Google Business optimizado</li>
+          <li>Formulario de contacto + WhatsApp</li>
+          <li>Deploy en Vercel con CDN global</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TIMELINE INTERACTIVO ───────────────────────────────────────── -->
+<section class="timeline-section">
+  <div class="wrap">
+    <div class="timeline-inner">
+      <div class="split-label rv">El proceso</div>
+      <div class="timeline-track" id="timelineTrack">
+        <div class="tl-item" data-day="0">
+          <div class="tl-dot"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div class="tl-day">Día 1</div>
+          <div class="tl-title">Brief y estrategia</div>
+          <div class="tl-desc">Levantamiento de información, objetivos, estructura y paleta visual. Definimos la arquitectura de contenido y los diferenciadores del negocio.</div>
+          <div class="tl-tags"><span class="tl-tag">Estrategia</span><span class="tl-tag">UX</span><span class="tl-tag">Brief</span></div>
+        </div>
+        <div class="tl-item" data-day="1">
+          <div class="tl-dot"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div class="tl-day">Días 2 – 4</div>
+          <div class="tl-title">Diseño y desarrollo</div>
+          <div class="tl-desc">Construcción del sitio con diseño a medida, responsive, con velocidad optimizada y Core Web Vitals en verde desde el primer deploy.</div>
+          <div class="tl-tags"><span class="tl-tag">HTML/CSS</span><span class="tl-tag">Mobile-first</span><span class="tl-tag">Performance</span></div>
+        </div>
+        <div class="tl-item" data-day="2">
+          <div class="tl-dot"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div class="tl-day">Día 5</div>
+          <div class="tl-title">SEO + GEO</div>
+          <div class="tl-desc">Schema Markup (LocalBusiness, FAQPage), sitemap.xml, llms.txt, meta tags y estructura semántica para visibilidad en Google y en IAs generativas.</div>
+          <div class="tl-tags"><span class="tl-tag">Schema</span><span class="tl-tag">SEO Técnico</span><span class="tl-tag">GEO</span></div>
+        </div>
+        <div class="tl-item" data-day="3">
+          <div class="tl-dot"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div class="tl-day">Días 6 – 7</div>
+          <div class="tl-title">Revisión y lanzamiento</div>
+          <div class="tl-desc">Pruebas en múltiples dispositivos, deploy en Vercel, configuración del dominio y entrega final. El cliente estuvo involucrado en cada paso.</div>
+          <div class="tl-tags"><span class="tl-tag">QA</span><span class="tl-tag">Vercel</span><span class="tl-tag">Deploy</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BROWSER MOCKUP ─────────────────────────────────────────────── -->
+<section class="mockup-section">
+  <div class="wrap">
+    <div class="mockup-label rv">El resultado — explóralo</div>
+    <div class="browser rv d1">
+      <div class="browser-bar">
+        <div class="browser-dots">
+          <div class="browser-dot r"></div>
+          <div class="browser-dot y"></div>
+          <div class="browser-dot g"></div>
+        </div>
+        <div class="browser-url">emercar.cl</div>
+      </div>
+      <div class="browser-screen" id="browserScreen">
+        <!-- Reemplazar con screenshot real del sitio Emercar -->
+        <img src="/emercar-screenshot.png" alt="Sitio web Emercar — vista completa" loading="lazy" style="width:100%;height:auto;display:block;">
+      </div>
+    </div>
+    <div class="browser-hint rv">↕ Puedes hacer scroll dentro del sitio</div>
+  </div>
+</section>
+
+<!-- ── BEFORE / AFTER ─────────────────────────────────────────────── -->
+<section class="ba-section">
+  <div class="wrap">
+    <div class="ba-label rv">Antes y después</div>
+    <div class="ba-wrap ba-height rv" id="baWrap">
+      <!-- BEFORE: representación vacía / sin presencia -->
+      <div style="position:absolute;inset:0;background:var(--black-4);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;z-index:1;">
+        <div style="font-family:var(--fd);font-size:3rem;color:var(--w30);letter-spacing:.1em;">SIN SITIO WEB</div>
+        <div style="font-size:.75rem;color:var(--w30);letter-spacing:.1em;">Antes de Modo Bacán</div>
+      </div>
+      <!-- AFTER: sitio terminado -->
+      <img src="/emercar-screenshot-mobile.png" alt="Sitio Emercar terminado" class="ba-img ba-after" id="baAfter" loading="lazy">
+      <div class="ba-divider" id="baDivider"></div>
+      <div class="ba-handle" id="baHandle">
+        <svg viewBox="0 0 24 24"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg>
+      </div>
+    </div>
+    <div class="ba-labels rv">
+      <span class="ba-lbl">← Antes</span>
+      <span class="ba-lbl">Después →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── ENTREGABLES ────────────────────────────────────────────────── -->
+<section class="del-section">
+  <div class="wrap">
+    <div class="split-label rv">Entregables</div>
+    <div class="del-grid">
+      <div class="del-card rv d1"><div class="del-icon">🌐</div><div class="del-name">Sitio Web</div><div class="del-desc">Diseño a medida, mobile-first, velocidad optimizada con Core Web Vitals en verde.</div></div>
+      <div class="del-card rv d2"><div class="del-icon">🔍</div><div class="del-name">SEO Técnico</div><div class="del-desc">Estructura semántica, meta tags, sitemap.xml y robots.txt configurados desde el inicio.</div></div>
+      <div class="del-card rv d3"><div class="del-icon">🤖</div><div class="del-name">GEO Ready</div><div class="del-desc">Schema Markup y llms.txt para visibilidad en ChatGPT, Perplexity y Google AI.</div></div>
+      <div class="del-card rv d4"><div class="del-icon">📍</div><div class="del-name">Google Business</div><div class="del-desc">Perfil optimizado con categorías, descripción y datos de contacto consistentes.</div></div>
+      <div class="del-card rv d5"><div class="del-icon">💬</div><div class="del-name">WhatsApp + Formulario</div><div class="del-desc">Canales de contacto integrados para capturar consultas sin fricción.</div></div>
+      <div class="del-card rv d6"><div class="del-icon">⚡</div><div class="del-name">Deploy en Vercel</div><div class="del-desc">Hosting con CDN global, HTTPS automático y deploys continuos desde GitHub.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESULTADOS A 30 DÍAS ───────────────────────────────────────── -->
+<section class="results-section">
+  <div class="wrap">
+    <div class="split-label rv">Resultados a 30 días</div>
+    <div class="results-grid">
+      <div class="result-card rv d1">
+        <div class="result-icon">🔍</div>
+        <div class="result-n">Top 10</div>
+        <div class="result-label">Google · Búsquedas locales</div>
+        <div class="result-desc">El sitio apareció en los primeros resultados de Google para búsquedas de distribución de alimentos en Temuco en menos de 30 días.</div>
+        <span class="result-badge">✓ Indexado en 48hrs</span>
+      </div>
+      <div class="result-card rv d2">
+        <div class="result-icon">⚡</div>
+        <div class="result-n">95/100</div>
+        <div class="result-label">PageSpeed · Mobile</div>
+        <div class="result-desc">Puntuación de rendimiento mobile en verde desde el primer deploy. Core Web Vitals aprobados sin optimizaciones posteriores.</div>
+        <span class="result-badge">✓ Core Web Vitals</span>
+      </div>
+      <div class="result-card rv d3">
+        <div class="result-icon">🤖</div>
+        <div class="result-n">3 IAs</div>
+        <div class="result-label">ChatGPT · Perplexity · Gemini</div>
+        <div class="result-desc">Con Schema Markup y llms.txt implementados desde el día uno, el sitio está listo para ser citado por las IAs generativas.</div>
+        <span class="result-badge">✓ GEO Ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ¿TU NEGOCIO SE PARECE? ─────────────────────────────────────── -->
+<section class="similar-section">
+  <div class="wrap">
+    <div class="split-label rv">¿Tu negocio se parece a Emercar?</div>
+    <p class="rv" style="color:var(--w60);font-size:1rem;line-height:1.7;max-width:600px;margin-bottom:2rem;">Si tu negocio es local, tiene clientes potenciales buscando online y todavía no tiene presencia digital profesional, esto también es para ti.</p>
+    <div class="similar-grid">
+      <div class="similar-card rv d1">
+        <div class="similar-icon">🏪</div>
+        <div>
+          <div class="similar-name">Tiendas y distribuidoras</div>
+          <div class="similar-desc">Negocios con productos físicos que quieren vender o hacer contacto inicial online antes de la venta presencial.</div>
+          <div class="similar-match">Mismo perfil que Emercar</div>
+        </div>
+      </div>
+      <div class="similar-card rv d2">
+        <div class="similar-icon">🐾</div>
+        <div>
+          <div class="similar-name">Servicios profesionales locales</div>
+          <div class="similar-desc">Veterinarias, clínicas, estudios jurídicos, talleres mecánicos — cualquier servicio con clientes buscando en Google.</div>
+          <div class="similar-match">Alta intención de búsqueda local</div>
+        </div>
+      </div>
+      <div class="similar-card rv d3">
+        <div class="similar-icon">🍽️</div>
+        <div>
+          <div class="similar-name">Gastronomía y turismo</div>
+          <div class="similar-desc">Restaurantes, cafeterías, hoteles y operadores turísticos que dependen de que la gente los encuentre antes de decidir.</div>
+          <div class="similar-match">Búsquedas con intención inmediata</div>
+        </div>
+      </div>
+      <div class="similar-card rv d4">
+        <div class="similar-icon">🏗️</div>
+        <div>
+          <div class="similar-name">Constructoras y contratistas</div>
+          <div class="similar-desc">Empresas de construcción, inmobiliarias o contratistas que necesitan un sitio que transmita seriedad y genere consultas.</div>
+          <div class="similar-match">Proyectos de alto valor</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUOTE ──────────────────────────────────────────────────────── -->
+<section class="quote-section">
+  <div class="wrap">
+    <div class="quote-box rv">
+      <div class="quote-text">"Antes no existíamos en internet. Hoy tenemos un sitio que nos representa bien y nuestros clientes nos pueden encontrar fácilmente."</div>
+      <div class="quote-author">— Cliente Emercar · Temuco, Chile · 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MINI PLANES ─────────────────────────────────────────────────── -->
+<section class="planes-section">
+  <div class="wrap">
+    <div class="split-label rv">¿Cuánto cuesta algo así?</div>
+    <p class="rv" style="color:var(--w60);font-size:1rem;line-height:1.7;max-width:560px;margin-bottom:2.5rem;">Tenemos planes para cada etapa. El proyecto de Emercar entró por nuestro plan Arranque — sin mensualidad y con entrega en 7 días.</p>
+    <div class="planes-grid">
+      <div class="plan-card rv d1">
+        <div class="plan-icon">🚀</div>
+        <div class="plan-name">Arranque</div>
+        <div class="plan-desc">Para partir con todo. Landing page profesional, SEO básico y Google Business. Sin mensualidad.</div>
+        <ul class="plan-feats">
+          <li>Landing page profesional</li>
+          <li>SEO básico</li>
+          <li>Google Business</li>
+          <li>Hosting y dominio</li>
+          <li>Entrega 5–7 días</li>
+        </ul>
+        <a href="/precios" class="plan-cta">Ver precio →</a>
+      </div>
+      <div class="plan-card featured rv d2">
+        <span class="plan-badge">⚡ El más pedido</span>
+        <div class="plan-icon">🏎️</div>
+        <div class="plan-name">A Todo Motor</div>
+        <div class="plan-desc">Sitio completo con blog, GEO, Google Ads y reportes quincenales. El que más pide la gente.</div>
+        <ul class="plan-feats">
+          <li>Sitio hasta 5 páginas</li>
+          <li>SEO avanzado + GEO completo</li>
+          <li>1 campaña Google Ads</li>
+          <li>Blog básico</li>
+          <li>Reportes quincenales</li>
+        </ul>
+        <a href="/precios" class="plan-cta">Consultar →</a>
+      </div>
+      <div class="plan-card rv d3">
+        <div class="plan-icon">👑</div>
+        <div class="plan-name">Encendido Total</div>
+        <div class="plan-desc">Para los que van en serio. Web premium, branding, Google Ads + Meta Ads y soporte prioritario.</div>
+        <ul class="plan-feats">
+          <li>Web premium</li>
+          <li>SEO avanzado + GEO</li>
+          <li>Google Ads + Meta Ads</li>
+          <li>Branding básico</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <a href="/precios" class="plan-cta">Consultar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ──────────────────────────────────────────────────── -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <div class="cta-box-bg">
+        <div class="cta-glow-1"></div>
+        <div class="cta-glow-2"></div>
+      </div>
+      <div class="cta-box-inner">
+        <h2>¿Tu negocio necesita<br><span>algo así?</span></h2>
+        <p>Trabajamos con pymes chilenas que quieren presencia digital profesional, rápida y optimizada para aparecer en Google y en las IAs generativas.</p>
+        <div class="cta-acts">
+          <a href="/#contacto" class="btn-p">Quiero un sitio como este →</a>
+          <a href="/precios" class="btn-s">Ver planes y precios</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-in">
+      <div>
+        <div class="ft-brand"><div class="ft-bico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3V12" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round"/><path d="M7.5 5.5A8 8 0 1 0 16.5 5.5" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></div>MODO BACÁN</div>
+        <div class="ft-bd">La primera agencia GEO de Chile.</div>
+      </div>
+      <div class="ft-col"><div class="ft-ct">Servicios</div><ul><li><a href="/landing">Landing Pages</a></li><li><a href="/seo">SEO</a></li><li><a href="/geo">GEO</a></li></ul></div>
+      <div class="ft-col"><div class="ft-ct">Recursos</div><ul><li><a href="/blog">Blog</a></li><li><a href="/casos">Casos</a></li><li><a href="/precios">Planes</a></li></ul></div>
+      <div class="ft-col"><div class="ft-ct">Contacto</div><ul><li><a href="https://wa.me/56954343686" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:sazoleonardo95@gmail.com">Email</a></li></ul></div>
+    </div>
+    <div class="ft-bot"><div class="ft-copy">© 2026 Modo Bacán</div><div style="font-size:.6rem;letter-spacing:.14em;color:var(--w30);">GEO CERTIFIED · CHILE 🇨🇱</div></div>
+  </div>
+</footer>
+
+<script>
+// ── CURSOR ─────────────────────────────────────────────────────────
+const c1=document.getElementById('c1'),c2=document.getElementById('c2');
+let mx=0,my=0,fx=0,fy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c1.style.left=mx+'px';c1.style.top=my+'px';});
+(function anim(){fx+=(mx-fx)*.12;fy+=(my-fy)*.12;c2.style.left=fx+'px';c2.style.top=fy+'px';requestAnimationFrame(anim);})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{c1.style.width='18px';c1.style.height='18px';c2.style.width='48px';c2.style.height='48px';});
+  el.addEventListener('mouseleave',()=>{c1.style.width='10px';c1.style.height='10px';c2.style.width='34px';c2.style.height='34px';});
+});
+
+// ── ESTELA ─────────────────────────────────────────────────────────
+if(!window.matchMedia('(max-width:768px)').matches){
+  document.addEventListener('mousemove',function(e){
+    var p=document.createElement('div'),size=Math.random()*6+3;
+    p.style.cssText='position:fixed;border-radius:50%;pointer-events:none;z-index:9997;left:'+(e.clientX-size/2)+'px;top:'+(e.clientY-size/2)+'px;width:'+size+'px;height:'+size+'px;background:rgba(200,255,0,'+(Math.random()*.5+.3)+');transition:opacity .6s,transform .6s;';
+    document.body.appendChild(p);
+    setTimeout(()=>{p.style.opacity='0';p.style.transform='scale(0)';},20);
+    setTimeout(()=>{p.parentNode&&p.parentNode.removeChild(p);},640);
+  });
+}
+
+// ── NAV ────────────────────────────────────────────────────────────
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>50?'rgba(13,13,13,.98)':'rgba(13,13,13,.88)';});
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('mobNav').classList.toggle('open'));
+function closeMob(){document.getElementById('mobNav').classList.remove('open');}
+
+// ── REVEAL ─────────────────────────────────────────────────────────
+const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+
+// ── 1. PARALLAX HERO ───────────────────────────────────────────────
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  document.querySelectorAll('.p-layer').forEach(el=>{
+    const speed=parseFloat(el.dataset.speed||0.2);
+    el.style.transform=`translateY(${sy*speed}px)`;
+  });
+});
+
+// ── 2. STATS EXPLOSION ─────────────────────────────────────────────
+(function(){
+  function animStat(el,target,suf,dur){
+    var start=null;
+    function step(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/dur,1);
+      var ease=1-Math.pow(1-p,3);
+      el.textContent=Math.round(target*ease)+suf;
+      if(p<1)requestAnimationFrame(step);
+      else{
+        el.textContent=target+suf;
+        el.closest('.stat-card').classList.add('exploded');
+        setTimeout(()=>el.closest('.stat-card').classList.remove('exploded'),400);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting)return;
+      const el=e.target;
+      if(el.dataset.counted)return;
+      el.dataset.counted='1';
+      obs.unobserve(el);
+      const target=parseInt(el.dataset.target);
+      const suf=el.dataset.suf||'';
+      if(target===0){el.textContent='0';return;}
+      setTimeout(()=>animStat(el,target,suf,1200),Math.random()*200);
+    });
+  },{threshold:.6});
+  document.querySelectorAll('.stat-n[data-target]').forEach(el=>obs.observe(el));
+})();
+
+// ── 3. TIMELINE INTERACTIVO ────────────────────────────────────────
+(function(){
+  const items=document.querySelectorAll('.tl-item');
+  const track=document.getElementById('timelineTrack');
+  if(!track)return;
+  function updateTimeline(){
+    const trackRect=track.getBoundingClientRect();
+    const trackTop=trackRect.top+window.scrollY;
+    const viewCenter=window.scrollY+window.innerHeight*0.55;
+    const progress=Math.max(0,Math.min(1,(viewCenter-trackTop)/(trackRect.height)));
+    const line=track.querySelector('::after')||track;
+    track.style.setProperty('--prog',(progress*100)+'%');
+    items.forEach((item,i)=>{
+      const itemRect=item.getBoundingClientRect();
+      const itemCenter=itemRect.top+itemRect.height/2;
+      if(itemCenter<window.innerHeight*0.65){
+        item.classList.add('active');
+      }
+    });
+  }
+  // Inject the ::after via a style tag
+  const st=document.createElement('style');
+  st.textContent='#timelineTrack::after{height:var(--prog,0%)!important;}';
+  document.head.appendChild(st);
+  track.style.setProperty('--prog','0%');
+  window.addEventListener('scroll',updateTimeline,{passive:true});
+  updateTimeline();
+})();
+
+// ── 4. BEFORE / AFTER SLIDER ───────────────────────────────────────
+(function(){
+  const wrap=document.getElementById('baWrap');
+  const after=document.getElementById('baAfter');
+  const divider=document.getElementById('baDivider');
+  const handle=document.getElementById('baHandle');
+  if(!wrap)return;
+  let dragging=false,pct=50;
+  function setPos(p){
+    pct=Math.max(5,Math.min(95,p));
+    after.style.clipPath=`inset(0 ${100-pct}% 0 0)`;
+    divider.style.left=pct+'%';
+    handle.style.left=pct+'%';
+  }
+  setPos(50);
+  wrap.addEventListener('mousedown',e=>{dragging=true;e.preventDefault();});
+  window.addEventListener('mouseup',()=>dragging=false);
+  window.addEventListener('mousemove',e=>{
+    if(!dragging)return;
+    const r=wrap.getBoundingClientRect();
+    setPos((e.clientX-r.left)/r.width*100);
+  });
+  wrap.addEventListener('touchstart',e=>{dragging=true;},{passive:true});
+  window.addEventListener('touchend',()=>dragging=false);
+  window.addEventListener('touchmove',e=>{
+    if(!dragging)return;
+    const r=wrap.getBoundingClientRect();
+    setPos((e.touches[0].clientX-r.left)/r.width*100);
+  },{passive:true});
+})();
+
+// ── 5. BROWSER MOCKUP SCROLL HINT ─────────────────────────────────
+(function(){
+  const screen=document.getElementById('browserScreen');
+  if(!screen)return;
+  let hinted=false;
+  screen.addEventListener('wheel',e=>{
+    e.stopPropagation();
+  },{passive:true});
+})();
+</script>
+<!-- ── CHAT WIDGET ──────────────────────────────────────────────── -->
+<div id="mbChat" style="position:fixed;bottom:1.85rem;right:1.85rem;z-index:300;font-family:'Cabinet Grotesk',sans-serif;">
+
+  <!-- Bubble -->
+  <div id="mbBubble" onclick="mbToggle()" style="width:52px;height:52px;background:#C8FF00;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 18px rgba(200,255,0,.35);transition:transform .2s;position:relative;" onmouseenter="this.style.transform='scale(1.08)'" onmouseleave="this.style.transform='scale(1)'">
+    <svg id="mbIconChat" viewBox="0 0 24 24" style="width:22px;height:22px;fill:#0D0D0D;transition:opacity .2s;"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    <svg id="mbIconClose" viewBox="0 0 24 24" style="width:20px;height:20px;fill:#0D0D0D;display:none;position:absolute;"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    <div id="mbBadge" style="position:absolute;top:-2px;right:-2px;width:16px;height:16px;background:#E24B4A;border-radius:50%;border:2px solid #0D0D0D;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;">1</div>
+  </div>
+
+  <!-- Window -->
+  <div id="mbWindow" style="display:none;position:absolute;bottom:64px;right:0;width:300px;background:#1A1A1A;border:1px solid rgba(245,240,232,.08);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.7);flex-direction:column;">
+
+    <!-- Header -->
+    <div style="background:#C8FF00;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:28px;height:28px;background:#0D0D0D;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;"><path d="M12 3V12" stroke="#C8FF00" stroke-width="2.5" stroke-linecap="round"/><path d="M7.5 5.5A8 8 0 1 0 16.5 5.5" stroke="#C8FF00" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:800;letter-spacing:.06em;color:#0D0D0D;">MODO BACÁN</div>
+          <div style="font-size:10px;color:rgba(13,13,13,.6);letter-spacing:.04em;">● En línea ahora</div>
+        </div>
+      </div>
+      <button onclick="mbToggle()" style="background:none;border:none;cursor:pointer;color:rgba(13,13,13,.7);font-size:20px;line-height:1;padding:0;">×</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="mbMsgs" style="padding:14px;display:flex;flex-direction:column;gap:8px;max-height:260px;overflow-y:auto;"></div>
+
+    <!-- Input -->
+    <div style="padding:10px 12px;border-top:1px solid rgba(245,240,232,.06);display:flex;gap:8px;align-items:center;">
+      <input id="mbInput" type="text" placeholder="Escribe tu mensaje..." onkeydown="if(event.key==='Enter')mbSend()" style="flex:1;background:#111;border:1px solid rgba(245,240,232,.1);border-radius:8px;padding:7px 10px;color:#F5F0E8;font-size:12px;font-family:inherit;outline:none;">
+      <button onclick="mbSend()" style="width:30px;height:30px;background:#C8FF00;border:none;border-radius:7px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#0D0D0D;"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.mb-msg-bot { max-width:85%;background:#222;color:rgba(245,240,232,.85);border-radius:12px 12px 12px 3px;padding:9px 12px;font-size:13px;line-height:1.55;align-self:flex-start; }
+.mb-msg-bot strong { color:#C8FF00; }
+.mb-msg-user { max-width:85%;background:#C8FF00;color:#0D0D0D;border-radius:12px 12px 3px 12px;padding:9px 12px;font-size:13px;font-weight:600;align-self:flex-end; }
+.mb-opt { background:transparent;border:1px solid rgba(200,255,0,.3);border-radius:8px;padding:8px 12px;color:#C8FF00;font-size:12px;font-family:'Cabinet Grotesk',sans-serif;cursor:pointer;text-align:left;transition:all .2s;width:100%; }
+.mb-opt:hover { background:rgba(200,255,0,.08);border-color:rgba(200,255,0,.6); }
+.mb-opts { display:flex;flex-direction:column;gap:6px;align-self:stretch; }
+.mb-typing { display:flex;gap:4px;align-items:center;padding:4px 2px; }
+.mb-typing span { width:6px;height:6px;background:rgba(245,240,232,.3);border-radius:50%;animation:mbBounce .9s ease infinite; }
+.mb-typing span:nth-child(2){animation-delay:.15s}
+.mb-typing span:nth-child(3){animation-delay:.3s}
+@keyframes mbBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+</style>
+
+<script>
+var mbOpen = false;
+var mbGoal = '';
+var mbPhone = '+56954343686';
+
+// Mapeo objetivo → solución + mensaje WA
+var mbSolutions = {
+  'Conseguir más clientes': {
+    sol: 'GEO + Landing Page',
+    msg: 'Necesito conseguir más clientes para mi negocio',
+    followup: '¿De qué rubro es tu negocio y en qué ciudad? Con eso te armo una estrategia de <strong>GEO + Landing Page</strong> enfocada en conversión.'
+  },
+  'Aparecer en Google': {
+    sol: 'SEO + GEO',
+    msg: 'Quiero aparecer en Google y en las IAs',
+    followup: 'Para aparecer en Google <em>y</em> en ChatGPT/Perplexity usamos <strong>SEO + GEO</strong> juntos. ¿En qué industria y ciudad estás?'
+  },
+  'Mejorar mi sitio web': {
+    sol: 'Landing Page / Rediseño',
+    msg: 'Quiero mejorar o rediseñar mi sitio web',
+    followup: 'Revisamos tu sitio actual y te proponemos mejoras concretas orientadas a conversión. ¿Tienes sitio web actualmente o necesitas uno desde cero?'
+  },
+  'Automatizar consultas': {
+    sol: 'Chat Widget + WhatsApp',
+    msg: 'Quiero automatizar las consultas de mis clientes',
+    followup: 'Implementamos un sistema de chat + WhatsApp que califica y deriva consultas automáticamente. ¿Cuántas consultas recibes actualmente por semana?'
+  }
+};
+
+function mbToggle() {
+  mbOpen = !mbOpen;
+  var w = document.getElementById('mbWindow');
+  var iconChat = document.getElementById('mbIconChat');
+  var iconClose = document.getElementById('mbIconClose');
+  var badge = document.getElementById('mbBadge');
+  if (mbOpen) {
+    w.style.display = 'flex';
+    iconChat.style.display = 'none';
+    iconClose.style.display = 'block';
+    if (badge) badge.style.display = 'none';
+    if (!document.getElementById('mbMsgs').hasChildNodes()) mbInit();
+  } else {
+    w.style.display = 'none';
+    iconChat.style.display = 'block';
+    iconClose.style.display = 'none';
+  }
+}
+
+function mbInit() {
+  mbAddBot('¡Hola! 👋 Soy el asistente de <strong>Modo Bacán</strong>.<br>¿Cuál es tu objetivo principal?');
+  setTimeout(function() {
+    var opts = document.createElement('div');
+    opts.className = 'mb-opts';
+    opts.id = 'mbOpts1';
+    ['Conseguir más clientes','Aparecer en Google','Mejorar mi sitio web','Automatizar consultas'].forEach(function(label) {
+      var btn = document.createElement('button');
+      btn.className = 'mb-opt';
+      var icons = {'Conseguir más clientes':'🚀','Aparecer en Google':'🔍','Mejorar mi sitio web':'🌐','Automatizar consultas':'⚡'};
+      btn.textContent = icons[label] + ' ' + label;
+      btn.onclick = function() { mbSelectGoal(label); };
+      opts.appendChild(btn);
+    });
+    var msgs = document.getElementById('mbMsgs');
+    msgs.appendChild(opts);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 600);
+}
+
+function mbSelectGoal(goal) {
+  mbGoal = goal;
+  document.getElementById('mbOpts1').remove();
+  mbAddUser(goal);
+  mbShowTyping();
+  setTimeout(function() {
+    mbRemoveTyping();
+    var data = mbSolutions[goal];
+    mbAddBot(data.followup);
+    setTimeout(function() {
+      mbAddBot('¿Te escribimos por <strong>WhatsApp</strong> ahora mismo para ayudarte?');
+      var opts = document.createElement('div');
+      opts.className = 'mb-opts';
+      var btn1 = document.createElement('button');
+      btn1.className = 'mb-opt';
+      btn1.textContent = '✓ Sí, escríbeme por WhatsApp';
+      btn1.onclick = function() { mbGoWA(data.msg); };
+      var btn2 = document.createElement('button');
+      btn2.className = 'mb-opt';
+      btn2.style.borderColor = 'rgba(245,240,232,.15)';
+      btn2.style.color = 'rgba(245,240,232,.4)';
+      btn2.textContent = '← Elegir otro objetivo';
+      btn2.onclick = function() {
+        opts.remove();
+        mbAddUser('← Volver');
+        document.getElementById('mbMsgs').innerHTML = '';
+        mbInit();
+      };
+      opts.appendChild(btn1);
+      opts.appendChild(btn2);
+      document.getElementById('mbMsgs').appendChild(opts);
+      document.getElementById('mbMsgs').scrollTop = 9999;
+    }, 800);
+  }, 1200);
+}
+
+function mbSend() {
+  var input = document.getElementById('mbInput');
+  var txt = input.value.trim();
+  if (!txt) return;
+  input.value = '';
+  mbAddUser(txt);
+  mbShowTyping();
+  setTimeout(function() {
+    mbRemoveTyping();
+    mbAddBot('¡Gracias! Para darte la mejor respuesta, ¿te contactamos ahora por <strong>WhatsApp</strong>?');
+    var btn = document.createElement('button');
+    btn.className = 'mb-opt';
+    btn.style.alignSelf = 'flex-start';
+    btn.textContent = '✓ Ir a WhatsApp →';
+    btn.onclick = function() { mbGoWA(txt); };
+    document.getElementById('mbMsgs').appendChild(btn);
+    document.getElementById('mbMsgs').scrollTop = 9999;
+  }, 1100);
+}
+
+function mbGoWA(context) {
+  var msg = encodeURIComponent('Hola Modo Bacán, contacto desde la web. ' + (mbGoal ? 'Mi objetivo: ' + mbGoal + '. ' : '') + context);
+  window.open('https://wa.me/56954343686?text=' + msg, '_blank');
+}
+
+function mbAddBot(html) {
+  var msgs = document.getElementById('mbMsgs');
+  var div = document.createElement('div');
+  div.className = 'mb-msg-bot';
+  div.innerHTML = html;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function mbAddUser(text) {
+  var msgs = document.getElementById('mbMsgs');
+  var div = document.createElement('div');
+  div.className = 'mb-msg-user';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function mbShowTyping() {
+  var msgs = document.getElementById('mbMsgs');
+  var div = document.createElement('div');
+  div.className = 'mb-msg-bot';
+  div.id = 'mbTyping';
+  div.innerHTML = '<div class="mb-typing"><span></span><span></span><span></span></div>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function mbRemoveTyping() {
+  var t = document.getElementById('mbTyping');
+  if (t) t.remove();
+}
+</script>
+
+</body>
+</html>
