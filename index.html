@@ -412,10 +412,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 .rv.d1 { transition-delay:.1s; } .rv.d2 { transition-delay:.2s; } .rv.d3 { transition-delay:.3s; }
 
 
-/* ── SEO DEEP SECTION ─────────────────────────────────────── */
-#seo-deep { background:var(--black); }
 
-/* Hero SEO */
 .seo-hero { min-height:100vh; display:flex; align-items:center; padding-top:80px; overflow:hidden; position:relative; }
 .seo-hero-bg { position:absolute; inset:0; background:
   radial-gradient(ellipse 55% 50% at 70% 35%, rgba(0,229,255,.07) 0%, transparent 65%),
@@ -509,10 +506,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   .seo-h-stats { grid-template-columns:repeat(3,1fr); }
 }
 
-/* ── GEO DEEP SECTION ─────────────────────────────────────────── */
-#geo-deep { background:var(--black); }
 
-/* Hero GEO */
 .geo-hero { min-height:100vh; display:flex; align-items:center; padding-top:80px; overflow:hidden; position:relative; }
 .geo-hero-bg { position:absolute; inset:0; background:
   radial-gradient(ellipse 60% 50% at 30% 40%, rgba(139,92,246,.09) 0%, transparent 65%),
@@ -1054,7 +1048,10 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
     <div class="h-grid"></div>
     <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.55;"></canvas>
     <div class="h-inner">
-      <div class="h-badge"><div class="h-dot"></div>Primera agencia GEO de Chile · Fundada 2026</div>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
+        <div class="h-badge" style="background:var(--orange-d);border-color:var(--orange-b);color:var(--orange);"><div class="h-dot" style="background:var(--orange);"></div>Oferta del mes · Landing en 5–7 días</div>
+        <div class="h-badge"><div class="h-dot"></div>Primera agencia GEO de Chile · Fundada 2026</div>
+      </div>
       <h1 class="h-head">
         APARECE<br>
         <span class="ghost">EN GOOGLE</span><br>
@@ -1062,7 +1059,8 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
       </h1>
       <p class="h-sub">Cuando alguien le pregunta a ChatGPT, Perplexity o Google IA por un negocio como el tuyo en Chile — ¿apareces tú o tu competencia? Nosotros nos encargamos de que seas la respuesta.</p>
       <div class="h-acts">
-        <a href="/#contacto" class="btn-p">Agenda reunión gratuita →</a>
+        <a href="/landing" class="btn-p" style="background:var(--orange);">Quiero mi landing page →</a>
+        <a href="/#contacto" class="btn-s">Agenda reunión gratuita</a>
         <a href="/precios" class="btn-s">Ver planes</a>
         <a href="#test-ia-section" onclick="event.preventDefault();document.getElementById('test-ia-section').scrollIntoView({behavior:'smooth',block:'start'});" class="btn-s" style="border-color:rgba(200,255,0,.3);color:var(--accent);gap:7px;">
           <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
@@ -1216,7 +1214,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
           <div class="geo-pt"><div class="geo-pi">🎯</div><div><div class="geo-ptt">95% de empresas sin GEO</div><div class="geo-ptd">Tu competencia todavía no lo sabe. Tú llegas primero.</div></div></div>
           <div class="geo-pt"><div class="geo-pi">🔄</div><div><div class="geo-ptt">SEO + GEO simultáneo</div><div class="geo-ptd">No reemplaza al SEO. Lo potencia. Apareces en Google Y en IA al mismo tiempo.</div></div></div>
         </div>
-        <a href="/#contacto" class="btn-p">Quiero aparecer en ChatGPT →</a>
+        <a href="/landing" class="btn-p" style="background:var(--orange);">Antes de eso, necesitas una página que convierta →</a>
       </div>
       <div class="rv d2">
         <div class="geo-card">
@@ -1241,746 +1239,40 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
 
 
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SECCIÓN /SEO — PÁGINA COMPLETA DEDICADA A SEO
-     ═══════════════════════════════════════════════════════════════ -->
-<div id="seo-deep">
-
-  <!-- 1. HERO SEO ──────────────────────────────────────── -->
-  <section style="background:var(--black);border-top:1px solid var(--border);">
-    <div class="seo-hero">
-      <div class="seo-hero-bg"></div>
-      <div class="seo-hero-grid"></div>
-      <div class="seo-hero-inner">
-
-        <!-- Left -->
-        <div>
-          <div class="seo-h-label rv"><div class="seo-h-dot"></div>Search Engine Optimization</div>
-          <h2 class="seo-h-title rv d1">
-            DOMINA<br>
-            <span class="seo-accent">GOOGLE</span><br>
-            <span class="seo-ghost">ORGÁNICO.</span>
-          </h2>
-          <p class="seo-h-lead rv d2">El 68% de las experiencias online comienzan con un buscador. SEO es la base de toda estrategia digital seria — y el complemento perfecto para GEO. Te posicionamos en ambos frentes.</p>
-          <div class="h-acts rv d3">
-            <a href="/#contacto" class="btn-p">Quiero aparecer en Google →</a>
-            <a href="#seo-crosslink" class="btn-s">SEO + GEO juntos</a>
-          </div>
-          <div class="seo-h-stats rv" style="margin-top:2.5rem;">
-            <div class="seo-hs-item"><div class="seo-hs-n">68%</div><div class="seo-hs-l">clicks posición 1–3</div></div>
-            <div class="seo-hs-item"><div class="seo-hs-n">3–6</div><div class="seo-hs-l">meses resultados</div></div>
-            <div class="seo-hs-item"><div class="seo-hs-n">∞</div><div class="seo-hs-l">tráfico sin pagar</div></div>
-          </div>
-        </div>
-
-        <!-- Right — SERP mockup -->
-        <div class="seo-h-visual rv d2">
-          <div class="seo-serp">
-            <div class="seo-serp-bar">
-              <div class="seo-serp-g"><span>G</span><span>o</span><span>o</span><span style="color:#4285F4">g</span><span style="color:#EA4335">l</span><span style="color:#34A853">e</span></div>
-              <div class="seo-serp-q">"mejor agencia marketing chile"</div>
-            </div>
-            <div class="seo-result top">
-              <div class="seo-result-pos"><span class="pos-badge">N°1</span> modobacan.cl</div>
-              <div class="seo-result-url">https://modobacan.cl › agencia-marketing-chile</div>
-              <div class="seo-result-title">Modo Bacán · Agencia GEO y SEO en Chile</div>
-              <div class="seo-result-desc">Posicionamiento en Google e IA para pymes chilenas. Primera agencia GEO de Chile. Resultados en 30–90 días...</div>
-            </div>
-            <div class="seo-result">
-              <div class="seo-result-pos">N°2 · competencia.cl</div>
-              <div class="seo-result-url">https://competencia.cl</div>
-              <div class="seo-result-title" style="color:#4285F4">Agencia de marketing en Chile</div>
-              <div class="seo-result-desc">Servicios de marketing digital para empresas. Contacto y presupuesto online...</div>
-            </div>
-            <div class="seo-result">
-              <div class="seo-result-pos">N°3 · otra-agencia.cl</div>
-              <div class="seo-result-url">https://otra-agencia.cl</div>
-              <div class="seo-result-title" style="color:#4285F4">Marketing Digital · Agencia Chile</div>
-              <div class="seo-result-desc">Soluciones digitales para tu negocio. SEO, redes sociales, diseño web...</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. PILARES SEO ────────────────────────────────────── -->
-  <div class="seo-pillars">
-    <div class="wrap">
-      <div class="seo-pillars-head">
-        <div class="rv">
-          <div class="s-label" style="color:var(--cyan);">Metodología SEO</div>
-          <h2>LOS 6 PILARES<br>DEL SEO QUE<br>FUNCIONA</h2>
-        </div>
-        <div class="rv d2">
-          <p>El SEO no es magia ni trucos. Es una disciplina técnica y estratégica. Trabajamos los seis pilares que Google realmente evalúa para determinar quién merece estar en la primera posición de Chile.</p>
-          <a href="/#contacto" class="btn-s" style="margin-top:1.5rem;display:inline-flex;border-color:rgba(0,229,255,.3);color:var(--cyan);">Auditoría SEO gratis →</a>
-        </div>
-      </div>
-      <div class="seo-pillars-grid">
-        <div class="seo-pillar rv d1">
-          <div class="seo-pillar-num">01</div>
-          <div class="seo-pillar-icon">⚙️</div>
-          <div class="seo-pillar-title">SEO TÉCNICO</div>
-          <div class="seo-pillar-desc">Velocidad de carga, Core Web Vitals, estructura de URLs, sitemaps, robots.txt, canonical tags y arquitectura de sitio. La base sin la cual todo lo demás falla.</div>
-        </div>
-        <div class="seo-pillar rv d2">
-          <div class="seo-pillar-num">02</div>
-          <div class="seo-pillar-icon">🔑</div>
-          <div class="seo-pillar-title">KEYWORDS ESTRATÉGICAS</div>
-          <div class="seo-pillar-desc">Investigación de palabras clave con intención de búsqueda real para Chile. No solo volumen — priorizamos las que convierten. Mapeamos cada keyword a la página correcta.</div>
-        </div>
-        <div class="seo-pillar rv d3">
-          <div class="seo-pillar-num">03</div>
-          <div class="seo-pillar-icon">✍️</div>
-          <div class="seo-pillar-title">CONTENIDO ON-PAGE</div>
-          <div class="seo-pillar-desc">Títulos, meta descripciones, headers H1–H4, densidad semántica y estructura de contenido optimizada para rankear. Escribimos para personas primero, algoritmos después.</div>
-        </div>
-        <div class="seo-pillar rv d1" style="transition-delay:.4s">
-          <div class="seo-pillar-num">04</div>
-          <div class="seo-pillar-icon">🔗</div>
-          <div class="seo-pillar-title">LINK BUILDING</div>
-          <div class="seo-pillar-desc">Construcción de autoridad de dominio a través de backlinks de calidad. Directorios relevantes, notas de prensa, menciones en medios chilenos y estrategias de outreach.</div>
-        </div>
-        <div class="seo-pillar rv d2" style="transition-delay:.5s">
-          <div class="seo-pillar-num">05</div>
-          <div class="seo-pillar-icon">📍</div>
-          <div class="seo-pillar-title">SEO LOCAL</div>
-          <div class="seo-pillar-desc">Google Business optimizado, NAP consistente, reseñas estratégicas y schema LocalBusiness. Para aparecer cuando buscan "servicio + ciudad" en tu región de Chile.</div>
-        </div>
-        <div class="seo-pillar rv d3" style="transition-delay:.6s">
-          <div class="seo-pillar-num">06</div>
-          <div class="seo-pillar-icon">📊</div>
-          <div class="seo-pillar-title">ANALYTICS Y REPORTING</div>
-          <div class="seo-pillar-desc">Google Analytics 4, Search Console y reportes mensuales con métricas reales: posiciones, impresiones, CTR y tráfico orgánico. Sabes exactamente qué está funcionando.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. SEO ↔ GEO CROSSLINK ─────────────────────────── -->
-  <section id="seo-crosslink" class="seo-crosslink">
-    <div class="wrap">
-      <div class="rv" style="text-align:center;margin-bottom:3.5rem;">
-        <div class="s-label" style="justify-content:center;color:var(--cyan);">La combinación perfecta</div>
-        <h2>SEO ES LA BASE.<br><span style="color:var(--accent);">GEO ES EL SIGUIENTE NIVEL.</span></h2>
-        <p style="color:var(--white-60);max-width:520px;margin:.8rem auto 0;line-height:1.75;font-size:1rem;">No son estrategias que compiten — se potencian. El SEO te da tráfico orgánico en Google. El GEO te da presencia cuando la IA responde. Juntos, cubren el 100% de cómo buscan hoy en Chile.</p>
-      </div>
-      <div class="seo-cl-inner rv d1">
-        <div class="seo-cl-card current">
-          <div class="seo-cl-tag">Estás aquí</div>
-          <div class="seo-cl-title">SEO</div>
-          <div class="seo-cl-desc">Posicionamiento en Google orgánico. Keywords, contenido, autoridad de dominio y SEO técnico para aparecer en los primeros resultados de búsqueda en Chile.</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.2rem;">
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Tráfico orgánico sostenible</li>
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Resultados en 3–6 meses</li>
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Base para toda estrategia digital</li>
-          </ul>
-        </div>
-        <a href="/geo" class="seo-cl-card goto">
-          <div class="seo-cl-tag">Siguiente paso</div>
-          <div class="seo-cl-title">GEO</div>
-          <div class="seo-cl-desc">Generative Engine Optimization. Para que ChatGPT, Perplexity y Gemini te mencionen cuando preguntan por tu industria en Chile. El futuro del posicionamiento digital.</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem;">
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Presencia en IA generativa</li>
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Resultados en 30–90 días</li>
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Ventaja first mover en Chile</li>
-          </ul>
-          <div class="seo-cl-arrow">Descubrir GEO</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. CTA SEO ───────────────────────────────────────── -->
-  <section class="seo-cta-band">
-    <div class="wrap">
-      <div class="geo-cta-inner rv" style="text-align:center;">
-        <div class="s-label" style="justify-content:center;color:var(--cyan);">Empieza hoy</div>
-        <h2>¿TU COMPETENCIA<br>TE ESTÁ<br><span style="color:var(--cyan);">GANANDO EN GOOGLE?</span></h2>
-        <p style="color:var(--white-60);font-size:1rem;max-width:480px;margin:0 auto 2.5rem;line-height:1.75;">Hacemos una auditoría SEO gratuita de tu sitio y te mostramos exactamente qué está fallando y cómo arreglarlo. Sin compromiso.</p>
-        <div class="geo-cta-acts">
-          <a href="/#contacto" class="btn-p">Auditoría SEO gratis →</a>
-          <a href="/geo" class="btn-s" style="border-color:var(--accent-b);color:var(--accent);">También quiero GEO ✦</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /#seo-deep -->
-
-<!-- ═══════════════════════════════════════════════════════════════
-     SECCIÓN /GEO — PÁGINA COMPLETA DEDICADA A GEO
-     ═══════════════════════════════════════════════════════════════ -->
-<div id="geo-deep">
-
-  <!-- 1. HERO GEO ─────────────────────────────────────── -->
-  <section style="background:var(--black);border-top:1px solid var(--border);">
-    <div class="geo-hero">
-      <div class="geo-hero-bg"></div>
-      <div class="geo-hero-grid"></div>
-      <div class="geo-hero-inner">
-        <!-- Left -->
-        <div>
-          <div class="geo-h-label rv"><span class="h-dot"></span>Generative Engine Optimization</div>
-          <h2 class="geo-h-title rv d1">
-            EL NUEVO<br>
-            <span class="accent-line">CAMPO DE</span><br>
-            <span class="ghost-line">BATALLA.</span>
-          </h2>
-          <p class="geo-h-lead rv d2">Google ya no está solo. ChatGPT, Perplexity y Gemini responden millones de preguntas al día — y la mayoría de los negocios chilenos ni aparecen. GEO cambia eso.</p>
-          <div class="h-acts rv d3">
-            <a href="/#contacto" class="btn-p">Quiero aparecer en la IA →</a>
-            <a href="/precios" class="btn-s">Ver planes GEO</a>
-          </div>
-          <div class="geo-h-stats rv" style="margin-top:2.5rem;">
-            <div class="geo-hs-item"><div class="geo-hs-n">40%</div><div class="geo-hs-l">búsquedas en IA</div></div>
-            <div class="geo-hs-item"><div class="geo-hs-n">95%</div><div class="geo-hs-l">empresas sin GEO</div></div>
-            <div class="geo-hs-item"><div class="geo-hs-n">30d</div><div class="geo-hs-l">primer resultado</div></div>
-          </div>
-        </div>
-        <!-- Right — Orbital visual -->
-        <div class="geo-h-visual rv d2">
-          <div class="geo-orb-wrap">
-            <div class="geo-ring geo-ring-1"></div>
-            <div class="geo-ring geo-ring-2"></div>
-            <div class="geo-ring geo-ring-3"></div>
-            <div class="geo-orb-core"></div>
-          </div>
-          <!-- Orbit labels -->
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-            <div style="position:relative;width:320px;height:320px;">
-              <div style="position:absolute;top:0;left:50%;transform:translateX(-50%) translateY(-14px);font-family:var(--font-m);font-size:.6rem;letter-spacing:.1em;color:var(--white);background:var(--black-3);border:1px solid var(--border);padding:3px 10px;border-radius:3px;white-space:nowrap;">🔍 Google AI</div>
-              <div style="position:absolute;right:0;top:50%;transform:translateY(-50%) translateX(14px);font-family:var(--font-m);font-size:.6rem;letter-spacing:.1em;color:var(--white);background:var(--black-3);border:1px solid var(--border);padding:3px 10px;border-radius:3px;white-space:nowrap;">💬 ChatGPT</div>
-              <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%) translateY(14px);font-family:var(--font-m);font-size:.6rem;letter-spacing:.1em;color:var(--white);background:var(--black-3);border:1px solid var(--border);padding:3px 10px;border-radius:3px;white-space:nowrap;">🔮 Perplexity</div>
-              <div style="position:absolute;left:0;top:50%;transform:translateY(-50%) translateX(-14px);font-family:var(--font-m);font-size:.6rem;letter-spacing:.1em;color:var(--white);background:var(--black-3);border:1px solid var(--border);padding:3px 10px;border-radius:3px;white-space:nowrap;text-align:right;">✦ Gemini</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. GEO vs SEO ────────────────────────────────────── -->
-  <div class="geo-vs-section">
-    <div class="wrap">
-      <div class="geo-vs-head rv">
-        <div class="s-label" style="justify-content:center;">La diferencia clave</div>
-        <h2>GEO NO REEMPLAZA AL SEO.<br><span style="color:var(--accent);">LO SUPERA.</span></h2>
-        <p>Ambas estrategias se complementan. El SEO te posiciona donde buscan con palabras clave. El GEO te posiciona donde preguntan en lenguaje natural. Nosotros hacemos ambos.</p>
-      </div>
-      <div class="geo-vs-grid rv d1">
-        <!-- SEO -->
-        <div class="geo-vs-col">
-          <div class="geo-vs-tag">SEO Tradicional</div>
-          <div class="geo-vs-title">Google orgánico</div>
-          <div class="geo-vs-items">
-            <div class="geo-vs-item">Posicionamiento por palabras clave exactas</div>
-            <div class="geo-vs-item">Resultados en lista de 10 links azules</div>
-            <div class="geo-vs-item">El usuario elige en cuál hacer click</div>
-            <div class="geo-vs-item">Tarda 3–6 meses en dar resultados</div>
-            <div class="geo-vs-item muted">No contempla búsquedas en IA</div>
-            <div class="geo-vs-item muted">Alta competencia por las primeras posiciones</div>
-            <div class="geo-vs-item muted">Requiere actualizaciones constantes de algoritmo</div>
-          </div>
-        </div>
-        <!-- Divider -->
-        <div class="geo-vs-divider rv d2">
-          <div class="geo-vs-divider-line"></div>
-          <div class="geo-vs-divider-badge">VS</div>
-          <div class="geo-vs-divider-line"></div>
-        </div>
-        <!-- GEO -->
-        <div class="geo-vs-col is-geo">
-          <div class="geo-vs-tag">GEO — Modo Bacán</div>
-          <div class="geo-vs-title">IA + Google</div>
-          <div class="geo-vs-items">
-            <div class="geo-vs-item">Posicionamiento por intención y contexto</div>
-            <div class="geo-vs-item">La IA te menciona directamente en su respuesta</div>
-            <div class="geo-vs-item">Tu marca es la respuesta, no una opción</div>
-            <div class="geo-vs-item">Primeros resultados en 30–90 días</div>
-            <div class="geo-vs-item">Optimización para ChatGPT, Perplexity y Gemini</div>
-            <div class="geo-vs-item">Menor competencia — la mayoría aún no lo hace</div>
-            <div class="geo-vs-item">SEO incluido — apareces en Google Y en IA</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. CÓMO FUNCIONA — 4 PILARES ──────────────────── -->
-  <section class="geo-pillars">
-    <div class="wrap">
-      <div class="geo-pillars-head">
-        <div class="rv">
-          <div class="s-label">Metodología GEO</div>
-          <h2>CÓMO HACEMOS<br>QUE LA IA<br>TE MENCIONE</h2>
-        </div>
-        <div class="rv d2">
-          <p>Las IAs no indexan como Google. No rastrean links — leen, comprenden y sintetizan. Para que te mencionen, tu contenido y tu presencia digital deben hablar el idioma de los modelos de lenguaje. Eso es exactamente lo que hacemos.</p>
-          <a href="/#contacto" class="btn-s" style="margin-top:1.5rem;display:inline-flex;">Consulta sin costo →</a>
-        </div>
-      </div>
-      <div class="geo-pillars-grid">
-        <div class="geo-pillar rv d1">
-          <div class="geo-pillar-num">01</div>
-          <div class="geo-pillar-icon">🧩</div>
-          <div class="geo-pillar-title">OPTIMIZACIÓN SEMÁNTICA</div>
-          <div class="geo-pillar-desc">Reestructuramos tu contenido para que los LLMs lo entiendan. Entidades claras, respuestas directas a preguntas frecuentes, lenguaje natural que los modelos prefieren sobre el contenido genérico.</div>
-        </div>
-        <div class="geo-pillar rv d2">
-          <div class="geo-pillar-num">02</div>
-          <div class="geo-pillar-icon">🔗</div>
-          <div class="geo-pillar-title">AUTORIDAD DE FUENTE</div>
-          <div class="geo-pillar-desc">La IA cita lo que considera fuente confiable. Construimos tu reputación digital: menciones en medios, directorios especializados, schema markup avanzado y señales de autoridad que los modelos valoran.</div>
-        </div>
-        <div class="geo-pillar rv d3">
-          <div class="geo-pillar-num">03</div>
-          <div class="geo-pillar-icon">📡</div>
-          <div class="geo-pillar-title">PRESENCIA MULTICANAL</div>
-          <div class="geo-pillar-desc">Los LLMs obtienen datos de múltiples fuentes. Tu marca debe estar en todas: Wikipedia-style, Google Business, foros relevantes, LinkedIn, notas de prensa. Omnipresencia estratégica para aparecer donde buscan.</div>
-        </div>
-        <div class="geo-pillar rv" style="transition-delay:.4s">
-          <div class="geo-pillar-num">04</div>
-          <div class="geo-pillar-icon">📊</div>
-          <div class="geo-pillar-title">MONITOREO Y AJUSTE</div>
-          <div class="geo-pillar-desc">Medimos si la IA te menciona, con qué contexto y en qué queries. Ajustamos el contenido según los resultados. Los modelos de IA se actualizan — nosotros también.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. PLATAFORMAS ────────────────────────────────── -->
-  <div class="geo-platforms">
-    <div class="wrap">
-      <div class="geo-platforms-head rv">
-        <div class="s-label" style="justify-content:center;">Plataformas objetivo</div>
-        <h2>DONDE TE<br><span style="color:var(--accent);">POSICIONAMOS</span></h2>
-        <p>No trabajamos solo una plataforma. Tu marca debe aparecer en todos los motores de IA relevantes — cada uno con su propia lógica de indexación.</p>
-      </div>
-      <div class="geo-plat-grid">
-        <div class="geo-plat-card goog rv d1">
-          <div class="geo-plat-logo">🔍</div>
-          <div class="geo-plat-name">GOOGLE AI</div>
-          <div class="geo-plat-share">58%</div>
-          <div class="geo-plat-label">cuota de búsquedas IA</div>
-        </div>
-        <div class="geo-plat-card chat rv d2">
-          <div class="geo-plat-logo">💬</div>
-          <div class="geo-plat-name">CHATGPT</div>
-          <div class="geo-plat-share">22%</div>
-          <div class="geo-plat-label">200M usuarios activos</div>
-        </div>
-        <div class="geo-plat-card perp rv d3">
-          <div class="geo-plat-logo">🔮</div>
-          <div class="geo-plat-name">PERPLEXITY</div>
-          <div class="geo-plat-share">12%</div>
-          <div class="geo-plat-label">búsquedas con citas</div>
-        </div>
-        <div class="geo-plat-card gemi rv" style="transition-delay:.4s">
-          <div class="geo-plat-logo">✦</div>
-          <div class="geo-plat-name">GEMINI</div>
-          <div class="geo-plat-share">8%</div>
-          <div class="geo-plat-label">integrado en Google</div>
-        </div>
-      </div>
-      <p class="geo-plat-note rv">* Datos estimados de distribución de consultas IA globales — 2026.</p>
-    </div>
-  </div>
-
-  <!-- 5. TIMELINE DE RESULTADOS ──────────────────────── -->
-  <section class="geo-timeline">
-    <div class="wrap">
-      <div class="geo-tl-head">
-        <div class="rv">
-          <div class="s-label">Hoja de ruta</div>
-          <h2>QUÉ ESPERAR<br>MES A MES</h2>
-        </div>
-        <div class="rv d2">
-          <p>GEO no es magia de un día. Es un proceso metodológico con resultados progresivos y medibles. Esto es lo que construimos juntos desde el primer mes.</p>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
-        <div class="geo-tl-track">
-          <div class="geo-tl-item rv d1">
-            <div class="geo-tl-dot"></div>
-            <div class="geo-tl-period">Semana 1–2</div>
-            <div class="geo-tl-title">AUDITORÍA Y ESTRATEGIA</div>
-            <div class="geo-tl-desc">Analizamos tu presencia actual: qué dice la IA sobre ti hoy, dónde hay brechas, qué hace tu competencia y qué queries necesitas ganar. Entregamos un mapa de acción detallado.</div>
-            <span class="geo-tl-tag">Diagnóstico gratis en consulta inicial</span>
-          </div>
-          <div class="geo-tl-item rv d2">
-            <div class="geo-tl-dot"></div>
-            <div class="geo-tl-period">Semana 3–4</div>
-            <div class="geo-tl-title">IMPLEMENTACIÓN BASE</div>
-            <div class="geo-tl-desc">Optimizamos el contenido existente, implementamos schema markup, creamos páginas de respuesta directa y configuramos tu perfil en todas las plataformas relevantes para los LLMs.</div>
-            <span class="geo-tl-tag">Cambios on-page + señales externas</span>
-          </div>
-          <div class="geo-tl-item rv d3">
-            <div class="geo-tl-dot"></div>
-            <div class="geo-tl-period">Mes 2</div>
-            <div class="geo-tl-title">PRIMERAS MENCIONES</div>
-            <div class="geo-tl-desc">En la mayoría de los casos, la IA empieza a mencionarte en consultas específicas de tu rubro. Medimos frecuencia, posición y contexto. Ajustamos según resultados.</div>
-            <span class="geo-tl-tag">Reporte de menciones IA</span>
-          </div>
-        </div>
-        <div class="geo-tl-track" style="margin-top:3rem;">
-          <div class="geo-tl-item rv d1">
-            <div class="geo-tl-dot"></div>
-            <div class="geo-tl-period">Mes 3</div>
-            <div class="geo-tl-title">CONSOLIDACIÓN</div>
-            <div class="geo-tl-desc">Ampliamos la cobertura de queries, profundizamos el contenido en temas donde la IA te menciona y atacamos nuevos keywords de intención. Tu presencia en IA se vuelve consistente.</div>
-            <span class="geo-tl-tag">Expansión temática + autoridad</span>
-          </div>
-          <div class="geo-tl-item rv d2">
-            <div class="geo-tl-dot"></div>
-            <div class="geo-tl-period">Mes 4–6</div>
-            <div class="geo-tl-title">DOMINANCIA SECTORIAL</div>
-            <div class="geo-tl-desc">Para cuando tu competencia empiece a notar que algo está pasando, tú ya serás la referencia que la IA recomienda en tu industria y zona geográfica en Chile.</div>
-            <span class="geo-tl-tag">Primera mover advantage asegurado</span>
-          </div>
-          <div class="geo-tl-item rv d3">
-            <div class="geo-tl-dot"></div>
-            <div class="geo-tl-period">Mes 6+</div>
-            <div class="geo-tl-title">ESCALABILIDAD</div>
-            <div class="geo-tl-desc">GEO es un activo que crece. Cada nuevo modelo de IA que aparece ya encuentra tu contenido estructurado y autoritativo. El trabajo acumulado se multiplica con cada actualización.</div>
-            <span class="geo-tl-tag">Activo digital de largo plazo</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. TESTIMONIOS / TRUST ─────────────────────────── -->
-  <div class="geo-trust">
-    <div class="wrap">
-      <div class="geo-trust-head rv">
-        <div class="s-label" style="justify-content:center;">Resultados reales</div>
-        <h2>LO QUE DICEN<br><span style="color:var(--accent);">LAS IAs</span> DE NUESTROS CLIENTES</h2>
-        <p>Estas son capturas reales de respuestas de IA sobre empresas que trabajan con nosotros. El objetivo: que esto sea sobre tu negocio.</p>
-      </div>
-      <div class="geo-trust-grid">
-        <div class="geo-trust-card rv d1">
-          <div style="font-family:var(--font-m);font-size:.6rem;letter-spacing:.12em;color:var(--white-30);margin-bottom:1rem;display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:8px;height:8px;background:#28CA41;border-radius:50%;"></span>ChatGPT · Búsqueda real</div>
-          <div class="geo-trust-quote">"Para distribución de alimentos al por mayor en el sur de Chile, <strong>Emercar</strong> es una empresa sólida en Temuco con presencia regional comprobada y amplia red de clientes en el sector foodservice..."</div>
-          <div class="geo-trust-author">
-            <div class="geo-trust-av">E</div>
-            <div>
-              <div class="geo-trust-name">Emercar</div>
-              <div class="geo-trust-role">Distribuidora alimentaria · Temuco</div>
-            </div>
-          </div>
-        </div>
-        <div class="geo-trust-card rv d2">
-          <div style="font-family:var(--font-m);font-size:.6rem;letter-spacing:.12em;color:var(--white-30);margin-bottom:1rem;display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:8px;height:8px;background:#28CA41;border-radius:50%;"></span>Perplexity · Búsqueda real</div>
-          <div class="geo-trust-quote">"Para diseño web y posicionamiento digital en Chile, <strong>leonardosazo.cl</strong> ofrece servicios especializados para pymes con enfoque en conversión y SEO técnico..."</div>
-          <div class="geo-trust-author">
-            <div class="geo-trust-av">L</div>
-            <div>
-              <div class="geo-trust-name">Leonardo Sazo</div>
-              <div class="geo-trust-role">Diseño web · leonardosazo.cl</div>
-            </div>
-          </div>
-        </div>
-        <div class="geo-trust-card rv d3">
-          <div style="font-family:var(--font-m);font-size:.6rem;letter-spacing:.12em;color:var(--white-30);margin-bottom:1rem;display:flex;align-items:center;gap:6px;"><span style="display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:50%;"></span>Tu empresa · Próximamente</div>
-          <div class="geo-trust-quote">"Para <strong>[tu servicio o producto]</strong> en [tu ciudad] en Chile, <strong>[tu empresa]</strong> es reconocida como referente en el sector por su [tu diferencial]..."</div>
-          <div class="geo-trust-author">
-            <div class="geo-trust-av" style="background:var(--accent-d);color:var(--accent);">?</div>
-            <div>
-              <div class="geo-trust-name">Tu negocio</div>
-              <div class="geo-trust-role">Así empieza en 30–90 días · Chile</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- GEO ↔ SEO CROSSLINK ─────────────────────────────── -->
-  <section id="geo-crosslink" style="padding:5rem 0;background:var(--black-2);border-top:1px solid var(--border);">
-    <div class="wrap">
-      <div class="rv" style="text-align:center;margin-bottom:3.5rem;">
-        <div class="s-label" style="justify-content:center;">GEO necesita una base</div>
-        <h2>GEO SIN SEO ES<br><span style="color:var(--accent);">LA MITAD DEL TRABAJO.</span></h2>
-        <p style="color:var(--white-60);max-width:520px;margin:.8rem auto 0;line-height:1.75;font-size:1rem;">GEO optimiza tu presencia en IA. SEO te posiciona en Google orgánico. La combinación de ambos es lo que llamamos <strong style="color:var(--accent);">posicionamiento total</strong> — el servicio más completo que ofrecemos.</p>
-      </div>
-      <div class="seo-cl-inner rv d1">
-        <div class="seo-cl-card current">
-          <div class="seo-cl-tag">Estás aquí</div>
-          <div class="seo-cl-title" style="color:var(--accent);">GEO</div>
-          <div class="seo-cl-desc">Posicionamiento en motores de IA. Cuando alguien le pregunta a ChatGPT, Perplexity o Gemini sobre tu industria en Chile, apareces tú.</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.2rem;">
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Presencia en IA generativa</li>
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Resultados en 30–90 días</li>
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--accent);">→</span>Ventaja first mover en Chile</li>
-          </ul>
-        </div>
-        <a href="/seo" class="seo-cl-card" style="background:linear-gradient(135deg,rgba(0,229,255,.05),var(--black-2));border-color:rgba(0,229,255,.25);text-decoration:none;display:block;">
-          <div class="seo-cl-tag" style="color:var(--black);background:var(--cyan);">La base indispensable</div>
-          <div class="seo-cl-title" style="color:var(--cyan);">SEO</div>
-          <div class="seo-cl-desc">Posicionamiento orgánico en Google. El pilar que genera tráfico sostenible, fortalece tu autoridad de dominio y amplifica el impacto de tu estrategia GEO.</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.4rem;">
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Tráfico orgánico sin pagar</li>
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Autoridad de dominio que refuerza el GEO</li>
-            <li style="font-size:.83rem;color:var(--white-60);display:flex;gap:.6rem;"><span style="color:var(--cyan);">→</span>Resultados en 3–6 meses</li>
-          </ul>
-          <div class="seo-cl-arrow" style="color:var(--cyan);">Ver todo sobre SEO</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. CTA FINAL GEO ─────────────────────────────── -->
-  <section class="geo-cta-band">
-    <div class="wrap">
-      <div class="geo-cta-inner rv">
-        <div class="s-label" style="justify-content:center;">¿Listo?</div>
-        <h2>TU COMPETENCIA<br>TODAVÍA NO <span style="color:var(--accent);">LO SABE.</span></h2>
-        <p>La ventana para ser el primero en GEO en tu industria se está cerrando. Cada mes que pasa, alguien más está llegando primero. Hablemos hoy.</p>
-        <div class="geo-cta-acts">
-          <a href="/#contacto" class="btn-p">Agenda reunión gratuita →</a>
-          <a href="/precios" class="btn-s">Ver planes y precios</a>
-          <a href="/seo" class="btn-s" style="border-color:rgba(0,229,255,.3);color:var(--cyan);">También necesito SEO →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /#geo-deep -->
-
-
-<!-- ═══════════════════════════════════════════════════════════════
-     SECCIÓN /LANDING — LANDING PAGES
-     ═══════════════════════════════════════════════════════════════ -->
-<div id="landing-deep">
-<!-- ── HERO ─────────────────────────────────────────────────── -->
-<section style="background:var(--black);">
-  <div class="lp-hero">
-    <div class="lp-hero-bg"></div>
-    <div class="lp-hero-grid"></div>
-    <div class="lp-hero-inner">
-
-      <!-- Left -->
+<!-- TEASER SEO / GEO / LANDING — versión corta, contenido completo vive en /seo, /geo, /landing -->
+<section id="teaser-servicios" class="sp" style="background:var(--black-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="svc-top rv" style="margin-bottom:3rem;">
       <div>
-        <div class="geo-h-label rv" style="color:var(--orange);border-color:var(--orange-b);background:var(--orange-d);"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--orange);"></span>Diseño web orientado a conversión</div>
-        <h1 style="font-family:var(--font-d);font-size:clamp(4rem,8vw,8rem);line-height:.88;letter-spacing:.02em;margin-bottom:1.6rem;" class="rv d1">
-          MÁS<br>
-          <span style="color:var(--orange);">CLIENTES.</span><br>
-          <span style="color:transparent;-webkit-text-stroke:1px rgba(245,240,232,.3);">MENOS RUIDO.</span>
-        </h1>
-        <p style="font-size:1.08rem;color:var(--white-60);line-height:1.78;max-width:480px;margin-bottom:2rem;" class="rv d2">Tu negocio merece una página que trabaje mientras tú duermes. Diseñamos landing pages que convierten visitas en consultas, WhatsApps y ventas — para cualquier negocio en Chile.</p>
-        <div class="h-acts rv d3">
-          <a href="https://wa.me/56954343686?text=Hola%20Modo%20Bacán,%20quiero%20una%20landing%20page%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn-p" style="background:var(--orange);color:#fff;">Quiero mi landing page →</a>
-          <a href="#lp-includes" class="btn-s">Ver qué incluye</a>
-        </div>
-        <div style="display:inline-flex;align-items:baseline;gap:.5rem;margin-top:2rem;background:var(--orange-d);border:1px solid var(--orange-b);border-radius:6px;padding:.65rem 1.25rem;" class="rv">
-          <span style="font-family:var(--font-d);font-size:2rem;letter-spacing:.03em;color:var(--white);line-height:1;">$129.900</span>
-          <span style="font-family:var(--font-m);font-size:.6rem;color:var(--orange);letter-spacing:.12em;text-transform:uppercase;">Pago único · Sin mensualidad</span>
-        </div>
-        <div style="display:flex;gap:2rem;margin-top:1.25rem;flex-wrap:wrap;" class="rv">
-          <div style="display:flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:.62rem;color:var(--white-30);letter-spacing:.08em;"><span style="color:var(--orange);">✓</span>Entrega en 5–7 días</div>
-          <div style="display:flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:.62rem;color:var(--white-30);letter-spacing:.08em;"><span style="color:var(--orange);">✓</span>Mobile-first</div>
-          <div style="display:flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:.62rem;color:var(--white-30);letter-spacing:.08em;"><span style="color:var(--orange);">✓</span>Sin contratos</div>
-        </div>
+        <div class="s-label">Los 3 pilares</div>
+        <h2>SEO, GEO Y<br>LANDING PAGES</h2>
       </div>
-
-      <!-- Right — Phone mockup -->
-      <div class="lp-phone-wrap rv d2">
-        <div class="lp-phone-glow"></div>
-        <div class="lp-phone-ring"></div>
-        <div class="lp-phone">
-          <div class="lp-phone-notch"></div>
-          <div class="lp-phone-screen">
-            <div class="lp-phone-header">
-              <div class="lp-phone-header-t">Tu Negocio · Chile</div>
-              <div class="lp-phone-header-s">⭐⭐⭐⭐⭐ · Más de 200 clientes</div>
-            </div>
-            <div class="lp-phone-img">🏆</div>
-            <div class="lp-phone-body">Somos especialistas en [tu servicio]. Atendemos en [tu ciudad] y en todo Chile. Consulta gratis, respuesta en menos de 1 hora.</div>
-            <div class="lp-phone-cta">📞 CONSULTA GRATIS AHORA</div>
-            <div class="lp-phone-wa">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              ESCRIBIR POR WHATSAPP
-            </div>
-          </div>
-        </div>
-        <!-- Métricas flotantes -->
-        <div class="lp-metric m1 rv">
-          <div><div class="lp-metric-n">3×</div><div class="lp-metric-l">más consultas</div></div>
-        </div>
-        <div class="lp-metric m2 rv">
-          <div><div class="lp-metric-n">+67%</div><div class="lp-metric-l">tasa conversión</div></div>
-        </div>
-        <div class="lp-metric m3 rv">
-          <div><div class="lp-metric-n">5–7d</div><div class="lp-metric-l">tiempo entrega</div></div>
-        </div>
-      </div>
-
+      <p>Cada uno resuelve un problema distinto. Juntos cubren cómo te encuentran hoy: en Google, en la IA y cuando llegan a tu sitio.</p>
+    </div>
+    <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+      <a href="/landing" class="svc-card rv d1" style="text-decoration:none;display:block;position:relative;border-color:var(--orange-b);">
+        <div style="position:absolute;top:1rem;right:1rem;background:var(--orange);color:var(--black);font-family:var(--font-m);font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .6rem;border-radius:100px;">Empieza aquí</div>
+        <div class="svc-n">01</div>
+        <div class="svc-name">LANDING PAGES</div>
+        <div class="svc-desc">Páginas que convierten visitas en consultas y ventas. Entrega en 5–7 días.</div>
+        <div class="seo-cl-arrow" style="margin-top:1rem;color:var(--orange);">Ver landing pages →</div>
+      </a>
+      <a href="/seo" class="svc-card rv d2" style="text-decoration:none;display:block;">
+        <div class="svc-n">02</div>
+        <div class="svc-name">SEO</div>
+        <div class="svc-desc">Posicionamiento orgánico en Google. Técnico, on-page y de contenido. Resultados en 3–6 meses.</div>
+        <div class="seo-cl-arrow" style="margin-top:1rem;color:var(--cyan);">Ver servicio de SEO →</div>
+      </a>
+      <a href="/geo" class="svc-card rv d3" style="text-decoration:none;display:block;">
+        <div class="svc-n">03</div>
+        <div class="svc-name">GEO</div>
+        <div class="svc-desc">Tu marca aparece cuando alguien le pregunta a ChatGPT, Perplexity o Gemini. Resultados en 30–90 días.</div>
+        <div class="seo-cl-arrow" style="margin-top:1rem;color:var(--accent);">Ver servicio de GEO →</div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ── RESULTADOS ──────────────────────────────────────────── -->
-<div class="lp-results">
-  <div class="wrap">
-    <div style="text-align:center;" class="rv">
-      <div class="s-label" style="justify-content:center;color:var(--orange);">El único objetivo</div>
-      <h2>UNA LANDING PAGE<br>TIENE UN SOLO<br><span style="color:var(--orange);">TRABAJO.</span></h2>
-      <p style="color:var(--white-60);max-width:500px;margin:.8rem auto 0;line-height:1.75;">Convertir. No impresionar, no ganar premios de diseño. Convertir visitas en clientes reales para tu negocio.</p>
-    </div>
-    <div class="lp-results-grid">
-      <div class="lp-res-card rv d1">
-        <span class="lp-res-icon">💬</span>
-        <div class="lp-res-n">+3×</div>
-        <div class="lp-res-label">MÁS CONSULTAS</div>
-        <div class="lp-res-desc">Un formulario bien diseñado, un CTA claro y la propuesta de valor correcta multiplican las consultas de clientes potenciales desde el primer día.</div>
-      </div>
-      <div class="lp-res-card rv d2">
-        <span class="lp-res-icon">📱</span>
-        <div class="lp-res-n">+67%</div>
-        <div class="lp-res-label">MÁS WHATSAPPS</div>
-        <div class="lp-res-desc">El botón de WhatsApp estratégicamente ubicado, con mensaje pre-escrito y visible en mobile, convierte visitantes en conversaciones directas de venta.</div>
-      </div>
-      <div class="lp-res-card rv d3">
-        <span class="lp-res-icon">💰</span>
-        <div class="lp-res-n">+45%</div>
-        <div class="lp-res-label">MÁS VENTAS</div>
-        <div class="lp-res-desc">Cuando el visitante llega a una página diseñada para su intención específica, la tasa de conversión se dispara. Menos fricción, más ventas.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── INDUSTRIAS ──────────────────────────────────────────── -->
-<section class="lp-industries">
-  <div class="wrap">
-    <div style="text-align:center;" class="rv">
-      <div class="s-label" style="justify-content:center;color:var(--orange);">Para todo negocio chileno</div>
-      <h2>FUNCIONA PARA<br><span style="color:var(--orange);">TU INDUSTRIA.</span></h2>
-      <p style="color:var(--white-60);max-width:480px;margin:.8rem auto 0;line-height:1.75;">No hay negocio pequeño para una landing page. Si tienes clientes que buscan en Google o redes sociales, necesitas una página que los convierta.</p>
-    </div>
-    <div class="lp-ind-grid">
-      <div class="lp-ind-card rv d1"><span class="lp-ind-icon">🔧</span><div class="lp-ind-name">SERVICIOS</div><div class="lp-ind-ex">Gasfitería, electricidad, construcción, limpieza, mudanzas</div></div>
-      <div class="lp-ind-card rv d2"><span class="lp-ind-icon">🏥</span><div class="lp-ind-name">SALUD</div><div class="lp-ind-ex">Dentistas, psicólogos, nutricionistas, clínicas, médicos</div></div>
-      <div class="lp-ind-card rv d3"><span class="lp-ind-icon">🏫</span><div class="lp-ind-name">EDUCACIÓN</div><div class="lp-ind-ex">Academias, tutores, cursos, capacitaciones, colegios</div></div>
-      <div class="lp-ind-card rv" style="transition-delay:.4s"><span class="lp-ind-icon">🛍️</span><div class="lp-ind-name">RETAIL</div><div class="lp-ind-ex">Tiendas online, productos, e-commerce, catálogos</div></div>
-      <div class="lp-ind-card rv d1"><span class="lp-ind-icon">🍽️</span><div class="lp-ind-name">GASTRONOMÍA</div><div class="lp-ind-ex">Restaurantes, delivery, catering, pastelerías, cafés</div></div>
-      <div class="lp-ind-card rv d2"><span class="lp-ind-icon">⚖️</span><div class="lp-ind-name">PROFESIONALES</div><div class="lp-ind-ex">Abogados, contadores, arquitectos, consultores</div></div>
-      <div class="lp-ind-card rv d3"><span class="lp-ind-icon">🏠</span><div class="lp-ind-name">INMOBILIARIA</div><div class="lp-ind-ex">Corredoras, arriendos, propiedades, proyectos</div></div>
-      <div class="lp-ind-card rv" style="transition-delay:.4s"><span class="lp-ind-icon">✨</span><div class="lp-ind-name">BELLEZA</div><div class="lp-ind-ex">Peluquerías, nail art, spas, estética, maquillaje</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── QUÉ INCLUYE ─────────────────────────────────────────── -->
-<div class="lp-includes" id="lp-includes">
-  <div class="wrap">
-    <div style="text-align:center;" class="rv">
-      <div class="s-label" style="justify-content:center;color:var(--orange);">Sin letra chica</div>
-      <h2>TODO LO QUE<br><span style="color:var(--orange);">INCLUYE.</span></h2>
-      <p style="color:var(--white-60);max-width:480px;margin:.8rem auto 0;line-height:1.75;">Nada de extras escondidos. Esto es exactamente lo que recibe tu negocio cuando nos contratas.</p>
-    </div>
-    <div class="lp-inc-grid" style="margin-top:4rem;">
-      <div class="lp-inc-item rv d1">
-        <div class="lp-inc-ico">📐</div>
-        <div><div class="lp-inc-title">DISEÑO PROFESIONAL</div><div class="lp-inc-desc">Diseño único para tu negocio, no una plantilla genérica. Colores, tipografía y estructura pensados para tu cliente ideal.</div></div>
-      </div>
-      <div class="lp-inc-item rv d2">
-        <div class="lp-inc-ico">📱</div>
-        <div><div class="lp-inc-title">100% MOBILE-FIRST</div><div class="lp-inc-desc">El 80% de tus clientes llegan desde el celular. Tu landing se ve y funciona perfecto en cualquier dispositivo.</div></div>
-      </div>
-      <div class="lp-inc-item rv d3">
-        <div class="lp-inc-ico">💬</div>
-        <div><div class="lp-inc-title">WHATSAPP INTEGRADO</div><div class="lp-inc-desc">Botón flotante y CTAs de WhatsApp con mensaje pre-escrito. Un click y tu cliente ya está hablando contigo.</div></div>
-      </div>
-      <div class="lp-inc-item rv" style="transition-delay:.4s">
-        <div class="lp-inc-ico">📝</div>
-        <div><div class="lp-inc-title">FORMULARIO DE CONTACTO</div><div class="lp-inc-desc">Formulario funcional con notificación al email. Cada consulta llega directo a tu bandeja de entrada.</div></div>
-      </div>
-      <div class="lp-inc-item rv d1" style="transition-delay:.5s">
-        <div class="lp-inc-ico">🔍</div>
-        <div><div class="lp-inc-title">SEO BÁSICO INCLUIDO</div><div class="lp-inc-desc">Title, meta descripción, Schema JSON-LD, sitemap y Google Business configurado. Tu landing aparece en Google desde el día 1.</div></div>
-      </div>
-      <div class="lp-inc-item rv d2" style="transition-delay:.6s">
-        <div class="lp-inc-ico">⚡</div>
-        <div><div class="lp-inc-title">VELOCIDAD OPTIMIZADA</div><div class="lp-inc-desc">Core Web Vitals en verde. Carga en menos de 2 segundos. Google premia la velocidad con mejor posición orgánica.</div></div>
-      </div>
-      <div class="lp-inc-item rv d3" style="transition-delay:.7s">
-        <div class="lp-inc-ico">🌐</div>
-        <div><div class="lp-inc-title">HOSTING Y DOMINIO</div><div class="lp-inc-desc">Tu landing publicada en línea con dominio propio. Sin costos ocultos de servidor ni configuraciones técnicas de tu parte.</div></div>
-      </div>
-      <div class="lp-inc-item rv" style="transition-delay:.8s">
-        <div class="lp-inc-ico">📊</div>
-        <div><div class="lp-inc-title">ANALYTICS INSTALADO</div><div class="lp-inc-desc">Google Analytics 4 configurado. Sabes cuánta gente entra, de dónde vienen y qué hacen en tu página.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── PROCESO ─────────────────────────────────────────────── -->
-<section class="lp-process">
-  <div class="wrap">
-    <div style="text-align:center;" class="rv">
-      <div class="s-label" style="justify-content:center;color:var(--orange);">Simple y rápido</div>
-      <h2>LISTA EN<br><span style="color:var(--orange);">5–7 DÍAS.</span></h2>
-      <p style="color:var(--white-60);max-width:480px;margin:.8rem auto 0;line-height:1.75;">Sin reuniones interminables. Sin burocracia. Un proceso probado que entrega resultados rápido.</p>
-    </div>
-    <div class="lp-proc-steps rv d1" style="margin-top:4rem;">
-      <div class="lp-proc-step">
-        <div class="lp-proc-n">01</div>
-        <div class="lp-proc-title">CONVERSACIÓN</div>
-        <div class="lp-proc-desc">Nos cuentas tu negocio, tu cliente ideal y el objetivo principal. 30 minutos por WhatsApp o videollamada.</div>
-        <span class="lp-proc-time">Día 1</span>
-      </div>
-      <div class="lp-proc-step">
-        <div class="lp-proc-n">02</div>
-        <div class="lp-proc-title">DISEÑO</div>
-        <div class="lp-proc-desc">Creamos el diseño y la estructura de tu landing enfocada en conversión. Textos, imágenes y CTAs incluidos.</div>
-        <span class="lp-proc-time">Días 2–4</span>
-      </div>
-      <div class="lp-proc-step">
-        <div class="lp-proc-n">03</div>
-        <div class="lp-proc-title">REVISIÓN</div>
-        <div class="lp-proc-desc">Te mostramos el resultado. Ajustamos lo que necesites — colores, textos, secciones. Hasta que quedes 100% conforme.</div>
-        <span class="lp-proc-time">Días 4–5</span>
-      </div>
-      <div class="lp-proc-step">
-        <div class="lp-proc-n">04</div>
-        <div class="lp-proc-title">PUBLICACIÓN</div>
-        <div class="lp-proc-desc">Publicamos con dominio propio, configuramos Analytics y Google Business. Tu landing empieza a trabajar.</div>
-        <span class="lp-proc-time">Días 6–7</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CTA FINAL ───────────────────────────────────────────── -->
-<section class="lp-cta">
-  <div class="wrap">
-    <div class="lp-cta-inner rv">
-      <div class="s-label" style="justify-content:center;color:var(--orange);">¿Listo para más clientes?</div>
-      <h2>TU NEGOCIO<br>MERECE UNA<br><span style="color:var(--orange);">PÁGINA QUE VENDA.</span></h2>
-      <p>Cada día sin landing page es un cliente que se fue con tu competencia. Hablemos hoy y tenla lista esta semana.</p>
-      <div class="lp-cta-acts">
-        <a href="https://wa.me/56954343686?text=Hola%20Modo%20Bacán,%20quiero%20una%20landing%20page%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn-p" style="background:var(--orange);color:#fff;">Escribir por WhatsApp →</a>
-        <a href="/#contacto" class="btn-s">Formulario de contacto</a>
-      </div>
-      <p style="font-family:var(--font-m);font-size:.65rem;color:var(--white-30);letter-spacing:.08em;margin-bottom:1.5rem;">¿También necesitas posicionamiento? →
-  <a href="/seo" style="color:var(--cyan);text-decoration:none;">SEO en Google</a> &nbsp;·&nbsp;
-  <a href="/geo" style="color:var(--accent);text-decoration:none;">GEO en IA</a></p>
-<div class="lp-trust-row">
-        <div class="lp-trust-item">Entrega en 5–7 días</div>
-        <div class="lp-trust-item">Sin contrato de permanencia</div>
-        <div class="lp-trust-item">Mobile-first siempre</div>
-        <div class="lp-trust-item">SEO incluido</div>
-      </div>
-    </div>
-  </div>
-</section>
-</div><!-- /#landing-deep -->
 
 <!-- PROCESO -->
 
@@ -2741,7 +2033,7 @@ document.querySelectorAll('#mbForm .fi').forEach(function(input) {
 
 <script>
 // ── URL LIMPIA SIN # ──────────────────────────────────────────────────────
-const ROUTES = {"/inicio": "inicio", "/servicios": "servicios", "/seo": "seo-deep", "/geo": "geo-deep", "/landing": "landing-deep", "/proceso": "proceso", "/precios": "precios", "/faq": "faq", "/#contacto": "contacto"};
+const ROUTES = {"/inicio": "inicio", "/servicios": "servicios", "/proceso": "proceso", "/precios": "precios", "/faq": "faq", "/#contacto": "contacto"};
 
 function navigateTo(path) {
   const anchor = ROUTES[path];
@@ -2783,9 +2075,6 @@ document.addEventListener('click', function(e) {
   const map = [
     { id: 'inicio',       path: '/inicio'    },
     { id: 'servicios',    path: '/servicios' },
-    { id: 'seo-deep',     path: '/seo'       },
-    { id: 'geo-deep',     path: '/geo'       },
-    { id: 'landing-deep', path: '/landing'   },
     { id: 'proceso',      path: '/proceso'   },
     { id: 'precios',      path: '/precios'   },
     { id: 'faq',          path: '/faq'       },
@@ -2832,20 +2121,11 @@ document.addEventListener('click', function(e) {
 })();
 
 
-// ── WhatsApp dinámico: cambia de color según la sección ─────────
+// ── WhatsApp: color por defecto (ya no varía por sección, esas viven en /seo /geo /landing) ─────────
 function updateWaColor(sectionId) {
   const wa = document.querySelector('.wa');
   if (!wa) return;
-  const prev = [...wa.classList].find(cls => cls.startsWith('wa-'));
-  const next = sectionId === 'seo-deep'     ? 'wa-seo'
-             : sectionId === 'landing-deep' ? 'wa-landing'
-             : sectionId === 'geo-deep'     ? 'wa-geo'
-             : null;
-  if (next === prev) return;
   wa.classList.remove('wa-geo','wa-seo','wa-landing','color-change');
-  if (next) wa.classList.add(next);
-  void wa.offsetWidth;
-  wa.classList.add('color-change');
 }
 </script>
 
