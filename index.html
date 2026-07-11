@@ -34,8 +34,9 @@
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://api.web3forms.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23C8FF00'/><path d='M16 6v10' stroke='%230D0D0D' stroke-width='3' stroke-linecap='round'/><path d='M10 9.5A9 9 0 1 0 22 9.5' stroke='%230D0D0D' stroke-width='3' stroke-linecap='round' fill='none'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%23C8FF00'/><path d='M90 30v60' stroke='%230D0D0D' stroke-width='16' stroke-linecap='round'/><path d='M56 48A62 62 0 1 0 124 48' stroke='%230D0D0D' stroke-width='16' stroke-linecap='round' fill='none'/></svg>">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -94,7 +95,7 @@
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 :root {
   --black:    #0D0D0D;
@@ -124,6 +125,7 @@ body {
   color: var(--white);
   font-family: var(--font-b);
   overflow-x: hidden;
+  position: relative;
   cursor: none;
 }
 
@@ -638,7 +640,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   .geo-ring-2,.geo-ring-3 { display:none; }
 }
 @media(max-width:768px){
-  .geo-h-visual { height:420px; overflow:visible; }
+  .geo-h-visual { height:420px; overflow-x:hidden; overflow-y:visible; }
   .geo-hero-inner { padding:0 1.5rem; }
   .geo-vs-grid { grid-template-columns:1fr; gap:1.5rem; }
   .geo-vs-divider { flex-direction:row; height:40px; }
@@ -780,7 +782,7 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   #casos a[style*="grid-template-columns:1fr 1fr"] > div:first-child { min-height:220px!important; }
 
   /* Hero mobile */
-  #hero { padding-top:70px; min-height:auto; padding-bottom:3rem; overflow:visible; }
+  #hero { padding-top:70px; min-height:auto; padding-bottom:3rem; overflow-x:hidden; overflow-y:visible; }
   .h-inner { padding:0 1.25rem; }
   .h-badge {
     font-size:.55rem;
