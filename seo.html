@@ -86,6 +86,7 @@ body {
   color: var(--white);
   font-family: var(--font-b);
   overflow-x: hidden;
+  position: relative;
   cursor: none;
 }
 
@@ -128,6 +129,16 @@ nav {
 .n-cta { font-family:var(--font-m); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; background:var(--accent); color:var(--black); padding:.55rem 1.35rem; border-radius:4px; text-decoration:none; font-weight:500; transition:all .2s; }
 .n-cta:hover { background:#d4ff1a; transform:translateY(-1px); box-shadow:0 4px 20px rgba(200,255,0,.3); }
 .n-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+.n-drop { position:relative; }
+.n-drop-trigger { display:flex; align-items:center; gap:5px; cursor:pointer; background:none; border:none; font-family:var(--font-m); font-size:.72rem; color:var(--white-60); letter-spacing:.1em; text-transform:uppercase; transition:color .2s; padding:0; }
+.n-drop-trigger:hover { color:var(--white); }
+.n-drop-trigger svg { width:11px; height:11px; fill:var(--white-30); transition:transform .25s; }
+.n-drop:hover .n-drop-trigger svg { transform:rotate(180deg); }
+.n-drop-menu { position:absolute; top:calc(100% + 1.1rem); left:50%; transform:translateX(-50%) translateY(6px); min-width:190px; background:rgba(17,17,17,.98); backdrop-filter:blur(20px); border:1px solid var(--border); border-radius:10px; padding:.5rem; opacity:0; visibility:hidden; transition:opacity .2s, transform .2s, visibility .2s; z-index:50; }
+.n-drop:hover .n-drop-menu, .n-drop-menu:hover, .n-drop.open .n-drop-menu { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.n-drop-menu a { display:block; font-family:var(--font-m); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--white-60); text-decoration:none; padding:.65rem .85rem; border-radius:6px; transition:background .2s, color .2s; }
+.n-drop-menu a:hover { background:rgba(245,240,232,.05); color:var(--white); }
+.n-drop-menu a.is-active { color:var(--accent); }
 .n-burger span { display:block; width:22px; height:2px; background:var(--white); border-radius:2px; transition:all .3s; }
 .mob-nav { display:none; position:fixed; top:68px; left:0; right:0; background:rgba(13,13,13,.98); backdrop-filter:blur(20px); padding:2rem 2rem; border-bottom:1px solid var(--border); flex-direction:column; gap:1.25rem; z-index:199; }
 .mob-nav.open { display:flex; }
@@ -749,13 +760,22 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
     </div>
   </a>
   <ul class="n-links">
-    <li><a href="/servicios">Servicios</a></li>
-    <li><a href="/seo" style="color:var(--cyan);">SEO</a></li>
-    <li><a href="/geo">GEO</a></li>
-    <li><a href="/proceso">Proceso</a></li>
-    <li><a href="/landing">Landing Pages</a></li>
-    <li><a href="/precios">Precios</a></li>
-    <li><a href="/faq">FAQ</a></li>
+    <li class="n-drop">
+      <button class="n-drop-trigger" aria-haspopup="true" aria-expanded="false">
+        Servicios
+        <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <div class="n-drop-menu">
+        <a href="/servicios">Todos los servicios</a>
+        <a href="/seo" class="is-active">SEO</a>
+        <a href="/geo">GEO</a>
+        <a href="/landing">Landing Pages</a>
+      </div>
+    </li>
+    <li><a href="/test-visibilidad" style="color:var(--accent);">Test IA ✦</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/casos" style="color:var(--accent);">Casos ✦</a></li>
+    <li><a href="/precios">Planes</a></li>
     <li><a href="/#contacto">Contacto</a></li>
   </ul>
   <a href="/#contacto" class="n-cta">Hablemos →</a>
@@ -769,10 +789,12 @@ footer { background:var(--black-2); border-top:1px solid var(--border); padding:
   <a href="/servicios" onclick="closeMob()">Servicios</a>
   <a href="/seo" onclick="closeMob()" style="color:var(--cyan)">SEO</a>
   <a href="/geo" onclick="closeMob()">GEO</a>
-  <a href="/proceso" onclick="closeMob()">Proceso</a>
   <a href="/landing" onclick="closeMob()">Landing Pages</a>
-  <a href="/precios" onclick="closeMob()">Precios</a>
-  <a href="/faq" onclick="closeMob()">FAQ</a>
+  <a href="/test-visibilidad" onclick="closeMob()" style="color:var(--accent);">Test IA ✦</a>
+  <a href="/blog" onclick="closeMob()">Blog</a>
+  <a href="/casos" onclick="closeMob()" style="color:var(--accent);">Casos ✦</a>
+  <a href="/precios" onclick="closeMob()">Planes</a>
+  <a href="/#contacto" onclick="closeMob()">Contacto</a>
   <a href="/#contacto" onclick="closeMob()" style="color:var(--accent)">→ Hablemos</a>
 </div>
 
@@ -1028,6 +1050,22 @@ document.querySelectorAll('a,button').forEach(el=>{
 const nav=document.getElementById('mainNav');
 window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>50?'rgba(13,13,13,.98)':'rgba(13,13,13,.88)';});
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('mobNav').classList.toggle('open'));
+
+// Dropdown Servicios: soporte tap para tablets/táctiles (sin hover real)
+(function(){
+  var drop = document.querySelector('.n-drop');
+  if(!drop) return;
+  var trigger = drop.querySelector('.n-drop-trigger');
+  trigger.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = drop.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', isOpen);
+  });
+  document.addEventListener('click', function(){
+    drop.classList.remove('open');
+    trigger.setAttribute('aria-expanded','false');
+  });
+})();
 function closeMob(){document.getElementById('mobNav').classList.remove('open');}
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
